@@ -1,0 +1,9 @@
+region = "us-east-1"
+aws_profile = "afri-research"
+ssh_public_key_path = "~/.ssh/afri-ai.pub"
+admin_cidr = "YOUR_PUBLIC_IPV4/32"
+node_count = 1
+instance_type = "m7i.xlarge"
+# Matched aggregate CPU/RAM comparison:
+# one m7i.xlarge (4 vCPU, 16 GiB) versus two m7i.large (2 vCPU, 8 GiB each).
+# Verify current credit balance, regional availability and public prices before apply.

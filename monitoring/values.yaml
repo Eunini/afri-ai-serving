@@ -1,0 +1,23 @@
+alertmanager:
+  enabled: false
+grafana:
+  resources:
+    requests: {cpu: 50m, memory: 128Mi}
+    limits: {cpu: 250m, memory: 256Mi}
+  sidecar:
+    dashboards:
+      enabled: true
+      searchNamespace: ALL
+prometheus:
+  prometheusSpec:
+    retention: 6h
+    scrapeInterval: 15s
+    resources:
+      requests: {cpu: 100m, memory: 256Mi}
+      limits: {cpu: 500m, memory: 1Gi}
+kubeControllerManager:
+  enabled: false
+kubeScheduler:
+  enabled: false
+kubeEtcd:
+  enabled: false

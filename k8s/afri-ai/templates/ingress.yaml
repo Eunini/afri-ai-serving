@@ -1,0 +1,24 @@
+{{- if .Values.ingress.enabled }}
+{{- $tls := required "Set ingress.tlsSecretName before enabling ingress" .Values.ingress.tlsSecretName }}
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ .Release.Name }}
+spec:
+  ingressClassName: {{ .Values.ingress.className }}
+  tls:
+    - hosts: [{{ .Values.ingress.host | quote }}]
+      secretName: {{ $tls }}
+  rules:
+    - host: {{ .Values.ingress.host | quote }}
+      http:
+        paths:
+          - path: /transcribe
+            pathType: Exact
+            backend:
+              service: {name: {{ .Release.Name }}-speech, port: {number: 8000}}
+          - path: /v1/chat/completions
+            pathType: Exact
+            backend:
+              service: {name: {{ .Release.Name }}-chat, port: {number: 8000}}
+{{- end }}

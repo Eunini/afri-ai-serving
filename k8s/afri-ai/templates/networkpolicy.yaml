@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: {{ .Release.Name }}
+spec:
+  podSelector:
+    matchExpressions:
+      - key: app
+        operator: In
+        values: [{{ .Release.Name }}-speech, {{ .Release.Name }}-chat]
+  policyTypes: [Ingress]
+  ingress:
+    - from:
+        - namespaceSelector: {}
+      ports:
+        - {protocol: TCP, port: 8000}

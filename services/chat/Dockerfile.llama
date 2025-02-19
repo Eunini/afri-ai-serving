@@ -1,0 +1,13 @@
+FROM ubuntu:24.04 AS build
+ARG LLAMA_COMMIT
+RUN test -n "$LLAMA_COMMIT"
+RUN apt-get update && apt-get install -y --no-install-recommends git cmake build-essential ca-certificates libcurl4-openssl-dev
+RUN git init /src && cd /src && git remote add origin https://github.com/ggml-org/llama.cpp.git && git fetch --depth 1 origin "$LLAMA_COMMIT" && git checkout --detach FETCH_HEAD
+RUN cmake -S /src -B /src/build -DGGML_NATIVE=OFF -DGGML_BACKEND_DL=OFF -DBUILD_SHARED_LIBS=OFF -DLLAMA_CURL=ON -DCMAKE_BUILD_TYPE=Release && cmake --build /src/build --target llama-server -j2
+FROM ubuntu:24.04
+RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates libgomp1 libcurl4t64 && rm -rf /var/lib/apt/lists/* && useradd --uid 10001 --create-home app
+COPY --from=build /src/build/bin/llama-server /usr/local/bin/llama-server
+USER 10001
+EXPOSE 8081
+ENTRYPOINT ["llama-server"]
+CMD ["--model", "/models/model.gguf", "--alias", "local", "--host", "0.0.0.0", "--port", "8081", "--ctx-size", "2048", "--threads", "2", "--parallel", "1", "--metrics", "--no-webui"]

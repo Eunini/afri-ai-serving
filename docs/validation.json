@@ -1,0 +1,16 @@
+{
+  "checked_at": "2026-10-25T22:01:28.841321+00:00",
+  "python": "3.12.14",
+  "checks": [
+    {
+      "command": "ruff check .",
+      "exit_code": 0,
+      "output": "All checks passed!\n"
+    },
+    {
+      "command": "python -m pytest -q",
+      "exit_code": 0,
+      "output": ".....                                                                    [100%]\n=============================== warnings summary ===============================\n../../.venv/lib/python3.12/site-packages/fastapi/testclient.py:1\n  /home/kamicode/aps/alma/output/african-language-research/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n5 passed, 1 warning in 1.08s\n"
+    }
+  ]
+}

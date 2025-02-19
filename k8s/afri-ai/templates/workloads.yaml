@@ -1,0 +1,134 @@
+{{- range $name := list "speech" "chat" }}
+{{- $config := index $.Values $name }}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ $.Release.Name }}-{{ $name }}
+  labels: {app: {{ $.Release.Name }}-{{ $name }}, service: {{ $name }}}
+spec:
+  {{- if not $config.autoscaling.enabled }}
+  replicas: {{ $config.replicas }}
+  {{- end }}
+  selector:
+    matchLabels: {app: {{ $.Release.Name }}-{{ $name }}}
+  template:
+    metadata:
+      labels: {app: {{ $.Release.Name }}-{{ $name }}, service: {{ $name }}}
+    spec:
+      {{- with $.Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      automountServiceAccountToken: false
+      terminationGracePeriodSeconds: 180
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 10001
+        fsGroup: 10001
+        seccompProfile: {type: RuntimeDefault}
+      containers:
+        - name: gateway
+          image: {{ $config.image | quote }}
+          imagePullPolicy: {{ $.Values.imagePullPolicy }}
+          ports: [{name: http, containerPort: 8000}]
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities: {drop: [ALL]}
+          env:
+            - name: API_KEY
+              valueFrom: {secretKeyRef: {name: {{ $.Values.apiKeySecret }}, key: api-key}}
+            {{- if eq $name "speech" }}
+            - {name: ASR_MODEL, value: {{ $config.modelPath | quote }}}
+            - {name: MODEL_THREADS, value: {{ $config.threads | quote }}}
+            {{- else }}
+            - {name: LLAMA_URL, value: "http://127.0.0.1:8081"}
+            {{- end }}
+          startupProbe:
+            httpGet: {path: /ready, port: http}
+            failureThreshold: 120
+            periodSeconds: 5
+          readinessProbe:
+            httpGet: {path: /ready, port: http}
+            periodSeconds: 5
+          livenessProbe:
+            httpGet: {path: /health, port: http}
+            periodSeconds: 10
+          resources:
+            {{- toYaml $config.resources | nindent 12 }}
+          volumeMounts:
+            - {name: tmp, mountPath: /tmp}
+            {{- if eq $name "speech" }}
+            - {name: model, mountPath: /models/asr, readOnly: true}
+            {{- end }}
+        {{- if eq $name "chat" }}
+        - name: llama
+          image: {{ $config.llamaImage | quote }}
+          args: ["--model", {{ printf "/models/%s" $config.modelFile | quote }}, "--alias", "local", "--host", "0.0.0.0", "--port", "8081", "--ctx-size", "2048", "--threads", {{ $config.threads | quote }}, "--parallel", "1", "--metrics", "--no-webui"]
+          ports: [{name: llama, containerPort: 8081}]
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities: {drop: [ALL]}
+          startupProbe:
+            httpGet: {path: /health, port: llama}
+            failureThreshold: 120
+            periodSeconds: 5
+          readinessProbe:
+            httpGet: {path: /health, port: llama}
+          resources:
+            {{- toYaml $config.llamaResources | nindent 12 }}
+          volumeMounts:
+            - {name: model, mountPath: /models, readOnly: true}
+            - {name: llama-tmp, mountPath: /tmp}
+        {{- end }}
+      volumes:
+        - {name: tmp, emptyDir: {sizeLimit: 128Mi}}
+        {{- if eq $name "chat" }}
+        - {name: llama-tmp, emptyDir: {sizeLimit: 128Mi}}
+        {{- end }}
+        - name: model
+          hostPath:
+            path: {{ $config.modelHostPath | quote }}
+            type: Directory
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ $.Release.Name }}-{{ $name }}
+  labels: {app: {{ $.Release.Name }}-{{ $name }}, service: {{ $name }}}
+spec:
+  selector: {app: {{ $.Release.Name }}-{{ $name }}}
+  ports: [{name: http, port: 8000, targetPort: http}]
+{{- if $config.autoscaling.enabled }}
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: {{ $.Release.Name }}-{{ $name }}
+spec:
+  scaleTargetRef: {apiVersion: apps/v1, kind: Deployment, name: {{ $.Release.Name }}-{{ $name }}}
+  minReplicas: {{ $config.autoscaling.minReplicas }}
+  maxReplicas: {{ $config.autoscaling.maxReplicas }}
+  behavior:
+    scaleDown: {stabilizationWindowSeconds: 120}
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target: {type: Utilization, averageUtilization: {{ $config.autoscaling.targetCPU }}}
+{{- end }}
+{{- if $.Values.monitoring.enabled }}
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: {{ $.Release.Name }}-{{ $name }}
+  labels: {release: {{ $.Values.monitoring.release }}}
+spec:
+  selector:
+    matchLabels: {app: {{ $.Release.Name }}-{{ $name }}}
+  endpoints: [{port: http, path: /metrics, interval: 15s}]
+{{- end }}
+{{- end }}

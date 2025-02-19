@@ -1,0 +1,35 @@
+imagePullPolicy: IfNotPresent
+imagePullSecrets: []
+apiKeySecret: afri-ai-api
+speech:
+  image: ghcr.io/REPLACE/afri-ai-serving-speech:REPLACE_COMMIT
+  replicas: 1
+  modelPath: /models/asr
+  modelHostPath: /opt/afri-models/asr
+  threads: 2
+  resources:
+    requests: {cpu: "500m", memory: "1Gi"}
+    limits: {cpu: "2", memory: "3Gi"}
+  autoscaling: {enabled: true, minReplicas: 1, maxReplicas: 2, targetCPU: 70}
+chat:
+  image: ghcr.io/REPLACE/afri-ai-serving-chat:REPLACE_COMMIT
+  llamaImage: ghcr.io/REPLACE/afri-ai-serving-llama:REPLACE_COMMIT
+  replicas: 1
+  modelHostPath: /opt/afri-models/llm
+  modelFile: model.gguf
+  threads: 2
+  resources:
+    requests: {cpu: "100m", memory: "128Mi"}
+    limits: {cpu: "500m", memory: "256Mi"}
+  llamaResources:
+    requests: {cpu: "500m", memory: "2Gi"}
+    limits: {cpu: "2", memory: "4Gi"}
+  autoscaling: {enabled: true, minReplicas: 1, maxReplicas: 2, targetCPU: 70}
+ingress:
+  enabled: false
+  className: traefik
+  host: ai.example.invalid
+  tlsSecretName: ""
+monitoring:
+  enabled: false
+  release: monitoring

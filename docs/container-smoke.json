@@ -1,0 +1,18 @@
+{
+  "scope": "local real-model container integration; not a cloud capacity benchmark",
+  "asr_artifact": "pretrained faster-whisper-tiny, int8 compute",
+  "llm_artifact": "qwen2.5-1.5b-instruct-q4_k_m.gguf",
+  "checks": {
+    "readiness": true,
+    "unauthorized_401": true,
+    "invalid_audio_415": true,
+    "real_transcription_200": true,
+    "real_chat_200": true,
+    "prometheus_audio_counter": true
+  },
+  "status": "passed",
+  "transcription_sha256": "6812c650a25ecabdefd667a1d73f64a18b747bac30e7b2d42eabb6f497c826c8",
+  "audio_seconds": 5.76,
+  "pilot_items_requested": 48,
+  "temporary_containers_and_network_removed": true
+}

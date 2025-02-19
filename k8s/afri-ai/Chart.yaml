@@ -1,0 +1,6 @@
+apiVersion: v2
+name: afri-ai
+description: CPU speech and language inference, with authenticated gateways
+type: application
+version: 0.1.0
+appVersion: "0.1.0"
