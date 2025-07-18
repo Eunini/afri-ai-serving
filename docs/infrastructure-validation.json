@@ -1,11 +1,11 @@
 {
-  "checked_at": "2026-10-25T21:53:10.731307+00:00",
+  "checked_at": "2026-10-25T23:13:07.315057+00:00",
   "terraform_version": "1.13.4",
   "helm_version": "3.19.0",
   "aws_terraform_validate": "passed",
-  "oci_terraform_validate": "passed",
   "helm_lint": "passed",
   "helm_render": "passed",
-  "cloud_apply": "not run; credentials pending",
-  "cloud_destroy": "not applicable; no cloud resources created"
+  "cloud_apply": "not yet run; profile verified; $100 credits / six months reported by owner",
+  "cloud_destroy": "not applicable; no cloud compute provisioned",
+  "aws_terraform_plan": "passed; 9 additions, no updates or deletes; intended account guard passed"
 }

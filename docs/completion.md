@@ -1,6 +1,6 @@
 # Completion record
 
-Built: Terraform VCN/subnet/firewall/ARM instances and cloud-init k3s; speech and
+Built: Terraform VPC/subnet/security groups/EC2 instances and cloud-init k3s; speech and
 chat gateways; llama.cpp image; three-image GHCR workflow; Helm deployments,
 probes, requests/limits, CPU HPA, TLS ingress and NetworkPolicy; Prometheus
 ServiceMonitors; Grafana dashboard; k6 load, pod-deletion recovery and cost tools.

@@ -8,9 +8,18 @@ import sys
 from pathlib import Path
 
 
-def secure_write(path, content):
+def secure_write(path, content, replace=False):
     path.parent.mkdir(parents=True, exist_ok=True, mode=0o700)
     path.parent.chmod(0o700)
+    if replace:
+        import tempfile
+
+        with tempfile.NamedTemporaryFile(mode="w", dir=path.parent, delete=False) as stream:
+            temporary = Path(stream.name)
+            temporary.chmod(0o600)
+            stream.write(content)
+        temporary.replace(path)
+        return
     if path.exists():
         raise ValueError(
             "A credential file already exists; use the service's own settings to update it"
@@ -22,8 +31,15 @@ def secure_write(path, content):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("account", choices=["kaggle", "huggingface", "aws"])
+    parser.add_argument("account", choices=["kaggle", "huggingface", "aws", "gemini"])
+    parser.add_argument(
+        "--replace",
+        action="store_true",
+        help="Replace only the dedicated Gemini key, after validation",
+    )
     args = parser.parse_args()
+    if args.replace and args.account != "gemini":
+        parser.error("--replace currently applies only to Gemini")
     if not sys.stdin.isatty():
         raise ValueError("Use an interactive terminal so secret input is hidden")
     if args.account == "kaggle":
@@ -33,14 +49,55 @@ def main():
         secure_write(Path.home() / ".kaggle/access_token", token + "\n")
         print("Kaggle token saved outside the project with private permissions.")
     elif args.account == "huggingface":
-        from huggingface_hub import HfApi, HfFolder
+        from huggingface_hub import HfApi
 
         token = getpass.getpass("Hugging Face write token (hidden): ").strip()
         identity = HfApi(token=token).whoami()
         if identity["name"].casefold() != "ineeoluwa":
             raise ValueError("The token does not belong to the intended Ineeoluwa account")
-        HfFolder.save_token(token)
+        secure_write(Path.home() / ".cache/huggingface/token", token + "\n")
         print("Hugging Face connected as Ineeoluwa; token stored outside the project.")
+    elif args.account == "gemini":
+        if (
+            input("Confirm this is a free-tier AI Studio project with no billing linked (yes): ")
+            .strip()
+            .lower()
+            != "yes"
+        ):
+            raise ValueError("Use a free-tier project for the zero-spend comparison")
+        token = getpass.getpass("Gemini API key (hidden): ").strip()
+        if not token:
+            raise ValueError("Key is empty")
+        import httpx
+
+        response = httpx.get(
+            "https://generativelanguage.googleapis.com/v1beta/models",
+            headers={"x-goog-api-key": token},
+            timeout=30,
+        )
+        if response.status_code != 200:
+            raise ValueError("Gemini rejected the supplied key; existing credentials preserved")
+        secure_write(
+            Path.home() / ".config/afri-research/gemini_api_key", token + "\n", replace=args.replace
+        )
+        import json
+        from datetime import datetime, timezone
+
+        secure_write(
+            Path.home() / ".config/afri-research/gemini_profile.json",
+            json.dumps(
+                {
+                    "provider": "Google Gemini Developer API",
+                    "free_tier": True,
+                    "billing_linked": False,
+                    "confirmed_at": datetime.now(timezone.utc).isoformat(),
+                },
+                indent=2,
+            )
+            + "\n",
+            replace=args.replace,
+        )
+        print("Gemini key and free-tier confirmation saved outside the project.")
     else:
         # Dedicated named profile; other profiles are not modified.
         key_id = getpass.getpass("AWS access key ID (hidden): ").strip()

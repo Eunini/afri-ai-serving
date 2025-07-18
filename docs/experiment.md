@@ -54,4 +54,4 @@ A two-node server/agent arrangement does not provide control-plane HA. Shared
 host paths require model pre-positioning on every node. A small free-tier
 allocation may be insufficient to demonstrate the full HPA maximum. Cluster
 creation, scaling/failure measurements and `terraform destroy` verification need
-real OCI access. At initial build no cloud resources were created.
+real AWS access. At initial build no cloud resources were created.

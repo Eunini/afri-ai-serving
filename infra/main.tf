@@ -1,27 +1,36 @@
 terraform {
   required_version = ">= 1.9, < 2.0"
   required_providers {
-    oci    = { source = "oracle/oci", version = "~> 7.0" }
+    aws    = { source = "hashicorp/aws", version = "~> 6.0" }
     random = { source = "hashicorp/random", version = "~> 3.7" }
   }
   backend "local" {}
 }
 
-# OCI authentication comes from ~/.oci/config, never from committed variables.
-provider "oci" {
-  region = var.region
+variable "region" {
+  type    = string
+  default = "us-east-1"
 }
-
-variable "region" { type = string }
-variable "compartment_ocid" { type = string }
-variable "availability_domain" { type = string }
-variable "ubuntu_arm_image_ocid" { type = string }
-variable "ssh_public_key_path" { type = string }
+variable "aws_profile" {
+  type    = string
+  default = "afri-research"
+}
+variable "aws_account_id" {
+  type = string
+  validation {
+    condition     = can(regex("^[0-9]{12}$", var.aws_account_id))
+    error_message = "Supply the intended 12-digit AWS account ID."
+  }
+}
+variable "ssh_public_key_path" {
+  type    = string
+  default = "~/.ssh/afri-ai.pub"
+}
 variable "admin_cidr" {
   type = string
   validation {
     condition     = can(cidrnetmask(var.admin_cidr)) && !contains(["0.0.0.0/0", "0.0.0.0/1", "128.0.0.0/1"], var.admin_cidr)
-    error_message = "Use a restricted administrator IPv4 CIDR."
+    error_message = "Supply a restricted administrator IPv4 CIDR."
   }
 }
 variable "node_count" {
@@ -29,139 +38,133 @@ variable "node_count" {
   default = 1
   validation {
     condition     = contains([1, 2], var.node_count)
-    error_message = "Use one server or one server plus one agent."
+    error_message = "Use one server or one server plus one worker."
   }
 }
-variable "ocpus_per_node" {
-  type    = number
-  default = 2
-}
-variable "memory_gb_per_node" {
-  type    = number
-  default = 12
-}
-variable "credited_total_ocpus" {
-  type    = number
-  default = 2
-}
-variable "credited_total_memory_gb" {
-  type    = number
-  default = 12
+variable "instance_type" {
+  type    = string
+  default = "m7i.xlarge"
 }
 variable "k3s_version" {
   type    = string
   default = "v1.33.5+k3s1"
 }
+variable "project_name" {
+  type    = string
+  default = "afri-ai-research"
+}
 
+provider "aws" {
+  region              = var.region
+  profile             = var.aws_profile
+  allowed_account_ids = [var.aws_account_id]
+  default_tags { tags = { Project = var.project_name, ManagedBy = "terraform" } }
+}
+data "aws_availability_zones" "available" { state = "available" }
+data "aws_ami" "ubuntu" {
+  most_recent = true
+  owners      = ["099720109477"]
+  filter {
+    name   = "name"
+    values = ["ubuntu/images/hvm-ssd-gp3/ubuntu-noble-24.04-amd64-server-*"]
+  }
+  filter {
+    name   = "architecture"
+    values = ["x86_64"]
+  }
+  filter {
+    name   = "virtualization-type"
+    values = ["hvm"]
+  }
+}
 resource "random_password" "join" {
   length  = 48
   special = false
 }
-
-resource "oci_core_vcn" "main" {
-  compartment_id = var.compartment_ocid
-  cidr_blocks    = ["10.30.0.0/16"]
-  display_name   = "afri-ai"
-  dns_label      = "afriai"
+resource "aws_vpc" "main" {
+  cidr_block           = "10.30.0.0/16"
+  enable_dns_support   = true
+  enable_dns_hostnames = true
+  tags                 = { Name = var.project_name }
 }
-resource "oci_core_internet_gateway" "main" {
-  compartment_id = var.compartment_ocid
-  vcn_id         = oci_core_vcn.main.id
+resource "aws_internet_gateway" "main" { vpc_id = aws_vpc.main.id }
+resource "aws_subnet" "main" {
+  vpc_id                  = aws_vpc.main.id
+  cidr_block              = "10.30.1.0/24"
+  availability_zone       = data.aws_availability_zones.available.names[0]
+  map_public_ip_on_launch = true
 }
-resource "oci_core_route_table" "main" {
-  compartment_id = var.compartment_ocid
-  vcn_id         = oci_core_vcn.main.id
-  route_rules {
-    destination       = "0.0.0.0/0"
-    network_entity_id = oci_core_internet_gateway.main.id
+resource "aws_route_table" "main" {
+  vpc_id = aws_vpc.main.id
+  route {
+    cidr_block = "0.0.0.0/0"
+    gateway_id = aws_internet_gateway.main.id
   }
 }
-resource "oci_core_security_list" "main" {
-  compartment_id = var.compartment_ocid
-  vcn_id         = oci_core_vcn.main.id
-  egress_security_rules {
-    protocol    = "all"
-    destination = "0.0.0.0/0"
-  }
-  dynamic "ingress_security_rules" {
-    for_each = toset([22, 6443])
+resource "aws_route_table_association" "main" {
+  subnet_id      = aws_subnet.main.id
+  route_table_id = aws_route_table.main.id
+}
+resource "aws_security_group" "nodes" {
+  name_prefix = "${var.project_name}-"
+  vpc_id      = aws_vpc.main.id
+  dynamic "ingress" {
+    for_each = toset([22, 80, 443, 6443])
     content {
-      protocol = "6"
-      source   = var.admin_cidr
-      tcp_options {
-        min = ingress_security_rules.value
-        max = ingress_security_rules.value
-      }
+      from_port   = ingress.value
+      to_port     = ingress.value
+      protocol    = "tcp"
+      cidr_blocks = [var.admin_cidr]
     }
   }
-  # HTTP is private to the administrator until a TLS ingress is configured.
-  dynamic "ingress_security_rules" {
-    for_each = toset([80, 443])
-    content {
-      protocol = "6"
-      source   = var.admin_cidr
-      tcp_options {
-        min = ingress_security_rules.value
-        max = ingress_security_rules.value
-      }
-    }
+  ingress {
+    from_port = 0
+    to_port   = 0
+    protocol  = "-1"
+    self      = true
   }
-  ingress_security_rules {
-    protocol = "all"
-    source   = "10.30.0.0/16"
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
   }
 }
-resource "oci_core_subnet" "main" {
-  compartment_id    = var.compartment_ocid
-  vcn_id            = oci_core_vcn.main.id
-  cidr_block        = "10.30.1.0/24"
-  route_table_id    = oci_core_route_table.main.id
-  security_list_ids = [oci_core_security_list.main.id]
-  dns_label         = "nodes"
+resource "aws_key_pair" "nodes" {
+  key_name_prefix = "${var.project_name}-"
+  public_key      = file(pathexpand(var.ssh_public_key_path))
 }
-
-locals {
-  node_addresses = ["10.30.1.10", "10.30.1.11"]
+resource "aws_instance" "node" {
+  count                       = var.node_count
+  ami                         = data.aws_ami.ubuntu.id
+  instance_type               = var.instance_type
+  subnet_id                   = aws_subnet.main.id
+  private_ip                  = "10.30.1.${10 + count.index}"
+  vpc_security_group_ids      = [aws_security_group.nodes.id]
+  key_name                    = aws_key_pair.nodes.key_name
+  user_data_replace_on_change = true
+  user_data = templatefile("${path.module}/cloud-init.yaml.tftpl", {
+    role       = count.index == 0 ? "server" : "agent"
+    server     = "10.30.1.10"
+    version    = var.k3s_version
+    token      = random_password.join.result
+    node_ip    = "10.30.1.${10 + count.index}"
+    admin_cidr = var.admin_cidr
+  })
+  root_block_device {
+    volume_type           = "gp3"
+    volume_size           = 30
+    encrypted             = true
+    delete_on_termination = true
+  }
+  metadata_options {
+    http_endpoint               = "enabled"
+    http_tokens                 = "required"
+    http_put_response_hop_limit = 1
+  }
+  tags       = { Name = "${var.project_name}-${count.index}" }
+  depends_on = [aws_route_table_association.main]
 }
-
-resource "oci_core_instance" "node" {
-  count               = var.node_count
-  availability_domain = var.availability_domain
-  compartment_id      = var.compartment_ocid
-  display_name        = "afri-ai-${count.index}"
-  shape               = "VM.Standard.A1.Flex"
-  shape_config {
-    ocpus         = var.ocpus_per_node
-    memory_in_gbs = var.memory_gb_per_node
-  }
-  source_details {
-    source_type             = "image"
-    source_id               = var.ubuntu_arm_image_ocid
-    boot_volume_size_in_gbs = 50
-  }
-  create_vnic_details {
-    subnet_id        = oci_core_subnet.main.id
-    private_ip       = local.node_addresses[count.index]
-    assign_public_ip = true
-  }
-  metadata = {
-    ssh_authorized_keys = file(pathexpand(var.ssh_public_key_path))
-    user_data = base64encode(templatefile("${path.module}/cloud-init.yaml.tftpl", {
-      role       = count.index == 0 ? "server" : "agent"
-      server     = local.node_addresses[0]
-      version    = var.k3s_version
-      token      = random_password.join.result
-      node_ip    = local.node_addresses[count.index]
-      admin_cidr = var.admin_cidr
-    }))
-  }
-  lifecycle {
-    precondition {
-      condition     = var.node_count * var.ocpus_per_node <= var.credited_total_ocpus && var.node_count * var.memory_gb_per_node <= var.credited_total_memory_gb
-      error_message = "Requested nodes exceed the declared free/credited quota. Verify tenancy quota before changing the limits."
-    }
-  }
-}
-
-output "public_ips" { value = oci_core_instance.node[*].public_ip }
-output "private_ips" { value = oci_core_instance.node[*].private_ip }
+output "public_ips" { value = aws_instance.node[*].public_ip }
+output "private_ips" { value = aws_instance.node[*].private_ip }
+output "instance_ids" { value = aws_instance.node[*].id }

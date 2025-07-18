@@ -20,7 +20,7 @@ write_files:
     content: |
       #!/usr/bin/env bash
       set -euo pipefail
-      # Ubuntu OCI images may contain host firewall rules in addition to VCN rules.
+      # Preserve private cluster/admin connectivity when an image has host firewall rules.
       iptables -I INPUT -s 10.30.0.0/16 -j ACCEPT
       iptables -I INPUT -s ${admin_cidr} -p tcp -m multiport --dports 22,80,443,6443 -j ACCEPT
       curl --fail --silent --show-error --location https://get.k3s.io -o /root/install-k3s.sh

@@ -1,13 +1,10 @@
-region                = "YOUR_OCI_HOME_REGION"
-compartment_ocid      = "ocid1.compartment.REPLACE"
-availability_domain   = "YOUR_AVAILABILITY_DOMAIN"
-ubuntu_arm_image_ocid = "ocid1.image.REPLACE_WITH_UBUNTU_24_04_ARM_IMAGE"
-ssh_public_key_path   = "~/.ssh/afri-ai.pub"
-admin_cidr            = "YOUR_PUBLIC_IPV4/32"
-node_count            = 1
-ocpus_per_node        = 2
-memory_gb_per_node    = 12
-# Default declared quota follows Oracle's public page checked 2026-10-25.
-# Other existing tenancy resources also consume this quota.
-credited_total_ocpus     = 2
-credited_total_memory_gb = 12
+region = "us-east-1"
+aws_profile = "afri-research"
+aws_account_id = "YOUR_12_DIGIT_ACCOUNT_ID"
+ssh_public_key_path = "~/.ssh/afri-ai.pub"
+admin_cidr = "YOUR_PUBLIC_IPV4/32"
+node_count = 1
+instance_type = "m7i.xlarge"
+# Matched aggregate CPU/RAM comparison:
+# one m7i.xlarge (4 vCPU, 16 GiB) versus two m7i.large (2 vCPU, 8 GiB each).
+# Verify current credit balance, regional availability and public prices before apply.

@@ -28,8 +28,8 @@ python3.12 -m venv .venv
 . .venv/bin/activate
 pip install -e '.[dev]'
 pytest -q
-terraform -chdir=infra/aws init -backend=false
-terraform -chdir=infra/aws validate
+terraform -chdir=infra init -backend=false
+terraform -chdir=infra validate
 helm lint k8s/afri-ai
 ```
 
@@ -38,8 +38,7 @@ Follow [the setup guide](docs/setup.md) for credentials outside the repository,
 The complete experiment has two topologies: one larger node and two smaller
 nodes. Use only verified free quota or free credits. AWS uses the dedicated `afri-research` profile and free credits. Compare one
 `m7i.xlarge` with two `m7i.large` instances for equal total vCPU/RAM. Verify credits
-and regional prices before provisioning. An alternative Oracle implementation is
-retained under `infra/`; see `docs/setup-oracle.md`.
+and regional prices before provisioning.
 
 `POST /transcribe` takes a raw WAV/FLAC body and returns text, language and duration:
 
@@ -52,7 +51,7 @@ curl --fail http://127.0.0.1:8000/transcribe \
 `POST /v1/chat/completions`. Metrics and llama.cpp itself are not exposed through
 the public ingress. NetworkPolicy denies cross-pod access to the sidecar port.
 
-GitHub Actions validates Python/Terraform/Helm, builds amd64 and arm64 images for
+GitHub Actions validates Python/Terraform/Helm, builds amd64 images for
 speech, chat gateway and llama.cpp, then publishes commit-tagged images to GHCR
 on pushes. Review the actual Actions run before claiming a registry build passed.
 

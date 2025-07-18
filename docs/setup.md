@@ -13,15 +13,24 @@ Check the intended identity without printing credentials:
 ```bash
 aws sts get-caller-identity --profile afri-research
 ssh-keygen -t ed25519 -f ~/.ssh/afri-ai
-cp infra/aws/terraform.tfvars.example infra/aws/local.tfvars
+cp infra/terraform.tfvars.example infra/local.tfvars
 ```
 
-Set a restricted administrator IPv4 CIDR and the selected AWS region. The
+Set a restricted administrator IPv4 CIDR, the intended AWS account ID, and the selected AWS region. The provider rejects a different account. The
 Terraform AMI lookup uses Canonical's Ubuntu 24.04 x86_64 images. The configuration
 creates a dedicated VPC, public subnet, internet route, security group, SSH public
 key registration, encrypted 30-GB gp3 root volumes and one or two EC2 instances.
 It creates no NAT gateway, paid cloud load balancer or Elastic IP reservation.
 Public IPv4 and EBS still have prices and must be included in the cost report.
+The checked public list prices are saved in `docs/aws-public-prices.json`.
+Refresh them with `pip install -e '.[pricing]'` then
+`python scripts/fetch_prices.py --out docs/aws-public-prices.json`.
+The script streams AWS's unauthenticated public offer files; billing permissions
+are not required. At the 2026-10-26 check, one m7i.xlarge with 30 GB gp3 and one
+public IPv4 costs $0.2098877/hour; two m7i.large nodes with the same per-node disk
+and IPv4 allocation cost $0.2181753/hour. These are list-price estimates before
+credits, tax and traffic. The owner reports $100 in credits valid for six months;
+the scoped IAM profile cannot independently confirm the balance or expiry date.
 
 Use the wrapper so Terraform state and the k3s join token remain outside git:
 
@@ -30,9 +39,8 @@ bash scripts/terraform.sh plan -var-file=local.tfvars
 bash scripts/terraform.sh apply -var-file=local.tfvars
 ```
 
-The wrapper defaults to `infra/aws`; `CLOUD=oci` selects the optional Oracle
-implementation with a separate state directory. Do not switch providers against
-the same state. The default AWS topology is one `m7i.xlarge` (4 vCPU, 16 GiB).
+The wrapper uses `infra/` and a dedicated external AWS state directory.
+The default AWS topology is one `m7i.xlarge` (4 vCPU, 16 GiB).
 For a matched aggregate resource comparison, destroy it and run two `m7i.large`
 instances (2 vCPU, 8 GiB each). Record actual AMI, instance IDs, public list prices,
 credit coverage and elapsed time. These non-burstable shapes avoid CPU-credit
@@ -65,7 +73,7 @@ host at the node public IP. Terraform does not create public DNS or a TLS certif
 ## Models and authentication
 
 Copy the Project 1 CTranslate2 artifact to `/opt/afri-models/asr` and the chosen
-Project 2 GGUF file to `/opt/afri-models/llm/model.gguf` on every node. Give UID/GID
+Project 2 GGUF file to `/opt/afri-models/llm/model.gguf` on every node. Use `python scripts/stage_models.py --asr-dir /path/to/ct2 --llm-file /path/to/model.gguf --hosts NODE_IP...` before deploying. Give UID/GID
 10001 read access to directories/files. Record source revision and SHA256. Do
 not substitute a base model while describing it as the fine-tuned checkpoint.
 
