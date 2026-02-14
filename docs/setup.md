@@ -26,9 +26,9 @@ The checked public list prices are saved in `docs/aws-public-prices.json`.
 Refresh them with `pip install -e '.[pricing]'` then
 `python scripts/fetch_prices.py --out docs/aws-public-prices.json`.
 The script streams AWS's unauthenticated public offer files; billing permissions
-are not required. At the 2026-10-26 check, one m7i.xlarge with 30 GB gp3 and one
-public IPv4 costs $0.2098877/hour; two m7i.large nodes with the same per-node disk
-and IPv4 allocation cost $0.2181753/hour. These are list-price estimates before
+are not required. At the 2026-10-26 check, one m7i-flex.large with 30 GB gp3 and one
+public IPv4 costs $0.1040477/hour; two c7i-flex.large nodes with the same per-node
+disk and IPv4 allocation cost $0.1861553/hour. These are list-price estimates before
 credits, tax and traffic. The owner reports $100 in credits valid for six months;
 the scoped IAM profile cannot independently confirm the balance or expiry date.
 
@@ -40,11 +40,13 @@ bash scripts/terraform.sh apply -var-file=local.tfvars
 ```
 
 The wrapper uses `infra/` and a dedicated external AWS state directory.
-The default AWS topology is one `m7i.xlarge` (4 vCPU, 16 GiB).
-For a matched aggregate resource comparison, destroy it and run two `m7i.large`
-instances (2 vCPU, 8 GiB each). Record actual AMI, instance IDs, public list prices,
-credit coverage and elapsed time. These non-burstable shapes avoid CPU-credit
-throttling or unlimited-mode surplus charges as a comparison confound.
+The default AWS topology is one `m7i-flex.large` (2 vCPU, 8 GiB).
+For a free-plan topology comparison, destroy it and run two `c7i-flex.large`
+instances (2 vCPU, 4 GiB each). Record actual AMI, instance IDs, public list prices,
+credit coverage and elapsed time. This matches aggregate RAM but doubles aggregate vCPU count in the two-node case.
+Flex instance performance is variable; report this confound and the bounded run
+window. A matched CPU/RAM one-m7i.xlarge/two-m7i.large comparison remains a
+separate paid-plan experiment; the current free account rejects those shapes.
 
 Wait for cloud-init on each server. Node 0 is the k3s server; node 1 is an agent.
 The two-node arrangement does not provide control-plane high availability.
@@ -97,11 +99,12 @@ part alone or save its stdout. Export `API_KEY` securely in the local shell firs
 helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
 helm repo update
 helm upgrade --install monitoring prometheus-community/kube-prometheus-stack \
-  --namespace monitoring --create-namespace -f monitoring/values.yaml
+  --version 92.13.1 --namespace monitoring --create-namespace -f monitoring/values.yaml
 kubectl -n monitoring create configmap afri-ai-dashboard \
   --from-file=monitoring/grafana-dashboard.json
 kubectl -n monitoring label configmap afri-ai-dashboard grafana_dashboard=1
 helm upgrade --install afri-ai k8s/afri-ai --namespace afri-ai \
+  -f k8s/values-free-plan.yaml \
   --set speech.image=ghcr.io/OWNER/afri-ai-serving-speech:COMMIT \
   --set chat.image=ghcr.io/OWNER/afri-ai-serving-chat:COMMIT \
   --set chat.llamaImage=ghcr.io/OWNER/afri-ai-serving-llama:COMMIT \
@@ -135,6 +138,15 @@ For speech, set `MODE=speech`, `AUDIO_FILE` to a representative real recording,
 and forward the speech gateway. Record the UTC start timestamp, workload/audio
 length, HPA replica observations before/during/after load, model hashes and
 actual chart/image versions. `loadtest.summarize` produces time-window statistics.
+
+The measured protocol uses `scripts.run_cloud_validation` for stress, HPA and
+pod deletion, then `scripts.run_capacity` for 0.1/0.2/0.5-request/s steady
+plateaus. `scripts.complete_cloud_run --help` wraps those stages, monitoring
+export and unconditional Terraform teardown for a recorded instance inventory.
+Use a scratch directory with at least 256 MiB available and keep Terraform state
+on persistent private storage. RAM-backed evidence can be archived after cleanup
+with `python -m scripts.preserve_cloud_run --source SCRATCH_RUN --archive RUN.tar.gz
+--wait-seconds 7200`. Extract the archive before reanalysing raw JSON/NDJSON files.
 
 ```bash
 bash scripts/terraform.sh destroy -var-file=local.tfvars

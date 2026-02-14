@@ -1,0 +1,44 @@
+
+
+  █ THRESHOLDS 
+
+    http_req_failed
+    ✗ 'rate<0.05' rate=82.27%
+
+    inference_latency_ms
+    ✓ 'p(95)<30000' p(95)=4.92s
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 2065   3.119074/s
+    checks_succeeded...: 17.72% 366 out of 2065
+    checks_failed......: 82.27% 1699 out of 2065
+
+    ✗ inference succeeds
+      ↳  17% — ✓ 366 / ✗ 1699
+
+    CUSTOM
+    inference_errors...............: 82.27% 1699 out of 2065
+    inference_latency_ms...........: avg=1.79s min=96.5ms  med=1.08s max=10.32s p(90)=4.08s p(95)=4.92s
+
+    HTTP
+    http_req_duration..............: avg=1.79s min=96.5ms  med=1.08s max=10.32s p(90)=4.08s p(95)=4.92s
+      { expected_response:true }...: avg=4.02s min=1.84s   med=3.82s max=10.32s p(90)=6.08s p(95)=6.74s
+    http_req_failed................: 82.27% 1699 out of 2065
+    http_reqs......................: 2065   3.119074/s
+
+    EXECUTION
+    dropped_iterations.............: 35     0.052866/s
+    iteration_duration.............: avg=1.81s min=97.09ms med=1.09s max=10.32s p(90)=4.13s p(95)=4.99s
+    iterations.....................: 2065   3.119074/s
+    vus............................: 1      min=0            max=37
+    vus_max........................: 39     min=4            max=39
+
+    NETWORK
+    data_received..................: 1.1 MB 1.7 kB/s
+    data_sent......................: 1.1 GB 1.7 MB/s
+
+
+
+time="2026-10-26T00:37:58+01:00" level=error msg="thresholds on metrics 'http_req_failed' have been crossed"

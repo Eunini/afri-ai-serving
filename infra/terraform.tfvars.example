@@ -4,7 +4,9 @@ aws_account_id = "YOUR_12_DIGIT_ACCOUNT_ID"
 ssh_public_key_path = "~/.ssh/afri-ai.pub"
 admin_cidr = "YOUR_PUBLIC_IPV4/32"
 node_count = 1
-instance_type = "m7i.xlarge"
-# Matched aggregate CPU/RAM comparison:
-# one m7i.xlarge (4 vCPU, 16 GiB) versus two m7i.large (2 vCPU, 8 GiB each).
+instance_type = "m7i-flex.large"
+# Free-plan comparison: one m7i-flex.large (2 vCPU, 8 GiB)
+# versus two c7i-flex.large (2 vCPU, 4 GiB each).
+# RAM is matched in aggregate, CPU is not; Flex performance is variable.
+# A paid-plan matched CPU/RAM alternative is one m7i.xlarge vs two m7i.large.
 # Verify current credit balance, regional availability and public prices before apply.

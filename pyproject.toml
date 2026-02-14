@@ -12,6 +12,7 @@ dependencies = ["fastapi>=0.115,<1", "httpx>=0.28,<1", "python-multipart>=0.0.20
 [project.optional-dependencies]
 speech = ["faster-whisper>=1.2,<2", "av>=13,<16", "huggingface-hub>=0.34,<1"]
 pricing = ["ijson>=3.4,<4"]
+cloud = ["boto3>=1.40,<2"]
 dev = ["pytest>=8,<9", "ruff>=0.12,<1"]
 
 [tool.setuptools.packages.find]

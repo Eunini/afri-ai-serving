@@ -1,0 +1,6 @@
+{
+  "failure": "local workspace ENOSPC during speech cooldown; experiment incomplete",
+  "terraform_destroy": "succeeded; external log retained",
+  "teardown_verification": "succeeded; independent EC2 checks repeated after disk recovery",
+  "corrupt_observation_fragments_preserved": 1
+}

@@ -1,0 +1,11 @@
+# Bounded validation profile for a 2-vCPU/8-GiB Free-plan node.
+# Both HPAs at two replicas request 1.3 CPUs in aggregate, leaving room for k3s
+# and monitoring. Limits still permit contention; measure it under load.
+speech:
+  resources:
+    requests: {cpu: "250m", memory: "1Gi"}
+chat:
+  resources:
+    requests: {cpu: "50m", memory: "128Mi"}
+  llamaResources:
+    requests: {cpu: "350m", memory: "2Gi"}

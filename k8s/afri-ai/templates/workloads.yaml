@@ -7,6 +7,9 @@ metadata:
   name: {{ $.Release.Name }}-{{ $name }}
   labels: {app: {{ $.Release.Name }}-{{ $name }}, service: {{ $name }}}
 spec:
+  strategy:
+    type: RollingUpdate
+    rollingUpdate: {maxSurge: 0, maxUnavailable: 1}
   {{- if not $config.autoscaling.enabled }}
   replicas: {{ $config.replicas }}
   {{- end }}

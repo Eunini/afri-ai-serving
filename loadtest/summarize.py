@@ -32,6 +32,9 @@ def summarize(points, start_time, window_seconds=120):
     for window, rows in sorted(groups.items()):
         latencies = [r["value"] for r in rows]
         successes = sum(str(r.get("tags", {}).get("status")) == "200" for r in rows)
+        successful_latencies = [
+            r["value"] for r in rows if str(r.get("tags", {}).get("status")) == "200"
+        ]
         output.append(
             {
                 "window_start_seconds": window * window_seconds,
@@ -40,6 +43,8 @@ def summarize(points, start_time, window_seconds=120):
                 "successes": successes,
                 "p50_ms": quantile(latencies, 0.5),
                 "p95_ms": quantile(latencies, 0.95),
+                "successful_p50_ms": quantile(successful_latencies, 0.5),
+                "successful_p95_ms": quantile(successful_latencies, 0.95),
                 "successful_requests_per_second": successes / window_seconds,
                 "error_rate": 1 - successes / len(rows),
                 "dropped_iterations": dropped[window],

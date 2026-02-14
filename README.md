@@ -1,7 +1,10 @@
 # A cost-aware serving platform for African-language AI
 
-**Status:** services and infrastructure code built; cloud capacity, autoscaling,
-failure recovery and cost claims require a deployed measurement run.
+**Measured platform validation:** the one-node AWS experiment scaled from one
+replica to two and back, recovered after pod deletion, and was destroyed with
+independent resource verification. A short speech workload achieved 0.208
+successful requests/s at 3,592 ms p95 and $0.1387 per 1,000 successes. The
+two-node comparison is running; final fine-tuned speech integration is pending.
 
 The platform serves a CTranslate2 int8 Yoruba speech model and a GGUF language
 model through authenticated FastAPI gateways. Terraform provisions AWS EC2
@@ -36,9 +39,11 @@ helm lint k8s/afri-ai
 Follow [the setup guide](docs/setup.md) for credentials outside the repository,
 `terraform apply`, model distribution, monitoring, Helm installation and k6.
 The complete experiment has two topologies: one larger node and two smaller
-nodes. Use only verified free quota or free credits. AWS uses the dedicated `afri-research` profile and free credits. Compare one
-`m7i.xlarge` with two `m7i.large` instances for equal total vCPU/RAM. Verify credits
-and regional prices before provisioning.
+nodes. AWS uses the dedicated `afri-research` profile and free credits. The
+account's Free plan rejected `m7i.xlarge`; the eligible experiment uses one
+`m7i-flex.large` versus two `c7i-flex.large` nodes. Aggregate RAM is matched,
+but the two-node setup has twice the vCPU count. See the explicit hardware and
+workload limits in [the measured report](docs/cloud-report.md).
 
 `POST /transcribe` takes a raw WAV/FLAC body and returns text, language and duration:
 
@@ -61,8 +66,12 @@ cluster; there is no claim of automatic model distribution or production storage
 HPA can only schedule replicas that fit the remaining CPU/RAM; maximum replicas
 must be chosen against actual cluster capacity.
 
-No cloud resources were provisioned during the initial code build, so no cloud
-teardown has occurred or is claimed. After any real experiment:
+The completed one-node run has verified teardown evidence under
+[`docs/runs/one-node`](docs/runs/one-node). Its speech model is pretrained tiny
+int8, pending the fine-tuned Project 1 artifact. An interrupted two-node attempt
+was also destroyed and is excluded from comparisons. The finite rerun performs
+load, failure and capacity tests, exports monitoring, then destroys resources
+in a `finally` block. After any real experiment:
 
 ```bash
 bash scripts/terraform.sh destroy

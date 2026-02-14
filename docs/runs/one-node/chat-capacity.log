@@ -1,0 +1,36 @@
+time="2026-10-26T01:10:25+01:00" level=warning msg="Insufficient VUs, reached 16 active VUs and cannot initialize more" executor=constant-arrival-rate scenario=steady_5_per_10s
+
+
+  █ THRESHOLDS 
+
+    http_req_failed
+    ✓ 'rate<0.05' rate=0.00%
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 64      0.164101/s
+    checks_succeeded...: 100.00% 64 out of 64
+    checks_failed......: 0.00%   0 out of 64
+
+    ✓ inference succeeds
+
+    HTTP
+    http_req_duration..............: avg=17.94s min=2.45s med=7.08s max=1m13s p(90)=49.02s p(95)=1m6s
+      { expected_response:true }...: avg=17.94s min=2.45s med=7.08s max=1m13s p(90)=49.02s p(95)=1m6s
+    http_req_failed................: 0.00% 0 out of 64
+    http_reqs......................: 64    0.164101/s
+
+    EXECUTION
+    dropped_iterations.............: 23    0.058974/s
+    iteration_duration.............: avg=18.02s min=2.45s med=7.08s max=1m13s p(90)=49.42s p(95)=1m7s
+    iterations.....................: 64    0.164101/s
+    vus............................: 11    min=0       max=16
+    vus_max........................: 21    min=8       max=21
+
+    NETWORK
+    data_received..................: 85 kB 217 B/s
+    data_sent......................: 55 kB 141 B/s
+
+
+

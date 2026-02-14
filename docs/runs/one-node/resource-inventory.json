@@ -1,0 +1,17 @@
+{
+  "vpc_id": "vpc-0d52d147c6abf93e2",
+  "key_name": "afri-ai-research-30d83929650a4575001fd5e048",
+  "instances": [
+    {
+      "id": "i-0eeeca84a00ab57a1",
+      "launch_time": "2026-10-25T23:16:34+00:00",
+      "type": "m7i-flex.large",
+      "volume_ids": [
+        "vol-0f17d0e133fe2ecce"
+      ],
+      "network_interface_ids": [
+        "eni-09ae157be5b6a3ce0"
+      ]
+    }
+  ]
+}

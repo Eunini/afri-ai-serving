@@ -1,0 +1,35 @@
+
+
+  █ THRESHOLDS 
+
+    checks
+    ✓ 'rate==1' rate=100.00%
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 1       0.687937/s
+    checks_succeeded...: 100.00% 1 out of 1
+    checks_failed......: 0.00%   0 out of 1
+
+    ✓ real inference succeeds through TLS ingress
+
+    HTTP
+    http_req_duration..............: avg=1.26s min=1.26s med=1.26s max=1.26s p(90)=1.26s p(95)=1.26s
+      { expected_response:true }...: avg=1.26s min=1.26s med=1.26s max=1.26s p(90)=1.26s p(95)=1.26s
+    http_req_failed................: 0.00%  0 out of 1
+    http_reqs......................: 1      0.687937/s
+
+    EXECUTION
+    iteration_duration.............: avg=1.45s min=1.45s med=1.45s max=1.45s p(90)=1.45s p(95)=1.45s
+    iterations.....................: 1      0.687937/s
+    vus............................: 1      min=1      max=1
+    vus_max........................: 1      min=1      max=1
+
+    NETWORK
+    data_received..................: 2.2 kB 1.5 kB/s
+    data_sent......................: 2.0 kB 1.4 kB/s
+
+
+
+time="2026-10-26T00:25:58+01:00" level=info msg="{\"mode\":\"chat\",\"status\":200,\"milliseconds\":1266.027174,\"response_sha256\":\"19d9019ae2e29eb9596234e6d360b78ef9672f7cfde50a7d42177c99e1484199\"}" source=console

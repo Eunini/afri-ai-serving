@@ -7,7 +7,16 @@ ServiceMonitors; Grafana dashboard; k6 load, pod-deletion recovery and cost tool
 
 Tests and local integration observations are recorded in `validation.json`.
 
-Pending: actual cloud provisioning, real model artifacts from Projects 1/2,
-monitoring deployment and screenshot, measured HPA scale-up/down, both topology
-experiments, provider-price evidence and verified cloud teardown. No serving
-performance or cost CV claim is supported yet.
+Completed: real-model container integration; successful GitHub Actions builds and
+GHCR publication of all three images; one-node AWS provisioning, TLS ingress,
+monitoring/dashboard capture, HPA scale-up/down, stress/steady load and pod-deletion
+tests, public price evidence and independently verified Terraform teardown.
+The report states the tested models and bounded workload. Workspace GHCR pull
+authorization returned 403, so the cluster imported the integrated local images;
+registry push and cluster pull are separate observations.
+
+One two-node attempt was interrupted by development-host disk exhaustion; its
+automatic destruction was verified. It is retained separately and excluded from
+comparisons. A rerun uses RAM-backed evidence, reserved cleanup disk space and
+automatic teardown. Pending: completion/review of that comparison, integration
+of the actual selected fine-tuned Project 1 model, and final report/CV claims.

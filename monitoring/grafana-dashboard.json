@@ -180,7 +180,7 @@
         {
           "expr": "kube_deployment_status_replicas_available{namespace=\"afri-ai\"}",
           "refId": "A",
-          "legendFormat": "{{service}} {{pod}}"
+          "legendFormat": "{{deployment}}"
         }
       ],
       "fieldConfig": {
@@ -208,7 +208,7 @@
         {
           "expr": "kube_horizontalpodautoscaler_status_desired_replicas{namespace=\"afri-ai\"}",
           "refId": "A",
-          "legendFormat": "{{service}} {{pod}}"
+          "legendFormat": "{{horizontalpodautoscaler}}"
         }
       ],
       "fieldConfig": {

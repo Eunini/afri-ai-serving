@@ -28,7 +28,7 @@ def offer(service, region):
                     attributes = {}
                 elif event == "end_map":
                     compute = (
-                        attributes.get("instanceType") in {"m7i.large", "m7i.xlarge"}
+                        attributes.get("instanceType") in {"m7i.large", "m7i.xlarge", "m7i-flex.large", "c7i-flex.large"}
                         and attributes.get("operatingSystem") == "Linux"
                         and attributes.get("tenancy") == "Shared"
                         and attributes.get("preInstalledSw") == "NA"
@@ -78,7 +78,7 @@ def main():
     disk = price(lambda x: x.get("usagetype") == "EBS:VolumeUsage.gp3", "GB-Mo")
     ip = price(lambda x: x.get("usagetype") == "USE1-PublicIPv4:InUseAddress", "Hrs")
     totals = {}
-    for kind, count in [("m7i.xlarge", 1), ("m7i.large", 2)]:
+    for kind, count in [("m7i.xlarge", 1), ("m7i.large", 2), ("m7i-flex.large", 1), ("c7i-flex.large", 2)]:
         instance = price(lambda x: x.get("instanceType") == kind, "Hrs")
         hourly = count * (instance + ip + 30 * disk / 730)
         totals[f"{count}x{kind}"] = {

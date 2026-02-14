@@ -43,7 +43,7 @@ variable "node_count" {
 }
 variable "instance_type" {
   type    = string
-  default = "m7i.xlarge"
+  default = "m7i-flex.large"
 }
 variable "k3s_version" {
   type    = string

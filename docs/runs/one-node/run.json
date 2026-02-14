@@ -1,0 +1,59 @@
+{
+  "started_at": "2026-10-25T23:18:06.429170+00:00",
+  "topology": "1xm7i-flex.large",
+  "instance_id": "i-0eeeca84a00ab57a1",
+  "public_ip": "44.199.189.154",
+  "stage": "platform validation with pretrained tiny ASR and Qwen1.5B Q4; fine-tuned model pending",
+  "ami": "ami-0d6dd9e8265d48906",
+  "shutdown_guard_minutes": 120,
+  "k3s": "v1.33.5+k3s1",
+  "local_images": [
+    {
+      "tags": [
+        "afri-research-speech:local"
+      ],
+      "image_id": "sha256:f16e475611fea6c9c53b41104ffe29c2b97eb350c4c46b4ea1dff57d86ebbe21",
+      "created_at": "2026-10-25T22:49:42.813926909+01:00"
+    },
+    {
+      "tags": [
+        "afri-research-chat:local"
+      ],
+      "image_id": "sha256:6d5d14cd61d018905fddd298a08ac805bbe5724dfcc458d98a43384126733ed4",
+      "created_at": "2026-10-25T22:50:33.806960992+01:00"
+    },
+    {
+      "tags": [
+        "afri-research-llama:local"
+      ],
+      "image_id": "sha256:0951cf1e89cfe7f34512a1b0616f99bf099aea590b8729532bdfb4961a6a436c",
+      "created_at": "2026-10-25T22:30:26.971862129+01:00"
+    }
+  ],
+  "registry_note": "GitHub Actions successfully built/pushed all three private GHCR images in run 40243750659. Workspace registry pull returned 403; this validation imports the previously integrated local images instead. Service Python source is identical; Dockerfiles now pin the observed base digests.",
+  "monitoring_chart": "kube-prometheus-stack 92.13.1",
+  "cloud_list_price_usd_per_hour": 0.10404767123287671,
+  "comparison_caveat": "AWS free account rejects m7i.xlarge; using eligible Flex nodes. One m7i-flex.large:2vCPU/8GiB vs two c7i-flex.large:4vCPU/8GiB total. Flex availability/performance varies; this is a bounded workload measurement.",
+  "speech_workload": {
+    "dataset": "google/WaxalNLP",
+    "subset": "yor_tts repurposed for ASR",
+    "revision": "5f4d8ca24f2b9d168b2ee545f1febaaff4b40580",
+    "record_id": "yor_1374",
+    "audio_seconds": 5.76,
+    "sha256": "306938593445316a5ed515200fc22908d0b2916701f03d1a8e7674597b4b8879",
+    "license": "CC-BY-SA-4.0; MediaTrust; dataset attribution in Project 1"
+  },
+  "chat_workload": {
+    "prompt": "Explain photosynthesis in two sentences.",
+    "max_tokens": 64,
+    "temperature": 0,
+    "language": "English",
+    "scope": "serving workload only; Nigerian-language accuracy is evaluated separately in Project 2"
+  },
+  "benchmark_protocol": {
+    "stress": "1 to 8 arrivals/s then cooldown; injected pod deletion; expected overloads are retained",
+    "steady": "0.1/0.2/0.5 arrivals/s, 120s each; successful-response latency and cost reported separately",
+    "k6": "2.3.0",
+    "transport": "HTTPS ingress with private benchmark CA, hostname mapping outside project; client is development VPS, not a mobile network"
+  }
+}
