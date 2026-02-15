@@ -8,6 +8,8 @@ from pathlib import Path
 import boto3
 from botocore.exceptions import ClientError
 
+from scripts.resource_states import instance_gone
+
 
 def absent(call, missing_code, **kwargs):
     try:
@@ -33,9 +35,13 @@ def main():
     original = json.loads(a.inventory.read_text())
     checks = {}
     for instance in original["instances"]:
-        found = ec2.describe_instances(InstanceIds=[instance["id"]])["Reservations"]
-        states = [i["State"]["Name"] for r in found for i in r["Instances"]]
-        checks[instance["id"]] = bool(states) and all(s == "terminated" for s in states)
+        try:
+            found = ec2.describe_instances(InstanceIds=[instance["id"]])["Reservations"]
+            checks[instance["id"]] = instance_gone(found)
+        except ClientError as error:
+            if error.response["Error"]["Code"] != "InvalidInstanceID.NotFound":
+                raise
+            checks[instance["id"]] = True
         for volume in instance["volume_ids"]:
             checks[volume] = absent(
                 ec2.describe_volumes, "InvalidVolume.NotFound", VolumeIds=[volume]

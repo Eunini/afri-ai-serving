@@ -1,0 +1,35 @@
+
+
+  █ THRESHOLDS 
+
+    http_req_failed
+    ✓ 'rate<0.05' rate=2.04%
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 98     0.270615/s
+    checks_succeeded...: 97.95% 96 out of 98
+    checks_failed......: 2.04%  2 out of 98
+
+    ✗ inference succeeds
+      ↳  97% — ✓ 96 / ✗ 2
+
+    HTTP
+    http_req_duration..............: avg=2.53s min=625.8ms  med=2.56s max=4.94s p(90)=3.35s p(95)=3.74s
+      { expected_response:true }...: avg=2.56s min=1.87s    med=2.57s max=4.94s p(90)=3.39s p(95)=3.74s
+    http_req_failed................: 2.04% 2 out of 98
+    http_reqs......................: 98    0.270615/s
+
+    EXECUTION
+    iteration_duration.............: avg=2.54s min=628.08ms med=2.56s max=4.94s p(90)=3.36s p(95)=3.74s
+    iterations.....................: 98    0.270615/s
+    vus............................: 1     min=0       max=2
+    vus_max........................: 8     min=8       max=8
+
+    NETWORK
+    data_received..................: 81 kB 223 B/s
+    data_sent......................: 54 MB 150 kB/s
+
+
+

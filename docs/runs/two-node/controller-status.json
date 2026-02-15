@@ -1,0 +1,30 @@
+[
+  {
+    "stage": "stress-and-failure",
+    "started_at": "2026-10-26T01:13:58.449010+00:00",
+    "return_code": 0
+  },
+  {
+    "stage": "steady-capacity",
+    "started_at": "2026-10-26T01:44:59.273805+00:00",
+    "return_code": 0
+  },
+  {
+    "stage": "monitoring-export",
+    "started_at": "2026-10-26T01:57:13.517033+00:00",
+    "return_code": 0
+  },
+  {
+    "stage": "dashboard-capture",
+    "return_code": 1
+  },
+  {
+    "stage": "terraform-destroy",
+    "return_code": 0
+  },
+  {
+    "stage": "teardown-verification",
+    "started_at": "2026-10-26T01:58:25.196160+00:00",
+    "return_code": 0
+  }
+]

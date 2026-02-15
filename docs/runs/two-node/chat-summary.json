@@ -1,0 +1,88 @@
+{
+  "mode": "chat",
+  "started_at": "2026-10-26T01:29:12.386204+00:00",
+  "finished_at": "2026-10-26T01:40:54.053523+00:00",
+  "k6_exit_code": 99,
+  "thresholds_passed": false,
+  "windows": [
+    {
+      "window_start_seconds": 0,
+      "window_seconds": 120,
+      "requests": 84,
+      "successes": 84,
+      "p50_ms": 11069.059989,
+      "p95_ms": 32303.439253049997,
+      "successful_p50_ms": 11069.059989,
+      "successful_p95_ms": 32303.439253049997,
+      "successful_requests_per_second": 0.7,
+      "error_rate": 0.0,
+      "dropped_iterations": 16
+    },
+    {
+      "window_start_seconds": 120,
+      "window_seconds": 120,
+      "requests": 108,
+      "successes": 102,
+      "p50_ms": 30423.1383535,
+      "p95_ms": 50585.6224191,
+      "successful_p50_ms": 32594.54365,
+      "successful_p95_ms": 50714.9563773,
+      "successful_requests_per_second": 0.85,
+      "error_rate": 0.05555555555555558,
+      "dropped_iterations": 36
+    },
+    {
+      "window_start_seconds": 240,
+      "window_seconds": 120,
+      "requests": 355,
+      "successes": 98,
+      "p50_ms": 114.417936,
+      "p95_ms": 71618.3340596,
+      "successful_p50_ms": 64769.560528500006,
+      "successful_p95_ms": 74847.2318769,
+      "successful_requests_per_second": 0.8166666666666667,
+      "error_rate": 0.7239436619718309,
+      "dropped_iterations": 7
+    },
+    {
+      "window_start_seconds": 360,
+      "window_seconds": 120,
+      "requests": 711,
+      "successes": 55,
+      "p50_ms": 102.884158,
+      "p95_ms": 63852.904748999994,
+      "successful_p50_ms": 68391.883899,
+      "successful_p95_ms": 72379.6045765,
+      "successful_requests_per_second": 0.4583333333333333,
+      "error_rate": 0.9226441631504922,
+      "dropped_iterations": 0
+    },
+    {
+      "window_start_seconds": 480,
+      "window_seconds": 120,
+      "requests": 642,
+      "successes": 66,
+      "p50_ms": 112.5086245,
+      "p95_ms": 72071.0147816,
+      "successful_p50_ms": 53952.928996,
+      "successful_p95_ms": 72037.47731925,
+      "successful_requests_per_second": 0.55,
+      "error_rate": 0.897196261682243,
+      "dropped_iterations": 1
+    },
+    {
+      "window_start_seconds": 600,
+      "window_seconds": 120,
+      "requests": 126,
+      "successes": 68,
+      "p50_ms": 41322.640659,
+      "p95_ms": 73033.330013,
+      "successful_p50_ms": 68449.409989,
+      "successful_p95_ms": 73548.19606270001,
+      "successful_requests_per_second": 0.5666666666666667,
+      "error_rate": 0.46031746031746035,
+      "dropped_iterations": 0
+    }
+  ],
+  "failure_exit_code": 0
+}

@@ -1,0 +1,74 @@
+time="2026-10-26T02:38:07+01:00" level=warning msg="Request Failed" error="Post \"https://afri-bench.internal/v1/chat/completions\": request timeout"
+time="2026-10-26T02:38:07+01:00" level=warning msg="Request Failed" error="Post \"https://afri-bench.internal/v1/chat/completions\": request timeout"
+time="2026-10-26T02:38:07+01:00" level=warning msg="Request Failed" error="Post \"https://afri-bench.internal/v1/chat/completions\": request timeout"
+time="2026-10-26T02:38:08+01:00" level=warning msg="Request Failed" error="Post \"https://afri-bench.internal/v1/chat/completions\": request timeout"
+time="2026-10-26T02:38:08+01:00" level=warning msg="Request Failed" error="Post \"https://afri-bench.internal/v1/chat/completions\": request timeout"
+time="2026-10-26T02:38:08+01:00" level=warning msg="Request Failed" error="Post \"https://afri-bench.internal/v1/chat/completions\": request timeout"
+time="2026-10-26T02:38:08+01:00" level=warning msg="Request Failed" error="Post \"https://afri-bench.internal/v1/chat/completions\": request timeout"
+time="2026-10-26T02:38:09+01:00" level=warning msg="Request Failed" error="Post \"https://afri-bench.internal/v1/chat/completions\": request timeout"
+time="2026-10-26T02:38:09+01:00" level=warning msg="Request Failed" error="Post \"https://afri-bench.internal/v1/chat/completions\": request timeout"
+time="2026-10-26T02:38:09+01:00" level=warning msg="Request Failed" error="Post \"https://afri-bench.internal/v1/chat/completions\": request timeout"
+time="2026-10-26T02:38:09+01:00" level=warning msg="Request Failed" error="Post \"https://afri-bench.internal/v1/chat/completions\": request timeout"
+time="2026-10-26T02:38:10+01:00" level=warning msg="Request Failed" error="Post \"https://afri-bench.internal/v1/chat/completions\": request timeout"
+time="2026-10-26T02:38:10+01:00" level=warning msg="Request Failed" error="Post \"https://afri-bench.internal/v1/chat/completions\": request timeout"
+time="2026-10-26T02:38:10+01:00" level=warning msg="Request Failed" error="Post \"https://afri-bench.internal/v1/chat/completions\": request timeout"
+time="2026-10-26T02:38:10+01:00" level=warning msg="Request Failed" error="Post \"https://afri-bench.internal/v1/chat/completions\": request timeout"
+time="2026-10-26T02:38:11+01:00" level=warning msg="Request Failed" error="Post \"https://afri-bench.internal/v1/chat/completions\": request timeout"
+time="2026-10-26T02:38:11+01:00" level=warning msg="Request Failed" error="Post \"https://afri-bench.internal/v1/chat/completions\": request timeout"
+time="2026-10-26T02:38:11+01:00" level=warning msg="Request Failed" error="Post \"https://afri-bench.internal/v1/chat/completions\": request timeout"
+time="2026-10-26T02:38:11+01:00" level=warning msg="Request Failed" error="Post \"https://afri-bench.internal/v1/chat/completions\": request timeout"
+time="2026-10-26T02:38:12+01:00" level=warning msg="Request Failed" error="Post \"https://afri-bench.internal/v1/chat/completions\": request timeout"
+time="2026-10-26T02:38:12+01:00" level=warning msg="Request Failed" error="Post \"https://afri-bench.internal/v1/chat/completions\": request timeout"
+time="2026-10-26T02:38:12+01:00" level=warning msg="Request Failed" error="Post \"https://afri-bench.internal/v1/chat/completions\": request timeout"
+time="2026-10-26T02:38:12+01:00" level=warning msg="Request Failed" error="Post \"https://afri-bench.internal/v1/chat/completions\": request timeout"
+time="2026-10-26T02:38:13+01:00" level=warning msg="Request Failed" error="Post \"https://afri-bench.internal/v1/chat/completions\": request timeout"
+time="2026-10-26T02:38:13+01:00" level=warning msg="Request Failed" error="Post \"https://afri-bench.internal/v1/chat/completions\": request timeout"
+time="2026-10-26T02:38:13+01:00" level=warning msg="Request Failed" error="Post \"https://afri-bench.internal/v1/chat/completions\": request timeout"
+time="2026-10-26T02:38:13+01:00" level=warning msg="Request Failed" error="Post \"https://afri-bench.internal/v1/chat/completions\": request timeout"
+time="2026-10-26T02:38:14+01:00" level=warning msg="Request Failed" error="Post \"https://afri-bench.internal/v1/chat/completions\": request timeout"
+time="2026-10-26T02:38:16+01:00" level=warning msg="Request Failed" error="Post \"https://afri-bench.internal/v1/chat/completions\": request timeout"
+time="2026-10-26T02:38:19+01:00" level=warning msg="Request Failed" error="Post \"https://afri-bench.internal/v1/chat/completions\": request timeout"
+
+
+  █ THRESHOLDS 
+
+    http_req_failed
+    ✗ 'rate<0.05' rate=76.65%
+
+    inference_latency_ms
+    ✗ 'p(95)<30000' p(95)=1m11s
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 2026   2.936217/s
+    checks_succeeded...: 23.34% 473 out of 2026
+    checks_failed......: 76.65% 1553 out of 2026
+
+    ✗ inference succeeds
+      ↳  23% — ✓ 473 / ✗ 1553
+
+    CUSTOM
+    inference_errors...............: 76.65% 1553 out of 2026
+    inference_latency_ms...........: avg=13.04s min=90.07ms med=111.76ms max=3m0s  p(90)=1m1s  p(95)=1m11s
+
+    HTTP
+    http_req_duration..............: avg=13.04s min=90.07ms med=111.76ms max=3m0s  p(90)=1m1s  p(95)=1m11s
+      { expected_response:true }...: avg=44.08s min=2.44s   med=45.76s   max=1m15s p(90)=1m12s p(95)=1m12s
+    http_req_failed................: 76.65% 1553 out of 2026
+    http_reqs......................: 2026   2.936217/s
+
+    EXECUTION
+    dropped_iterations.............: 60     0.086956/s
+    iteration_duration.............: avg=13.04s min=90.52ms med=112.33ms max=3m0s  p(90)=1m1s  p(95)=1m11s
+    iterations.....................: 2026   2.936217/s
+    vus............................: 13     min=0            max=63
+    vus_max........................: 64     min=4            max=64
+
+    NETWORK
+    data_received..................: 654 kB 948 B/s
+    data_sent......................: 561 kB 813 B/s
+
+
+
+time="2026-10-26T02:40:42+01:00" level=error msg="thresholds on metrics 'http_req_failed, inference_latency_ms' have been crossed"

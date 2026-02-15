@@ -17,6 +17,12 @@ registry push and cluster pull are separate observations.
 
 One two-node attempt was interrupted by development-host disk exhaustion; its
 automatic destruction was verified. It is retained separately and excluded from
-comparisons. A rerun uses RAM-backed evidence, reserved cleanup disk space and
-automatic teardown. Pending: completion/review of that comparison, integration
-of the actual selected fine-tuned Project 1 model, and final report/CV claims.
+comparisons. The rerun completed using RAM-backed evidence, reserved cleanup
+disk space and automatic teardown. Its measurements are now on persistent
+storage and both instances, disks, VPC and key registration were independently
+confirmed removed, including a later recheck after EC2 expired instance records.
+Two-node dashboard capture failed; all eleven Prometheus query groups were
+exported and the real one-node dashboard screenshot remains available.
+
+Pending: integration of the actual selected fine-tuned Project 1 model and
+final report/CV claims after the cross-project measurements are complete.

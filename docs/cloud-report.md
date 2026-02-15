@@ -12,6 +12,8 @@ Eligibility requires under 5% request errors and zero dropped arrivals at that t
 | --- | --- | ---: | ---: | ---: | ---: | ---: |
 | 1xm7i-flex.large | speech | 0.208 | 2521 | 3592 | 0.0% | $0.1387 |
 | 1xm7i-flex.large | chat | 0.108 | 2632 | 7262 | 0.0% | $0.2668 |
+| 2xc7i-flex.large | speech | 0.492 | 2533 | 3824 | 3.3% | $0.1052 |
+| 2xc7i-flex.large | chat | 0.500 | 2415 | 2565 | 0.0% | $0.1034 |
 
 ## Recovery after pod deletion
 
@@ -19,13 +21,22 @@ Eligibility requires under 5% request errors and zero dropped arrivals at that t
 | --- | --- | ---: | ---: | --- |
 | 1xm7i-flex.large | speech | 2 | 7.39 | recovered |
 | 1xm7i-flex.large | chat | 2 | 187.67 | recovered |
+| 2xc7i-flex.large | speech | 2 | 7.42 | recovered |
+| 2xc7i-flex.large | chat | 2 | 191.32 | recovered |
 
 Deletion uses the configured 180-second graceful termination period. Replacement readiness is not the same as total service outage: another ready replica can continue serving. Inspect the saved HPA/pod observations and request errors. Stress tests intentionally overload the platform; their failed k6 thresholds are preserved in the run summaries.
+
+## Monitoring evidence
+
+![Measured one-node dashboard](runs/one-node/dashboard-speech-load.png)
+
+The one-node screenshot shows real request, latency, error, CPU, memory and replica metrics. The two-node browser capture failed, so no second screenshot is claimed. Both runs preserve all eleven dashboard query groups in their monitoring-series.json files. HPA/pod observations record scale-up, pod replacement and cooldown independently of the screenshot.
 
 ## Hardware and cleanup
 
 The AWS Free plan rejected m7i.xlarge. The eligible comparison uses one m7i-flex.large (2 vCPU/8 GiB) versus two c7i-flex.large (4 vCPU/8 GiB total). RAM is matched, CPU is not. A result cannot isolate node count from this hardware difference. A matched m7i.xlarge/two-m7i.large experiment remains separate.
 
 - 1xm7i-flex.large: **Terraform destroy verified** for the known instances, boot volumes, VPC and public-key registration.
+- 2xc7i-flex.large: **Terraform destroy verified** for the known instances, boot volumes, VPC and public-key registration.
 
 The owner reports $100 of six-month credits. The scoped IAM profile cannot inspect billing; these are public list-price calculations, not a verified remaining-credit balance. See [price evidence](aws-public-prices.json) and the per-run sanitized inventories, image IDs, monitoring exports and load summaries under `docs/runs/`.
