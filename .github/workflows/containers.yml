@@ -14,6 +14,11 @@ jobs:
           python-version: '3.12'
       - run: pip install -r requirements-dev.lock && pip install --no-deps -e .
       - run: ruff check . && pytest -q
+      - name: Audit locked Python runtime dependencies
+        run: |
+          pip install pip-audit==2.10.1
+          pip-audit --strict --no-deps --disable-pip --progress-spinner off -r requirements.lock
+          pip-audit --strict --no-deps --disable-pip --progress-spinner off -r requirements-speech.lock
       - uses: hashicorp/setup-terraform@v3
         with:
           terraform_version: '1.13.4'

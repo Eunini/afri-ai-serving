@@ -18,6 +18,13 @@ quality, continuous availability or a finished four-project release.
   speech to 20 MiB and 120 seconds of mono/stereo 8–48 kHz WAV/FLAC.
 - Regression checks cover oversized declared and chunked bodies, auth before
   parsing, slow uploads, concurrent streams and cancellation releasing capacity.
+- The selected fine-tuned tiny int8 artifact passed a real-audio local gateway
+  check (`fine-tuned-local-integration.json`); this does not validate new container
+  images or a cluster deployment. Speech decoding explicitly fixes temperature zero.
+- Both Python runtime lockfiles were audited with pip-audit 2.10.1: 23 gateway
+  and 40 speech package records, no known findings or skipped packages in that
+  snapshot. Receipts and lockfile hashes are in `security/`. CI repeats the audit.
+  Native/OS image components and full dependency license review remain outstanding.
 
 ## Gates before sign-off
 

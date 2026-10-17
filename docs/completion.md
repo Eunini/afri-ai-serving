@@ -24,5 +24,14 @@ confirmed removed, including a later recheck after EC2 expired instance records.
 Two-node dashboard capture failed; all eleven Prometheus query groups were
 exported and the real one-node dashboard screenshot remains available.
 
-Pending: integration of the actual selected fine-tuned Project 1 model and
+The actual selected fine-tuned tiny int8 model has now passed a local FastAPI
+gateway check with real Yoruba audio: readiness, authentication, nonempty
+transcription, duration and audio metrics. Hashes and the precise code state are
+recorded in `fine-tuned-local-integration.json`. This is not a new container or
+AWS deployment result. New request-budget regression tests pass. Both locked
+Python runtime dependency sets passed the recorded pip-audit check; this does
+not audit operating-system packages, native binaries or undisclosed issues.
+
+Pending: final model container/cluster integration and repeated load/failure
+checks, the other production sign-off gates in `production-readiness.md`, and
 final report/CV claims after the cross-project measurements are complete.

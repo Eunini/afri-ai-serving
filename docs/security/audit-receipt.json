@@ -1,0 +1,28 @@
+{
+  "checked_at": "2026-10-26T11:54:32.479618+00:00",
+  "tool": "pip-audit",
+  "tool_version": "2.10.1",
+  "service": "PyPI advisory service (pip-audit default)",
+  "options": [
+    "--strict",
+    "--no-deps",
+    "--disable-pip"
+  ],
+  "scope": "Exactly pinned Python runtime packages. Excludes OS/native components, unpublished vulnerabilities, license compatibility and artifact integrity. Lockfiles have exact versions but not per-artifact hashes.",
+  "locks": {
+    "requirements.lock": {
+      "sha256": "690ef6770bc41fae99bf4d460782ac114002cad18b3f1534bd8b13248cf957ec",
+      "packages": 23,
+      "findings": 0,
+      "skipped": 0,
+      "report": "gateway-dependencies.json"
+    },
+    "requirements-speech.lock": {
+      "sha256": "50ed1ecb5efebf31a2a41cc35ac807cd2168c2303c0941b6d60d18bdf84e3d4d",
+      "packages": 40,
+      "findings": 0,
+      "skipped": 0,
+      "report": "speech-dependencies.json"
+    }
+  }
+}

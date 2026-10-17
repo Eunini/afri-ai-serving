@@ -40,6 +40,7 @@ def create_app(transcriber=None):
                     io.BytesIO(audio),
                     language="yo",
                     beam_size=1,
+                    temperature=0.0,
                     vad_filter=False,
                     condition_on_previous_text=False,
                 )

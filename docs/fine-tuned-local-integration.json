@@ -1,0 +1,30 @@
+{
+  "scope": "actual selected fine-tuned tiny int8 in local FastAPI gateway; not a container/deployed-cluster or accuracy/capacity test",
+  "timestamp": "2026-10-26T11:51:48.520592+00:00",
+  "artifact": "Kaggle v6 selected tiny checkpoint-800 converted to CTranslate2 int8",
+  "audio_id": "yor_1374",
+  "audio_sha256": "306938593445316a5ed515200fc22908d0b2916701f03d1a8e7674597b4b8879",
+  "code_base_commit": "bda7afae28b2fd8499ba110706bae961fe366de5",
+  "code_has_uncommitted_temperature_pin": true,
+  "code_sha256": {
+    "services/common.py": "eebddb86e02fec3176bbd14884a001549304d3cd8a0c186f1b6a4f76c033dc10",
+    "services/speech/app.py": "08380c51e4e33ba29d769a2e20a129915dc5f975beb317e4550db000bdaf85da"
+  },
+  "model_sha256": {
+    "config.json": "a73a28cdfe1c43ccc7202fa333d1f89c202477271407ae9a7f19afa52039cac8",
+    "model.bin": "c84765e8164efb0e6062455f4e10d558dd5953e72015e79799634503c1903586",
+    "preprocessor_config.json": "994838f1fa6462c8b9b3c90edada831f11f3dd8b4664634e18f4694d005c9dbf",
+    "tokenizer.json": "7b469ff15eb7816315aa45eec391f5943d639b9d73d110f5c003df5192fd54e3",
+    "vocabulary.json": "5ad28279db5e546349708b9a74736e2c018737ac5a600f1048f1f26c99b85b47"
+  },
+  "checks": {
+    "ready_200": true,
+    "unauthorized_401": true,
+    "transcription_200": true,
+    "nonempty_transcript": true,
+    "duration_matches": true,
+    "audio_metric_present": true
+  },
+  "transcription_sha256": "422fe407db98f61a203ce7fb11d3275d18eb29ccc25f56220bb1d04ae2338aed",
+  "status": "passed"
+}
