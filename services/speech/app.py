@@ -1,4 +1,3 @@
-import asyncio
 import io
 import os
 from contextlib import asynccontextmanager
@@ -9,7 +8,7 @@ from fastapi.concurrency import run_in_threadpool
 from fastapi.responses import Response
 from prometheus_client import CONTENT_TYPE_LATEST, Counter, generate_latest
 
-from services.common import authorize, instrument
+from services.common import RequestBudgetMiddleware, authorize, instrument
 
 AUDIO_SECONDS = Counter("afri_audio_seconds_total", "Successfully transcribed audio seconds")
 MAX_BYTES = 20 * 1024 * 1024
@@ -53,7 +52,9 @@ def create_app(transcriber=None):
 
     app = FastAPI(title="African-language speech service", lifespan=lifespan)
     app.state.ready = False
-    app.state.semaphore = asyncio.Semaphore(1)
+    app.add_middleware(
+        RequestBudgetMiddleware, path="/transcribe", max_body_bytes=MAX_BYTES, max_inflight=1
+    )
     instrument(app, "speech")
 
     @app.get("/health")
@@ -86,16 +87,13 @@ def create_app(transcriber=None):
         except (RuntimeError, sf.LibsndfileError):
             raise HTTPException(415, "Send valid WAV or FLAC audio as the request body") from None
         duration = metadata.duration
+        if metadata.format not in {"WAV", "WAVEX", "FLAC"}:
+            raise HTTPException(415, "Send WAV or FLAC audio")
+        if metadata.channels > 2 or not 8000 <= metadata.samplerate <= 48000:
+            raise HTTPException(422, "Use mono/stereo audio between 8 and 48 kHz")
         if duration <= 0 or duration > MAX_SECONDS:
             raise HTTPException(422, "Audio must be between 0 and 120 seconds")
-        try:
-            await asyncio.wait_for(app.state.semaphore.acquire(), timeout=0.05)
-        except asyncio.TimeoutError:
-            raise HTTPException(429, "Model busy; retry later") from None
-        try:
-            text = await run_in_threadpool(app.state.transcribe, audio)
-        finally:
-            app.state.semaphore.release()
+        text = await run_in_threadpool(app.state.transcribe, audio)
         AUDIO_SECONDS.inc(duration)
         return {"text": text, "language": "yo", "audio_seconds": duration}
 

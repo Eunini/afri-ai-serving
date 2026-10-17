@@ -7,7 +7,7 @@ from fastapi.responses import Response, StreamingResponse
 from prometheus_client import CONTENT_TYPE_LATEST, Counter, Histogram, generate_latest
 from pydantic import BaseModel, Field
 
-from services.common import authorize, instrument
+from services.common import RequestBudgetMiddleware, authorize, instrument
 
 STREAM_ERRORS = Counter("afri_chat_stream_errors_total", "Chat streaming errors after headers")
 STREAM_LATENCY = Histogram("afri_chat_stream_duration_seconds", "Complete chat stream duration")
@@ -39,6 +39,10 @@ def create_app(transport=None):
         await app.state.client.aclose()
 
     app = FastAPI(title="African-language chat gateway", lifespan=lifespan)
+    app.add_middleware(
+        RequestBudgetMiddleware, path="/v1/chat/completions",
+        max_body_bytes=256 * 1024, max_inflight=1,
+    )
     instrument(app, "chat")
 
     @app.get("/health")

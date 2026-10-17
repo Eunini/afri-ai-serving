@@ -7,6 +7,11 @@ successful requests/s at 3,592 ms p95 and $0.1387 per 1,000 successes. The
 two-node comparison has also completed and its teardown is verified. Final
 fine-tuned speech integration is pending.
 
+**Release status:** validated research platform; production sign-off remains
+pending. See [release gates](docs/production-readiness.md). The newest gateway
+hardening bounds authenticated uploads and model concurrency; the historical
+AWS measurements describe the earlier recorded images and must not be relabelled.
+
 The platform serves a CTranslate2 int8 Yoruba speech model and a GGUF language
 model through authenticated FastAPI gateways. Terraform provisions AWS EC2
 servers and networking; cloud-init installs pinned k3s. Helm deploys services,

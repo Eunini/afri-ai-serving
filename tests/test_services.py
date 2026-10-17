@@ -23,6 +23,9 @@ def test_speech_auth_decode_failure_and_metrics(monkeypatch):
         assert client.post("/transcribe", content=wav()).status_code == 401
         headers = {"Authorization": "Bearer unit-test-only"}
         assert client.post("/transcribe", content=b"invalid", headers=headers).status_code == 415
+        multichannel = io.BytesIO()
+        sf.write(multichannel, np.zeros((1600, 3)), 16000, format="WAV")
+        assert client.post("/transcribe", content=multichannel.getvalue(), headers=headers).status_code == 422
         response = client.post("/transcribe", content=wav(), headers=headers)
         assert response.json()["text"] == "Ẹ káàárọ̀"
         assert len(calls) == 1

@@ -16,9 +16,28 @@ from pathlib import Path
 import httpx
 
 
+def artifact_sha256(path):
+    with path.open("rb") as stream:
+        return hashlib.file_digest(stream, "sha256").hexdigest()
+
+
+def cleanup_verified(call, ids, network):
+    try:
+        remaining = set(call(
+            "ps", "-aq", "--no-trunc", "--filter", "label=research.portfolio=african-language-ai"
+        ).splitlines())
+        network_remaining = call(
+            "network", "ls", "--filter", "name=^" + network + "$", "--format", "{{.Name}}"
+        )
+        return not remaining.intersection(ids) and not network_remaining
+    except subprocess.CalledProcessError:
+        return False
+
+
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("--asr-model", type=Path, required=True)
+    p.add_argument("--asr-label", required=True, help="Actual source/checkpoint; never infer it from a path")
     p.add_argument("--llm-model", type=Path, required=True)
     p.add_argument("--audio", type=Path, required=True)
     p.add_argument("--docker-prefix", default="docker")
@@ -40,7 +59,8 @@ def main():
     key_file.close()
     result = {
         "scope": "local real-model container integration; not a cloud capacity benchmark",
-        "asr_artifact": "pretrained faster-whisper-tiny, int8 compute",
+        "asr_artifact": a.asr_label,
+        "asr_compute_type": "int8",
         "llm_artifact": a.llm_model.name,
         "checks": {},
         "status": "running",
@@ -101,8 +121,16 @@ def main():
             time.sleep(1)
         raise RuntimeError("Container readiness timed out")
 
-    call("network", "create", "--label", "research.portfolio=african-language-ai", network)
     try:
+        call("network", "create", "--label", "research.portfolio=african-language-ai", network)
+        result["model_hashes"] = {
+            "asr": {
+                path.name: artifact_sha256(path)
+                for path in sorted(a.asr_model.iterdir()) if path.is_file()
+            },
+        }
+        with a.llm_model.open("rb") as stream:
+            result["model_hashes"]["llm"] = hashlib.file_digest(stream, "sha256").hexdigest()
         asr = a.asr_model.resolve()
         cache = asr.parents[2] if asr.parent.name == "snapshots" else asr
         inside = "/asr/" + str(asr.relative_to(cache))
@@ -150,7 +178,7 @@ def main():
             )
             response.raise_for_status()
             output = response.json()
-            assert isinstance(output["text"], str) and output["audio_seconds"] > 0
+            assert isinstance(output["text"], str) and output["text"].strip() and output["audio_seconds"] > 0
             chat_body = {
                 "model": "local",
                 "messages": [{"role": "user", "content": "Reply with hello."}],
@@ -202,14 +230,22 @@ def main():
             subprocess.run(command, cwd=a.benchmark_repo, check=True)
             result["pilot_items_requested"] = a.benchmark_limit
         result["status"] = "passed"
+    except BaseException as error:
+        result.update(status="failed", error_type=type(error).__name__)
+        raise
     finally:
         Path(key_file.name).unlink(missing_ok=True)
         for container in reversed(ids):
             subprocess.run([*docker, "rm", "-f", container], check=False, capture_output=True)
         subprocess.run([*docker, "network", "rm", network], check=False, capture_output=True)
-        result["temporary_containers_and_network_removed"] = True
+        removed = cleanup_verified(call, ids, network)
+        result["temporary_containers_and_network_removed"] = removed
+        if not removed:
+            result["status"] = "cleanup_not_verified"
         a.out.parent.mkdir(parents=True, exist_ok=True)
         a.out.write_text(json.dumps(result, indent=2) + "\n")
+    if not result["temporary_containers_and_network_removed"]:
+        raise RuntimeError("Container cleanup could not be verified; inspect this run's inventory")
     print(json.dumps(result, indent=2))
 
 
