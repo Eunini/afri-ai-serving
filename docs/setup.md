@@ -78,6 +78,11 @@ Copy the Project 1 CTranslate2 artifact to `/opt/afri-models/asr` and the chosen
 Project 2 GGUF file to `/opt/afri-models/llm/model.gguf` on every node. Use `python scripts/stage_models.py --asr-dir /path/to/ct2 --llm-file /path/to/model.gguf --hosts NODE_IP...` before deploying. Give UID/GID
 10001 read access to directories/files. Record source revision and SHA256. Do
 not substitute a base model while describing it as the fine-tuned checkpoint.
+The staging command verifies SHA256 on every node after transfer and writes
+`model-values.json`. Pass that file to Helm. Each pod verifies these same hashes
+in a read-only init container before loading its model. Empty or mismatched
+`modelHashes` prevent startup; never disable verification to bypass a failed
+artifact transfer. Retain the values alongside the exact image and model revisions.
 
 Create the API key secret from an environment value without putting it in a
 committed file or command output:
@@ -105,6 +110,7 @@ kubectl -n monitoring create configmap afri-ai-dashboard \
 kubectl -n monitoring label configmap afri-ai-dashboard grafana_dashboard=1
 helm upgrade --install afri-ai k8s/afri-ai --namespace afri-ai \
   -f k8s/values-free-plan.yaml \
+  -f model-values.json \
   --set speech.image=ghcr.io/OWNER/afri-ai-serving-speech:COMMIT \
   --set chat.image=ghcr.io/OWNER/afri-ai-serving-chat:COMMIT \
   --set chat.llamaImage=ghcr.io/OWNER/afri-ai-serving-llama:COMMIT \

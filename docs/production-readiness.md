@@ -25,6 +25,9 @@ quality, continuous availability or a finished four-project release.
   and 40 speech package records, no known findings or skipped packages in that
   snapshot. Receipts and lockfile hashes are in `security/`. CI repeats the audit.
   Native/OS image components and full dependency license review remain outstanding.
+- Model staging generates reviewed SHA256 values and checks transferred bytes
+  on each node. Helm init containers refuse to start services when the model
+  manifest is empty or bytes differ. Final-cluster verification remains a gate.
 
 ## Gates before sign-off
 
@@ -49,6 +52,7 @@ off. An always-on production installation needs its own operating budget,
 availability target, domain and runbook; these cannot be inferred from free
 research credits.
 
-The three consent-based language review packets can proceed now. Hausa remains
-pending; independent human labelling of 100 safety outputs happens after model
-runs. These human judgments cannot be filled in by the implementation agent.
+The owner has recruited speakers for all four languages. The first Yoruba
+translation review is submitted (23 accepted, seven needing correction and
+re-review); the other language reviews remain pending. These translation reviews
+are separate from the later independent human labelling of 100 safety outputs.

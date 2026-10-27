@@ -30,6 +30,24 @@ spec:
         runAsUser: 10001
         fsGroup: 10001
         seccompProfile: {type: RuntimeDefault}
+      initContainers:
+        - name: verify-model-artifacts
+          image: {{ $config.image | quote }}
+          imagePullPolicy: {{ $.Values.imagePullPolicy }}
+          command: ["python", "-m", "services.artifacts"]
+          env:
+            - {name: MODEL_ROOT, value: /models}
+            - name: MODEL_HASHES
+              value: {{ $config.modelHashes | toJson | quote }}
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities: {drop: [ALL]}
+          resources:
+            requests: {cpu: "50m", memory: "64Mi"}
+            limits: {cpu: "500m", memory: "128Mi"}
+          volumeMounts:
+            - {name: model, mountPath: /models, readOnly: true}
       containers:
         - name: gateway
           image: {{ $config.image | quote }}

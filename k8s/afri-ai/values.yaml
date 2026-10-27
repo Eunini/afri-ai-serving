@@ -2,6 +2,7 @@ imagePullPolicy: IfNotPresent
 imagePullSecrets: []
 apiKeySecret: afri-ai-api
 speech:
+  modelHashes: {}
   image: ghcr.io/REPLACE/afri-ai-serving-speech:REPLACE_COMMIT
   replicas: 1
   modelPath: /models/asr
@@ -12,6 +13,7 @@ speech:
     limits: {cpu: "2", memory: "3Gi"}
   autoscaling: {enabled: true, minReplicas: 1, maxReplicas: 2, targetCPU: 70}
 chat:
+  modelHashes: {}
   image: ghcr.io/REPLACE/afri-ai-serving-chat:REPLACE_COMMIT
   llamaImage: ghcr.io/REPLACE/afri-ai-serving-llama:REPLACE_COMMIT
   replicas: 1

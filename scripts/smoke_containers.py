@@ -15,6 +15,8 @@ from pathlib import Path
 
 import httpx
 
+from services.artifacts import manifests
+
 
 def artifact_sha256(path):
     with path.open("rb") as stream:
@@ -23,9 +25,15 @@ def artifact_sha256(path):
 
 def cleanup_verified(call, ids, network):
     try:
-        remaining = set(call(
-            "ps", "-aq", "--no-trunc", "--filter", "label=research.portfolio=african-language-ai"
-        ).splitlines())
+        remaining = set(
+            call(
+                "ps",
+                "-aq",
+                "--no-trunc",
+                "--filter",
+                "label=research.portfolio=african-language-ai",
+            ).splitlines()
+        )
         network_remaining = call(
             "network", "ls", "--filter", "name=^" + network + "$", "--format", "{{.Name}}"
         )
@@ -37,7 +45,9 @@ def cleanup_verified(call, ids, network):
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("--asr-model", type=Path, required=True)
-    p.add_argument("--asr-label", required=True, help="Actual source/checkpoint; never infer it from a path")
+    p.add_argument(
+        "--asr-label", required=True, help="Actual source/checkpoint; never infer it from a path"
+    )
     p.add_argument("--llm-model", type=Path, required=True)
     p.add_argument("--audio", type=Path, required=True)
     p.add_argument("--docker-prefix", default="docker")
@@ -64,6 +74,14 @@ def main():
         "llm_artifact": a.llm_model.name,
         "checks": {},
         "status": "running",
+        "source_commit": subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip(),
+        "source_commit_is_baseline": bool(subprocess.check_output(
+            ["git", "status", "--porcelain", "--", "services", "scripts/smoke_containers.py"],
+            text=True,
+        ).strip()),
+        "source_files_sha256": {
+            str(path): artifact_sha256(path) for path in sorted(Path("services").rglob("*.py"))
+        },
     }
 
     def call(*args):
@@ -85,6 +103,12 @@ def main():
             network,
             "--label",
             "research.portfolio=african-language-ai",
+            "--read-only",
+            "--cap-drop=ALL",
+            "--security-opt=no-new-privileges",
+            "--pids-limit=256",
+            "--cpus=2",
+            "--tmpfs=/tmp:rw,noexec,nosuid,size=134217728",
             *extra,
             image,
         )
@@ -122,11 +146,56 @@ def main():
         raise RuntimeError("Container readiness timed out")
 
     try:
+        reviewed = manifests(a.asr_model, a.llm_model)
+        result["images"] = {
+            service: json.loads(call("image", "inspect", f"afri-research-{service}:local"))[0]["Id"]
+            for service in ("speech", "chat", "llama")
+        }
+        image_sources = {}
+        inspect_source = (
+            "import hashlib,json; from pathlib import Path; "
+            "print(json.dumps({str(p.relative_to('/app')):hashlib.sha256(p.read_bytes()).hexdigest() "
+            "for p in sorted(Path('/app/services').rglob('*.py'))}))"
+        )
+        for service in ("speech", "chat"):
+            image_sources[service] = json.loads(call(
+                "run", "--rm", "--network=none", "--read-only", "--entrypoint=python",
+                f"afri-research-{service}:local", "-c", inspect_source,
+            ))
+            if image_sources[service] != result["source_files_sha256"]:
+                raise ValueError("Gateway image source differs from this checkout; rebuild it")
+        result["gateway_image_sources_match_checkout"] = True
+        for service, mount in [
+            ("speech", f"{a.asr_model}:/models:ro"),
+            ("chat", f"{a.llm_model}:/models/model.gguf:ro"),
+        ]:
+            call(
+                "run",
+                "--rm",
+                "--network=none",
+                "--read-only",
+                "--cap-drop=ALL",
+                "--security-opt=no-new-privileges",
+                "--user",
+                f"{os.getuid()}:{os.getgid()}",
+                "--entrypoint=python",
+                "-v",
+                mount,
+                "-e",
+                "MODEL_ROOT=/models",
+                "-e",
+                "MODEL_HASHES=" + json.dumps(reviewed[service]["modelHashes"]),
+                f"afri-research-{service}:local",
+                "-m",
+                "services.artifacts",
+            )
+        result["model_manifest_verification"] = "passed inside both final gateway images"
         call("network", "create", "--label", "research.portfolio=african-language-ai", network)
         result["model_hashes"] = {
             "asr": {
                 path.name: artifact_sha256(path)
-                for path in sorted(a.asr_model.iterdir()) if path.is_file()
+                for path in sorted(a.asr_model.iterdir())
+                if path.is_file()
             },
         }
         with a.llm_model.open("rb") as stream:
@@ -143,6 +212,7 @@ def main():
                 "127.0.0.1::8081",
                 "-v",
                 f"{a.llm_model.resolve()}:/models/model.gguf:ro",
+                "--memory=4g",
             ],
         )
         speech = start(
@@ -156,11 +226,20 @@ def main():
                 f"ASR_MODEL={inside}",
                 "-v",
                 f"{cache}:/asr:ro",
+                "--memory=3g",
             ],
         )
         chat = start(
             "afri-research-chat:local",
-            ["-p", "127.0.0.1::8000", "-e", "API_KEY", "-e", "LLAMA_URL=http://llama:8081"],
+            [
+                "-p",
+                "127.0.0.1::8000",
+                "-e",
+                "API_KEY",
+                "-e",
+                "LLAMA_URL=http://llama:8081",
+                "--memory=256m",
+            ],
         )
         speech_url = f"http://127.0.0.1:{port(speech, 8000)}"
         chat_url = f"http://127.0.0.1:{port(chat, 8000)}"
@@ -178,7 +257,11 @@ def main():
             )
             response.raise_for_status()
             output = response.json()
-            assert isinstance(output["text"], str) and output["text"].strip() and output["audio_seconds"] > 0
+            assert (
+                isinstance(output["text"], str)
+                and output["text"].strip()
+                and output["audio_seconds"] > 0
+            )
             chat_body = {
                 "model": "local",
                 "messages": [{"role": "user", "content": "Reply with hello."}],
