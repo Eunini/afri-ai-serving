@@ -1,0 +1,22 @@
+{
+  "checked_at": "2026-10-27T23:35:30.194733+00:00",
+  "source_commit": "baa4f80b7a91b10c576dcaa8a06aa368fbd9d401",
+  "scope": "Anonymous OCI manifest retrieval only; not a Kubernetes node pull or model integration test",
+  "images": [
+    {
+      "service": "speech",
+      "anonymous_manifest_access": false,
+      "http_status": 401
+    },
+    {
+      "service": "chat",
+      "anonymous_manifest_access": false,
+      "http_status": 401
+    },
+    {
+      "service": "llama",
+      "anonymous_manifest_access": false,
+      "http_status": 401
+    }
+  ]
+}

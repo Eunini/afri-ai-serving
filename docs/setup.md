@@ -121,10 +121,14 @@ kubectl -n afri-ai get hpa
 ```
 
 Record the installed kube-prometheus-stack chart version in the run manifest;
-the application Helm chart itself has no floating chart dependencies. If GHCR
-packages are private, create a registry pull secret outside git and configure
-`imagePullSecrets` in the chart. For a local image smoke test, import images into
-k3s/containerd and use `imagePullPolicy: Never` with local image names.
+the application Helm chart itself has no floating chart dependencies.
+The repository is public, but recorded anonymous GHCR manifest checks returned
+HTTP 401 for all three images (`registry-access.json`). Package access is a
+separate setting. Use a registry pull secret outside git and `imagePullSecrets`,
+or build the images from this public source, import them into k3s/containerd and
+use `imagePullPolicy: Never` with local names. The integration check used
+source-built images; anonymous registry access has not been established.
+See [GitHub's package-access documentation](https://docs.github.com/en/packages/learn-github-packages/configuring-a-packages-access-control-and-visibility).
 
 Port-forward each gateway for local measurement. Forward Grafana separately,
 authenticate locally and save a dashboard screenshot only after metrics exist.
