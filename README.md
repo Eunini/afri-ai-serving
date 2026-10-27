@@ -1,4 +1,4 @@
-# A cost-aware serving platform for African-language AI
+# African-language AI serving
 
 **Measured platform validation:** the one-node AWS experiment scaled from one
 replica to two and back, recovered after pod deletion, and was destroyed with
@@ -8,7 +8,7 @@ two-node comparison has also completed and its teardown is verified. Final
 fine-tuned speech integration is pending.
 
 **Release status:** validated research platform; production sign-off remains
-pending. See [release gates](docs/production-readiness.md). The newest gateway
+pending. See [release gates](docs/production-readiness.md). The gateway
 hardening bounds authenticated uploads and model concurrency; the historical
 AWS measurements describe the earlier recorded images and must not be relabelled.
 
