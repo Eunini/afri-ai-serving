@@ -1,0 +1,4618 @@
+{
+  "service": "llama",
+  "scanner": "Trivy 0.76.1; official release checksum verified",
+  "scanned_at": "2026-10-27T23:57:41.948710938+01:00",
+  "image_id": "sha256:e0feb644c375acb89ac85a751ee308609317445e4a40c6305b2b401f762da823",
+  "os": {
+    "Family": "ubuntu",
+    "Name": "24.04"
+  },
+  "scanners": [
+    "vulnerability",
+    "full license"
+  ],
+  "full_raw_report_sha256": "2d34efec8ae3f6216fac24e29f31d2685e5d96e9f80d0e3567e6c366a40f6217",
+  "vulnerabilities_by_severity": {
+    "MEDIUM": 25,
+    "LOW": 4
+  },
+  "fixable_high_critical": 0,
+  "license_classifications": {
+    "restricted": 363,
+    "notice": 136,
+    "unknown": 210,
+    "reciprocal": 2,
+    "unencumbered": 5
+  },
+  "status": "Findings recorded; no production clearance",
+  "vulnerabilities": [
+    {
+      "VulnerabilityID": "CVE-2026-102473",
+      "PkgName": "dash",
+      "InstalledVersion": "0.5.12-6ubuntu5",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "dash: dash: Super-polynomial backtracking in pmatch when libc fnmatch is disabled",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-102473"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-102474",
+      "PkgName": "dash",
+      "InstalledVersion": "0.5.12-6ubuntu5",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "dash: dash: Heap out-of-bounds write in conv_escape via undersized Unicode escape reservation",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-102474"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-111497",
+      "PkgName": "libbrotli1",
+      "InstalledVersion": "1.1.0-2build2",
+      "FixedVersion": "1.1.0-2ubuntu0.1",
+      "Severity": "MEDIUM",
+      "Status": "fixed",
+      "Title": "brotli: Out-of-Bounds Write in Google Brotli Decoder",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-111497"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-18374",
+      "PkgName": "libc-bin",
+      "InstalledVersion": "2.39-0ubuntu8.9",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "glibc: glibc: Heap buffer overflow via attacker-controlled fopen mode string",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-18374"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-89092",
+      "PkgName": "libc-bin",
+      "InstalledVersion": "2.39-0ubuntu8.9",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "glibc: nscd stack overflow leads to degraded DNS resolution",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-89092"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-18374",
+      "PkgName": "libc6",
+      "InstalledVersion": "2.39-0ubuntu8.9",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "glibc: glibc: Heap buffer overflow via attacker-controlled fopen mode string",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-18374"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-89092",
+      "PkgName": "libc6",
+      "InstalledVersion": "2.39-0ubuntu8.9",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "glibc: nscd stack overflow leads to degraded DNS resolution",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-89092"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-67693",
+      "PkgName": "libgnutls30t64",
+      "InstalledVersion": "3.8.3-1.1ubuntu3.6",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "gnutls: gnutls: Information disclosure via contradictory Key Usage and Extended Key Usage extensions",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-67693"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-88647",
+      "PkgName": "libgnutls30t64",
+      "InstalledVersion": "3.8.3-1.1ubuntu3.6",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "gnutls: gnutls: Information disclosure via hostname verification bypass",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-88647"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-88648",
+      "PkgName": "libgnutls30t64",
+      "InstalledVersion": "3.8.3-1.1ubuntu3.6",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "gnutls: gnutls: Cross-domain certificate restriction bypass via incomplete X.509 validation",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-88648"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-95184",
+      "PkgName": "libgnutls30t64",
+      "InstalledVersion": "3.8.3-1.1ubuntu3.6",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "gnutls: gnutls: legitimate user certificates incorrectly rejected causing denial of service",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-95184"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-95209",
+      "PkgName": "libgnutls30t64",
+      "InstalledVersion": "3.8.3-1.1ubuntu3.6",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "gnutls: gnutls: legitimate CA certificates incorrectly rejected causing denial of service",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-95209"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-95210",
+      "PkgName": "libgnutls30t64",
+      "InstalledVersion": "3.8.3-1.1ubuntu3.6",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "gnutls: gnutls: certificates with invalid extensions incorrectly accepted",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-95210"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-103111",
+      "PkgName": "libpcre2-8-0",
+      "InstalledVersion": "10.42-4ubuntu2.1",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "pcre2: pcre2: Out-of-bounds write via crafted regular expression",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-103111"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-86145",
+      "PkgName": "libpcre2-8-0",
+      "InstalledVersion": "10.42-4ubuntu2.1",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "pcre2: PCRE2: Out-of-bounds write allows arbitrary code execution via crafted regular expressions",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-86145"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-89156",
+      "PkgName": "libpcre2-8-0",
+      "InstalledVersion": "10.42-4ubuntu2.1",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "PCRE2: PCRE2: Out-of-bounds read via invalid UTF data during JIT fallback",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-89156"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-89157",
+      "PkgName": "libpcre2-8-0",
+      "InstalledVersion": "10.42-4ubuntu2.1",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "pcre2: PCRE2: Out-of-bounds write via large pattern input",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-89157"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-89158",
+      "PkgName": "libpcre2-8-0",
+      "InstalledVersion": "10.42-4ubuntu2.1",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "PCRE2: PCRE2: Out-of-bounds write via integer overflow on 32-bit platforms",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-89158"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-89160",
+      "PkgName": "libpcre2-8-0",
+      "InstalledVersion": "10.42-4ubuntu2.1",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "pcre2: PCRE2: Denial of Service via out-of-bounds read during invalid UTF matching",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-89160"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-89161",
+      "PkgName": "libpcre2-8-0",
+      "InstalledVersion": "10.42-4ubuntu2.1",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "pcre2: PCRE2: Memory corruption vulnerability in pcre2_jit_match",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-89161"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-107161",
+      "PkgName": "libsasl2-2",
+      "InstalledVersion": "2.1.28+dfsg1-5ubuntu3.1",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "cyrus-sasl: Heap buffer overflow in cyrus-sasl add_to_challenge() allows malicious server to crash or compromise DIGEST-MD5 clients",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-107161"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-107161",
+      "PkgName": "libsasl2-modules-db",
+      "InstalledVersion": "2.1.28+dfsg1-5ubuntu3.1",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "cyrus-sasl: Heap buffer overflow in cyrus-sasl add_to_challenge() allows malicious server to crash or compromise DIGEST-MD5 clients",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-107161"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-40228",
+      "PkgName": "libsystemd0",
+      "InstalledVersion": "255.4-1ubuntu8.17",
+      "FixedVersion": null,
+      "Severity": "LOW",
+      "Status": "affected",
+      "Title": "systemd: systemd-journald: Unintended output to user terminals via logger command",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-40228"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-40228",
+      "PkgName": "libudev1",
+      "InstalledVersion": "255.4-1ubuntu8.17",
+      "FixedVersion": null,
+      "Severity": "LOW",
+      "Status": "affected",
+      "Title": "systemd: systemd-journald: Unintended output to user terminals via logger command",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-40228"
+    },
+    {
+      "VulnerabilityID": "CVE-2024-56433",
+      "PkgName": "login",
+      "InstalledVersion": "1:4.13+dfsg1-4ubuntu3.2",
+      "FixedVersion": null,
+      "Severity": "LOW",
+      "Status": "affected",
+      "Title": "shadow-utils: Default subordinate ID configuration in /etc/login.defs could lead to compromise",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-56433"
+    },
+    {
+      "VulnerabilityID": "CVE-2024-56433",
+      "PkgName": "passwd",
+      "InstalledVersion": "1:4.13+dfsg1-4ubuntu3.2",
+      "FixedVersion": null,
+      "Severity": "LOW",
+      "Status": "affected",
+      "Title": "shadow-utils: Default subordinate ID configuration in /etc/login.defs could lead to compromise",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-56433"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-18477",
+      "PkgName": "tar",
+      "InstalledVersion": "1.35+dfsg-3ubuntu0.4",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "tar: tar: TOCTOU in incremental dumpdir 'X' rename handling allows restore path escape",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-18477"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-18508",
+      "PkgName": "tar",
+      "InstalledVersion": "1.35+dfsg-3ubuntu0.4",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "tar: tar: --one-top-level hardlink targets not confined to top-level directory enabling arbitrary file overwrite",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-18508"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-85091",
+      "PkgName": "zlib1g",
+      "InstalledVersion": "1:1.3.dfsg-3.1ubuntu2.2",
+      "FixedVersion": "1:1.3.dfsg-3.1ubuntu2.3",
+      "Severity": "MEDIUM",
+      "Status": "fixed",
+      "Title": "zlib versions 1.3.1.2 through 1.3.2 contain a heap buffer overflow vul ...",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-85091"
+    }
+  ],
+  "licenses": [
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "apt",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "apt",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "apt",
+      "FilePath": ""
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "apt",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "base-files",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "base-passwd",
+      "FilePath": ""
+    },
+    {
+      "Name": "public-domain",
+      "Category": "unknown",
+      "PkgName": "base-passwd",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "bash",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "bash",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3+ with Bison exception",
+      "Category": "unknown",
+      "PkgName": "bash",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "bash",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "bash",
+      "FilePath": ""
+    },
+    {
+      "Name": "GFDL-1.3-no-invariants-only",
+      "Category": "unknown",
+      "PkgName": "bash",
+      "FilePath": ""
+    },
+    {
+      "Name": "GFDL-1.3-only",
+      "Category": "unknown",
+      "PkgName": "bash",
+      "FilePath": ""
+    },
+    {
+      "Name": "Latex2e",
+      "Category": "unknown",
+      "PkgName": "bash",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-4-Clause-UC",
+      "Category": "notice",
+      "PkgName": "bash",
+      "FilePath": ""
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "bash",
+      "FilePath": ""
+    },
+    {
+      "Name": "permissive",
+      "Category": "unknown",
+      "PkgName": "bash",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "bsdutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "bsdutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "bsdutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "public-domain",
+      "Category": "unknown",
+      "PkgName": "bsdutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-4-Clause",
+      "Category": "notice",
+      "PkgName": "bsdutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "bsdutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "bsdutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSLA",
+      "Category": "unknown",
+      "PkgName": "bsdutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "bsdutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-or-later",
+      "Category": "restricted",
+      "PkgName": "bsdutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "bsdutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "bsdutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "bsdutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-only",
+      "Category": "restricted",
+      "PkgName": "bsdutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "bsdutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "ca-certificates",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "ca-certificates",
+      "FilePath": ""
+    },
+    {
+      "Name": "MPL-2.0",
+      "Category": "reciprocal",
+      "PkgName": "ca-certificates",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "coreutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-4-Clause-UC",
+      "Category": "notice",
+      "PkgName": "coreutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "coreutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "ISC",
+      "Category": "notice",
+      "PkgName": "coreutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "FSFULLR",
+      "Category": "unknown",
+      "PkgName": "coreutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "GFDL-1.3-no-invariants-only",
+      "Category": "unknown",
+      "PkgName": "coreutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "GFDL-1.3-only",
+      "Category": "unknown",
+      "PkgName": "coreutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "dash",
+      "FilePath": ""
+    },
+    {
+      "Name": "public-domain",
+      "Category": "unknown",
+      "PkgName": "dash",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "dash",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "dash",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-2-Clause",
+      "Category": "notice",
+      "PkgName": "debconf",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "debianutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "debianutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "public-domain",
+      "Category": "unknown",
+      "PkgName": "debianutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "SMAIL-GPL",
+      "Category": "unknown",
+      "PkgName": "debianutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "diffutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "FSFULLR",
+      "Category": "unknown",
+      "PkgName": "diffutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-or-later",
+      "Category": "restricted",
+      "PkgName": "diffutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-with-autoconf-exception+",
+      "Category": "restricted",
+      "PkgName": "diffutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "diffutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3+ with texinfo exception",
+      "Category": "unknown",
+      "PkgName": "diffutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "diffutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "diffutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "X11",
+      "Category": "notice",
+      "PkgName": "diffutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "FSFAP",
+      "Category": "unknown",
+      "PkgName": "diffutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "GFDL-1.3-no-invariants-only",
+      "Category": "unknown",
+      "PkgName": "diffutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "diffutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "diffutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "public-domain",
+      "Category": "unknown",
+      "PkgName": "diffutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "diffutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-only",
+      "Category": "restricted",
+      "PkgName": "diffutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "diffutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "GFDL-1.3-only",
+      "Category": "unknown",
+      "PkgName": "diffutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "dpkg",
+      "FilePath": ""
+    },
+    {
+      "Name": "public-domain-s-s-d",
+      "Category": "unknown",
+      "PkgName": "dpkg",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "dpkg",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "e2fsprogs",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "e2fsprogs",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "e2fsprogs",
+      "FilePath": ""
+    },
+    {
+      "Name": "Apache-2.0",
+      "Category": "notice",
+      "PkgName": "e2fsprogs",
+      "FilePath": ""
+    },
+    {
+      "Name": "ISC",
+      "Category": "notice",
+      "PkgName": "e2fsprogs",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "e2fsprogs",
+      "FilePath": ""
+    },
+    {
+      "Name": "MIT-US-export",
+      "Category": "unknown",
+      "PkgName": "e2fsprogs",
+      "FilePath": ""
+    },
+    {
+      "Name": "Kazlib",
+      "Category": "unknown",
+      "PkgName": "e2fsprogs",
+      "FilePath": ""
+    },
+    {
+      "Name": "Latex2e",
+      "Category": "unknown",
+      "PkgName": "e2fsprogs",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2+ with Texinfo exception",
+      "Category": "unknown",
+      "PkgName": "e2fsprogs",
+      "FilePath": ""
+    },
+    {
+      "Name": "GFDL-1.3-no-invariants-or-later",
+      "Category": "unknown",
+      "PkgName": "findutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "findutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "FSFAP",
+      "Category": "unknown",
+      "PkgName": "findutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3+ with Autoconf-data exception",
+      "Category": "unknown",
+      "PkgName": "findutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "FSFULLR",
+      "Category": "unknown",
+      "PkgName": "findutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2+ with Autoconf-data exception",
+      "Category": "unknown",
+      "PkgName": "findutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "findutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "X11",
+      "Category": "notice",
+      "PkgName": "findutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "public-domain",
+      "Category": "unknown",
+      "PkgName": "findutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL with automake exception",
+      "Category": "unknown",
+      "PkgName": "findutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-or-later",
+      "Category": "restricted",
+      "PkgName": "findutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "findutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "findutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-clause and/or GPL-3+",
+      "Category": "unknown",
+      "PkgName": "findutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3+ with Bison-2.2 exception",
+      "Category": "unknown",
+      "PkgName": "findutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "findutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "ISC and/or LGPL-2.1+",
+      "Category": "unknown",
+      "PkgName": "findutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "findutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "GFDL-1.3-only",
+      "Category": "unknown",
+      "PkgName": "findutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "findutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "findutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "ISC",
+      "Category": "notice",
+      "PkgName": "findutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "findutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-only",
+      "Category": "restricted",
+      "PkgName": "findutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "gcc-14-base",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "gcc-14-base",
+      "FilePath": ""
+    },
+    {
+      "Name": "GFDL-1.2-only",
+      "Category": "unknown",
+      "PkgName": "gcc-14-base",
+      "FilePath": ""
+    },
+    {
+      "Name": "Artistic-2.0",
+      "Category": "notice",
+      "PkgName": "gcc-14-base",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "gcc-14-base",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "gpgv",
+      "FilePath": ""
+    },
+    {
+      "Name": "permissive",
+      "Category": "unknown",
+      "PkgName": "gpgv",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-or-later",
+      "Category": "restricted",
+      "PkgName": "gpgv",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "gpgv",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "gpgv",
+      "FilePath": ""
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "gpgv",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "gpgv",
+      "FilePath": ""
+    },
+    {
+      "Name": "RFC-Reference",
+      "Category": "unknown",
+      "PkgName": "gpgv",
+      "FilePath": ""
+    },
+    {
+      "Name": "TinySCHEME",
+      "Category": "unknown",
+      "PkgName": "gpgv",
+      "FilePath": ""
+    },
+    {
+      "Name": "CC0-1.0",
+      "Category": "unencumbered",
+      "PkgName": "gpgv",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "gpgv",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "gpgv",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-only",
+      "Category": "restricted",
+      "PkgName": "gpgv",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "gpgv",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "grep",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "grep",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "gzip",
+      "FilePath": ""
+    },
+    {
+      "Name": "GFDL-1.3+-no-invariant",
+      "Category": "unknown",
+      "PkgName": "gzip",
+      "FilePath": ""
+    },
+    {
+      "Name": "FSF-manpages",
+      "Category": "unknown",
+      "PkgName": "gzip",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "gzip",
+      "FilePath": ""
+    },
+    {
+      "Name": "GFDL-3",
+      "Category": "unknown",
+      "PkgName": "gzip",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "hostname",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "init-system-helpers",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "init-system-helpers",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "init-system-helpers",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libacl1",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libacl1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libacl1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-only",
+      "Category": "restricted",
+      "PkgName": "libacl1",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libapt-pkg6.0t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libapt-pkg6.0t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "libapt-pkg6.0t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "libapt-pkg6.0t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-or-later",
+      "Category": "restricted",
+      "PkgName": "libassuan0",
+      "FilePath": ""
+    },
+    {
+      "Name": "GAP~FSF",
+      "Category": "unknown",
+      "PkgName": "libassuan0",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libassuan0",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "libassuan0",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2+ with libtool exception",
+      "Category": "unknown",
+      "PkgName": "libassuan0",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libassuan0",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libassuan0",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "libassuan0",
+      "FilePath": ""
+    },
+    {
+      "Name": "GAP",
+      "Category": "unknown",
+      "PkgName": "libassuan0",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libassuan0",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-only",
+      "Category": "restricted",
+      "PkgName": "libassuan0",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libattr1",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libattr1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libattr1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-only",
+      "Category": "restricted",
+      "PkgName": "libattr1",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libaudit-common",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-only",
+      "Category": "restricted",
+      "PkgName": "libaudit-common",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-1.0-only",
+      "Category": "restricted",
+      "PkgName": "libaudit-common",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libaudit1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-only",
+      "Category": "restricted",
+      "PkgName": "libaudit1",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-1.0-only",
+      "Category": "restricted",
+      "PkgName": "libaudit1",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libblkid1",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libblkid1",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libblkid1",
+      "FilePath": ""
+    },
+    {
+      "Name": "public-domain",
+      "Category": "unknown",
+      "PkgName": "libblkid1",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-4-Clause",
+      "Category": "notice",
+      "PkgName": "libblkid1",
+      "FilePath": ""
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "libblkid1",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "libblkid1",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSLA",
+      "Category": "unknown",
+      "PkgName": "libblkid1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libblkid1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-or-later",
+      "Category": "restricted",
+      "PkgName": "libblkid1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libblkid1",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "libblkid1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libblkid1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-only",
+      "Category": "restricted",
+      "PkgName": "libblkid1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "libblkid1",
+      "FilePath": ""
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "libbrotli1",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "libbz2-1.0",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libbz2-1.0",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-only",
+      "Category": "restricted",
+      "PkgName": "libc-bin",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libc-bin",
+      "FilePath": ""
+    },
+    {
+      "Name": "GFDL-1.3-only",
+      "Category": "unknown",
+      "PkgName": "libc-bin",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-only",
+      "Category": "restricted",
+      "PkgName": "libc6",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libc6",
+      "FilePath": ""
+    },
+    {
+      "Name": "GFDL-1.3-only",
+      "Category": "unknown",
+      "PkgName": "libc6",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-or-later",
+      "Category": "restricted",
+      "PkgName": "libcap-ng0",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libcap-ng0",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "libcap-ng0",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-only",
+      "Category": "restricted",
+      "PkgName": "libcap-ng0",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libcap-ng0",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "libcap2",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libcap2",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libcap2",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libcom-err2",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libcom-err2",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "libcom-err2",
+      "FilePath": ""
+    },
+    {
+      "Name": "Apache-2.0",
+      "Category": "notice",
+      "PkgName": "libcom-err2",
+      "FilePath": ""
+    },
+    {
+      "Name": "ISC",
+      "Category": "notice",
+      "PkgName": "libcom-err2",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libcom-err2",
+      "FilePath": ""
+    },
+    {
+      "Name": "MIT-US-export",
+      "Category": "unknown",
+      "PkgName": "libcom-err2",
+      "FilePath": ""
+    },
+    {
+      "Name": "Kazlib",
+      "Category": "unknown",
+      "PkgName": "libcom-err2",
+      "FilePath": ""
+    },
+    {
+      "Name": "Latex2e",
+      "Category": "unknown",
+      "PkgName": "libcom-err2",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2+ with Texinfo exception",
+      "Category": "unknown",
+      "PkgName": "libcom-err2",
+      "FilePath": ""
+    },
+    {
+      "Name": "curl",
+      "Category": "unknown",
+      "PkgName": "libcurl4t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "OLDAP-2.8",
+      "Category": "unknown",
+      "PkgName": "libcurl4t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "ISC",
+      "Category": "notice",
+      "PkgName": "libcurl4t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2+ with Autoconf-data exception",
+      "Category": "unknown",
+      "PkgName": "libcurl4t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3+ with Autoconf-data exception",
+      "Category": "unknown",
+      "PkgName": "libcurl4t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2+ with Libtool exception",
+      "Category": "unknown",
+      "PkgName": "libcurl4t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "libcurl4t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-4-Clause-UC",
+      "Category": "notice",
+      "PkgName": "libcurl4t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "FSFULLR",
+      "Category": "unknown",
+      "PkgName": "libcurl4t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "X11",
+      "Category": "notice",
+      "PkgName": "libcurl4t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libcurl4t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "Sleepycat",
+      "Category": "restricted",
+      "PkgName": "libdb5.3t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "libdb5.3t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "MS-PL",
+      "Category": "notice",
+      "PkgName": "libdb5.3t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libdb5.3t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "Artistic-2.0",
+      "Category": "notice",
+      "PkgName": "libdb5.3t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "X11",
+      "Category": "notice",
+      "PkgName": "libdb5.3t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "MIT-old",
+      "Category": "unknown",
+      "PkgName": "libdb5.3t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "TCL-like",
+      "Category": "unknown",
+      "PkgName": "libdb5.3t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-clause-fjord",
+      "Category": "unknown",
+      "PkgName": "libdb5.3t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "libdb5.3t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "Zlib",
+      "Category": "notice",
+      "PkgName": "libdb5.3t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-2-Clause",
+      "Category": "notice",
+      "PkgName": "libdebconfclient0",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libdebconfclient0",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libdebconfclient0",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libext2fs2t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libext2fs2t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "libext2fs2t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "Apache-2.0",
+      "Category": "notice",
+      "PkgName": "libext2fs2t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "ISC",
+      "Category": "notice",
+      "PkgName": "libext2fs2t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libext2fs2t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "MIT-US-export",
+      "Category": "unknown",
+      "PkgName": "libext2fs2t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "Kazlib",
+      "Category": "unknown",
+      "PkgName": "libext2fs2t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "Latex2e",
+      "Category": "unknown",
+      "PkgName": "libext2fs2t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2+ with Texinfo exception",
+      "Category": "unknown",
+      "PkgName": "libext2fs2t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "libffi8",
+      "FilePath": ""
+    },
+    {
+      "Name": "X11",
+      "Category": "notice",
+      "PkgName": "libffi8",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libffi8",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libffi8",
+      "FilePath": ""
+    },
+    {
+      "Name": "MPL-1.1",
+      "Category": "reciprocal",
+      "PkgName": "libffi8",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-or-later",
+      "Category": "restricted",
+      "PkgName": "libffi8",
+      "FilePath": ""
+    },
+    {
+      "Name": "public-domain",
+      "Category": "unknown",
+      "PkgName": "libffi8",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libgcrypt20",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libgcrypt20",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libgmp10",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libgmp10",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libgmp10",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3+ with Bison exception",
+      "Category": "unknown",
+      "PkgName": "libgmp10",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libgmp10",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "libgmp10",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "libgmp10",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-only",
+      "Category": "restricted",
+      "PkgName": "libgnutls30t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libgnutls30t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "libgnutls30t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libgnutls30t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "libgnutls30t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "GFDL-1.3-only",
+      "Category": "unknown",
+      "PkgName": "libgnutls30t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "CC0-1.0",
+      "Category": "unencumbered",
+      "PkgName": "libgnutls30t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "libgnutls30t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "Apache-2.0",
+      "Category": "notice",
+      "PkgName": "libgnutls30t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libgnutls30t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-or-later",
+      "Category": "restricted",
+      "PkgName": "libgnutls30t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libgnutls30t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "libgnutls30t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-or-later",
+      "Category": "restricted",
+      "PkgName": "libgpg-error0",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "libgpg-error0",
+      "FilePath": ""
+    },
+    {
+      "Name": "g10-permissive",
+      "Category": "unknown",
+      "PkgName": "libgpg-error0",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libgpg-error0",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-only",
+      "Category": "restricted",
+      "PkgName": "libgpg-error0",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "libgpg-error0",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libgssapi-krb5-2",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libhogweed6t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libhogweed6t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libhogweed6t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libhogweed6t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "libhogweed6t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-with-autoconf-exception+",
+      "Category": "restricted",
+      "PkgName": "libhogweed6t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "public-domain",
+      "Category": "unknown",
+      "PkgName": "libhogweed6t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libhogweed6t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "GAP",
+      "Category": "unknown",
+      "PkgName": "libhogweed6t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libidn2-0",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libidn2-0",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libidn2-0",
+      "FilePath": ""
+    },
+    {
+      "Name": "Unicode",
+      "Category": "unknown",
+      "PkgName": "libidn2-0",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "libidn2-0",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libidn2-0",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "libidn2-0",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libk5crypto3",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libkeyutils1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libkeyutils1",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libkeyutils1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libkeyutils1",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libkrb5-3",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libkrb5support0",
+      "FilePath": ""
+    },
+    {
+      "Name": "OpenLDAP-2.8",
+      "Category": "unknown",
+      "PkgName": "libldap2",
+      "FilePath": ""
+    },
+    {
+      "Name": "FSF-unlimited",
+      "Category": "unknown",
+      "PkgName": "libldap2",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-with-autoconf-exception+",
+      "Category": "restricted",
+      "PkgName": "libldap2",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-with-autoconf-exception+",
+      "Category": "restricted",
+      "PkgName": "libldap2",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2+ with Libtool exception",
+      "Category": "unknown",
+      "PkgName": "libldap2",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3+ with Libtool exception",
+      "Category": "unknown",
+      "PkgName": "libldap2",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libldap2",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libldap2",
+      "FilePath": ""
+    },
+    {
+      "Name": "UMich",
+      "Category": "unknown",
+      "PkgName": "libldap2",
+      "FilePath": ""
+    },
+    {
+      "Name": "F5",
+      "Category": "unknown",
+      "PkgName": "libldap2",
+      "FilePath": ""
+    },
+    {
+      "Name": "JCG",
+      "Category": "unknown",
+      "PkgName": "libldap2",
+      "FilePath": ""
+    },
+    {
+      "Name": "MIT-XC",
+      "Category": "unknown",
+      "PkgName": "libldap2",
+      "FilePath": ""
+    },
+    {
+      "Name": "NeoSoft-permissive",
+      "Category": "unknown",
+      "PkgName": "libldap2",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "libldap2",
+      "FilePath": ""
+    },
+    {
+      "Name": "Beerware",
+      "Category": "unknown",
+      "PkgName": "libldap2",
+      "FilePath": ""
+    },
+    {
+      "Name": "public-domain",
+      "Category": "unknown",
+      "PkgName": "libldap2",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-4-clause-California",
+      "Category": "unknown",
+      "PkgName": "libldap2",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-clause-variant",
+      "Category": "unknown",
+      "PkgName": "libldap2",
+      "FilePath": ""
+    },
+    {
+      "Name": "Expat-ISC",
+      "Category": "unknown",
+      "PkgName": "libldap2",
+      "FilePath": ""
+    },
+    {
+      "Name": "Expat-UNM",
+      "Category": "unknown",
+      "PkgName": "libldap2",
+      "FilePath": ""
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "libldap2",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-clause-California",
+      "Category": "unknown",
+      "PkgName": "libldap2",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libldap2",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "libldap2",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-2-Clause",
+      "Category": "notice",
+      "PkgName": "liblz4-1",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "liblz4-1",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "liblz4-1",
+      "FilePath": ""
+    },
+    {
+      "Name": "PD",
+      "Category": "unknown",
+      "PkgName": "liblzma5",
+      "FilePath": ""
+    },
+    {
+      "Name": "probably-PD",
+      "Category": "unknown",
+      "PkgName": "liblzma5",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "liblzma5",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-or-later",
+      "Category": "restricted",
+      "PkgName": "liblzma5",
+      "FilePath": ""
+    },
+    {
+      "Name": "permissive-fsf",
+      "Category": "unknown",
+      "PkgName": "liblzma5",
+      "FilePath": ""
+    },
+    {
+      "Name": "Autoconf",
+      "Category": "unknown",
+      "PkgName": "liblzma5",
+      "FilePath": ""
+    },
+    {
+      "Name": "permissive-nowarranty",
+      "Category": "unknown",
+      "PkgName": "liblzma5",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "liblzma5",
+      "FilePath": ""
+    },
+    {
+      "Name": "none",
+      "Category": "unknown",
+      "PkgName": "liblzma5",
+      "FilePath": ""
+    },
+    {
+      "Name": "config-h",
+      "Category": "unknown",
+      "PkgName": "liblzma5",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "liblzma5",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-only",
+      "Category": "restricted",
+      "PkgName": "liblzma5",
+      "FilePath": ""
+    },
+    {
+      "Name": "noderivs",
+      "Category": "unknown",
+      "PkgName": "liblzma5",
+      "FilePath": ""
+    },
+    {
+      "Name": "PD-debian",
+      "Category": "unknown",
+      "PkgName": "liblzma5",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "liblzma5",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "libmd0",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-clause-Aaron-D-Gifford",
+      "Category": "unknown",
+      "PkgName": "libmd0",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-2-Clause",
+      "Category": "notice",
+      "PkgName": "libmd0",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-2-Clause-NetBSD",
+      "Category": "notice",
+      "PkgName": "libmd0",
+      "FilePath": ""
+    },
+    {
+      "Name": "ISC",
+      "Category": "notice",
+      "PkgName": "libmd0",
+      "FilePath": ""
+    },
+    {
+      "Name": "Beerware",
+      "Category": "unknown",
+      "PkgName": "libmd0",
+      "FilePath": ""
+    },
+    {
+      "Name": "public-domain-md4",
+      "Category": "unknown",
+      "PkgName": "libmd0",
+      "FilePath": ""
+    },
+    {
+      "Name": "public-domain-md5",
+      "Category": "unknown",
+      "PkgName": "libmd0",
+      "FilePath": ""
+    },
+    {
+      "Name": "public-domain-sha1",
+      "Category": "unknown",
+      "PkgName": "libmd0",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libmount1",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libmount1",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libmount1",
+      "FilePath": ""
+    },
+    {
+      "Name": "public-domain",
+      "Category": "unknown",
+      "PkgName": "libmount1",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-4-Clause",
+      "Category": "notice",
+      "PkgName": "libmount1",
+      "FilePath": ""
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "libmount1",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "libmount1",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSLA",
+      "Category": "unknown",
+      "PkgName": "libmount1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libmount1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-or-later",
+      "Category": "restricted",
+      "PkgName": "libmount1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libmount1",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "libmount1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libmount1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-only",
+      "Category": "restricted",
+      "PkgName": "libmount1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "libmount1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libnettle8t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libnettle8t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libnettle8t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libnettle8t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "libnettle8t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-with-autoconf-exception+",
+      "Category": "restricted",
+      "PkgName": "libnettle8t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "public-domain",
+      "Category": "unknown",
+      "PkgName": "libnettle8t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libnettle8t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "GAP",
+      "Category": "unknown",
+      "PkgName": "libnettle8t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "libnghttp2-14",
+      "FilePath": ""
+    },
+    {
+      "Name": "all-permissive",
+      "Category": "unknown",
+      "PkgName": "libnghttp2-14",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-with-autoconf-exception+",
+      "Category": "restricted",
+      "PkgName": "libnghttp2-14",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-2-Clause",
+      "Category": "notice",
+      "PkgName": "libnghttp2-14",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "libnghttp2-14",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-or-later",
+      "Category": "restricted",
+      "PkgName": "libnpth0t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-only",
+      "Category": "restricted",
+      "PkgName": "libnpth0t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "libp11-kit0",
+      "FilePath": ""
+    },
+    {
+      "Name": "FSFULLR",
+      "Category": "unknown",
+      "PkgName": "libp11-kit0",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2+ with Autoconf-data exception",
+      "Category": "unknown",
+      "PkgName": "libp11-kit0",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3+ with Autoconf-data exception",
+      "Category": "unknown",
+      "PkgName": "libp11-kit0",
+      "FilePath": ""
+    },
+    {
+      "Name": "X11",
+      "Category": "notice",
+      "PkgName": "libp11-kit0",
+      "FilePath": ""
+    },
+    {
+      "Name": "ISC",
+      "Category": "notice",
+      "PkgName": "libp11-kit0",
+      "FilePath": ""
+    },
+    {
+      "Name": "customFSFULLRWD",
+      "Category": "unknown",
+      "PkgName": "libp11-kit0",
+      "FilePath": ""
+    },
+    {
+      "Name": "Apache-2.0",
+      "Category": "notice",
+      "PkgName": "libp11-kit0",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-or-later",
+      "Category": "restricted",
+      "PkgName": "libp11-kit0",
+      "FilePath": ""
+    },
+    {
+      "Name": "customFSFUL",
+      "Category": "unknown",
+      "PkgName": "libp11-kit0",
+      "FilePath": ""
+    },
+    {
+      "Name": "FSFAP",
+      "Category": "unknown",
+      "PkgName": "libp11-kit0",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-only",
+      "Category": "restricted",
+      "PkgName": "libp11-kit0",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "libpam-modules",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libpam-modules",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libpam-modules",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "libpam-modules",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3+ with Bison exception",
+      "Category": "unknown",
+      "PkgName": "libpam-modules",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-tcp_wrappers",
+      "Category": "unknown",
+      "PkgName": "libpam-modules",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libpam-modules",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libpam-modules",
+      "FilePath": ""
+    },
+    {
+      "Name": "public-domain",
+      "Category": "unknown",
+      "PkgName": "libpam-modules",
+      "FilePath": ""
+    },
+    {
+      "Name": "Beerware",
+      "Category": "unknown",
+      "PkgName": "libpam-modules",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "libpam-modules-bin",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libpam-modules-bin",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libpam-modules-bin",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "libpam-modules-bin",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3+ with Bison exception",
+      "Category": "unknown",
+      "PkgName": "libpam-modules-bin",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-tcp_wrappers",
+      "Category": "unknown",
+      "PkgName": "libpam-modules-bin",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libpam-modules-bin",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libpam-modules-bin",
+      "FilePath": ""
+    },
+    {
+      "Name": "public-domain",
+      "Category": "unknown",
+      "PkgName": "libpam-modules-bin",
+      "FilePath": ""
+    },
+    {
+      "Name": "Beerware",
+      "Category": "unknown",
+      "PkgName": "libpam-modules-bin",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "libpam-runtime",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libpam-runtime",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libpam-runtime",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "libpam-runtime",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3+ with Bison exception",
+      "Category": "unknown",
+      "PkgName": "libpam-runtime",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-tcp_wrappers",
+      "Category": "unknown",
+      "PkgName": "libpam-runtime",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libpam-runtime",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libpam-runtime",
+      "FilePath": ""
+    },
+    {
+      "Name": "public-domain",
+      "Category": "unknown",
+      "PkgName": "libpam-runtime",
+      "FilePath": ""
+    },
+    {
+      "Name": "Beerware",
+      "Category": "unknown",
+      "PkgName": "libpam-runtime",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "libpam0g",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libpam0g",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libpam0g",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "libpam0g",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3+ with Bison exception",
+      "Category": "unknown",
+      "PkgName": "libpam0g",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-tcp_wrappers",
+      "Category": "unknown",
+      "PkgName": "libpam0g",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libpam0g",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libpam0g",
+      "FilePath": ""
+    },
+    {
+      "Name": "public-domain",
+      "Category": "unknown",
+      "PkgName": "libpam0g",
+      "FilePath": ""
+    },
+    {
+      "Name": "Beerware",
+      "Category": "unknown",
+      "PkgName": "libpam0g",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-clause-Cambridge with BINARY LIBRARY-LIKE PACKAGES exception",
+      "Category": "unknown",
+      "PkgName": "libpcre2-8-0",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "libpcre2-8-0",
+      "FilePath": ""
+    },
+    {
+      "Name": "X11",
+      "Category": "notice",
+      "PkgName": "libpcre2-8-0",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-2-Clause",
+      "Category": "notice",
+      "PkgName": "libpcre2-8-0",
+      "FilePath": ""
+    },
+    {
+      "Name": "public-domain",
+      "Category": "unknown",
+      "PkgName": "libpcre2-8-0",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-or-later",
+      "Category": "restricted",
+      "PkgName": "libproc2-0",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libproc2-0",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libproc2-0",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libproc2-0",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libproc2-0",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-only",
+      "Category": "restricted",
+      "PkgName": "libproc2-0",
+      "FilePath": ""
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "libpsl5t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "gnulib",
+      "Category": "unknown",
+      "PkgName": "libpsl5t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "Chromium",
+      "Category": "unknown",
+      "PkgName": "libpsl5t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "librtmp1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-only",
+      "Category": "restricted",
+      "PkgName": "librtmp1",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause-Attribution",
+      "Category": "notice",
+      "PkgName": "libsasl2-2",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "libsasl2-2",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-2-Clause",
+      "Category": "notice",
+      "PkgName": "libsasl2-2",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libsasl2-2",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "libsasl2-2",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-4-Clause-UC",
+      "Category": "notice",
+      "PkgName": "libsasl2-2",
+      "FilePath": ""
+    },
+    {
+      "Name": "RSA-MD",
+      "Category": "unknown",
+      "PkgName": "libsasl2-2",
+      "FilePath": ""
+    },
+    {
+      "Name": "CUSTOM License: BSD-3-Clause-Attribution and IBM-as-is...",
+      "Category": "unknown",
+      "PkgName": "libsasl2-2",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-clause-JANET",
+      "Category": "unknown",
+      "PkgName": "libsasl2-2",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-clause-PADL",
+      "Category": "unknown",
+      "PkgName": "libsasl2-2",
+      "FilePath": ""
+    },
+    {
+      "Name": "MIT-OpenVision",
+      "Category": "unknown",
+      "PkgName": "libsasl2-2",
+      "FilePath": ""
+    },
+    {
+      "Name": "OpenLDAP",
+      "Category": "unknown",
+      "PkgName": "libsasl2-2",
+      "FilePath": ""
+    },
+    {
+      "Name": "FSFULLR",
+      "Category": "unknown",
+      "PkgName": "libsasl2-2",
+      "FilePath": ""
+    },
+    {
+      "Name": "MIT-CMU",
+      "Category": "unknown",
+      "PkgName": "libsasl2-2",
+      "FilePath": ""
+    },
+    {
+      "Name": "MIT-Export",
+      "Category": "unknown",
+      "PkgName": "libsasl2-2",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-2.2-clause",
+      "Category": "unknown",
+      "PkgName": "libsasl2-2",
+      "FilePath": ""
+    },
+    {
+      "Name": "CUSTOM License: IBM-as-is...",
+      "Category": "unknown",
+      "PkgName": "libsasl2-2",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause-Attribution",
+      "Category": "notice",
+      "PkgName": "libsasl2-modules-db",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "libsasl2-modules-db",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-2-Clause",
+      "Category": "notice",
+      "PkgName": "libsasl2-modules-db",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libsasl2-modules-db",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "libsasl2-modules-db",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-4-Clause-UC",
+      "Category": "notice",
+      "PkgName": "libsasl2-modules-db",
+      "FilePath": ""
+    },
+    {
+      "Name": "RSA-MD",
+      "Category": "unknown",
+      "PkgName": "libsasl2-modules-db",
+      "FilePath": ""
+    },
+    {
+      "Name": "CUSTOM License: BSD-3-Clause-Attribution and IBM-as-is...",
+      "Category": "unknown",
+      "PkgName": "libsasl2-modules-db",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-clause-JANET",
+      "Category": "unknown",
+      "PkgName": "libsasl2-modules-db",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-clause-PADL",
+      "Category": "unknown",
+      "PkgName": "libsasl2-modules-db",
+      "FilePath": ""
+    },
+    {
+      "Name": "MIT-OpenVision",
+      "Category": "unknown",
+      "PkgName": "libsasl2-modules-db",
+      "FilePath": ""
+    },
+    {
+      "Name": "OpenLDAP",
+      "Category": "unknown",
+      "PkgName": "libsasl2-modules-db",
+      "FilePath": ""
+    },
+    {
+      "Name": "FSFULLR",
+      "Category": "unknown",
+      "PkgName": "libsasl2-modules-db",
+      "FilePath": ""
+    },
+    {
+      "Name": "MIT-CMU",
+      "Category": "unknown",
+      "PkgName": "libsasl2-modules-db",
+      "FilePath": ""
+    },
+    {
+      "Name": "MIT-Export",
+      "Category": "unknown",
+      "PkgName": "libsasl2-modules-db",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-2.2-clause",
+      "Category": "unknown",
+      "PkgName": "libsasl2-modules-db",
+      "FilePath": ""
+    },
+    {
+      "Name": "CUSTOM License: IBM-as-is...",
+      "Category": "unknown",
+      "PkgName": "libsasl2-modules-db",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-only",
+      "Category": "restricted",
+      "PkgName": "libseccomp2",
+      "FilePath": ""
+    },
+    {
+      "Name": "public-domain",
+      "Category": "unknown",
+      "PkgName": "libselinux1",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libselinux1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-or-later",
+      "Category": "restricted",
+      "PkgName": "libsemanage-common",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-only",
+      "Category": "restricted",
+      "PkgName": "libsemanage-common",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libsemanage-common",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-or-later",
+      "Category": "restricted",
+      "PkgName": "libsemanage2",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-only",
+      "Category": "restricted",
+      "PkgName": "libsemanage2",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libsemanage2",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-or-later",
+      "Category": "restricted",
+      "PkgName": "libsepol2",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-only",
+      "Category": "restricted",
+      "PkgName": "libsepol2",
+      "FilePath": ""
+    },
+    {
+      "Name": "Zlib",
+      "Category": "notice",
+      "PkgName": "libsepol2",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libsepol2",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libsepol2",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libsmartcols1",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libsmartcols1",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libsmartcols1",
+      "FilePath": ""
+    },
+    {
+      "Name": "public-domain",
+      "Category": "unknown",
+      "PkgName": "libsmartcols1",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-4-Clause",
+      "Category": "notice",
+      "PkgName": "libsmartcols1",
+      "FilePath": ""
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "libsmartcols1",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "libsmartcols1",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSLA",
+      "Category": "unknown",
+      "PkgName": "libsmartcols1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libsmartcols1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-or-later",
+      "Category": "restricted",
+      "PkgName": "libsmartcols1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libsmartcols1",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "libsmartcols1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libsmartcols1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-only",
+      "Category": "restricted",
+      "PkgName": "libsmartcols1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "libsmartcols1",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libss2",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libss2",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "libss2",
+      "FilePath": ""
+    },
+    {
+      "Name": "Apache-2.0",
+      "Category": "notice",
+      "PkgName": "libss2",
+      "FilePath": ""
+    },
+    {
+      "Name": "ISC",
+      "Category": "notice",
+      "PkgName": "libss2",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libss2",
+      "FilePath": ""
+    },
+    {
+      "Name": "MIT-US-export",
+      "Category": "unknown",
+      "PkgName": "libss2",
+      "FilePath": ""
+    },
+    {
+      "Name": "Kazlib",
+      "Category": "unknown",
+      "PkgName": "libss2",
+      "FilePath": ""
+    },
+    {
+      "Name": "Latex2e",
+      "Category": "unknown",
+      "PkgName": "libss2",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2+ with Texinfo exception",
+      "Category": "unknown",
+      "PkgName": "libss2",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1+~OpenSSL",
+      "Category": "unknown",
+      "PkgName": "libssh-4",
+      "FilePath": ""
+    },
+    {
+      "Name": "public-domain",
+      "Category": "unknown",
+      "PkgName": "libssh-4",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-only",
+      "Category": "restricted",
+      "PkgName": "libssh-4",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-2-Clause",
+      "Category": "notice",
+      "PkgName": "libssh-4",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "libssh-4",
+      "FilePath": ""
+    },
+    {
+      "Name": "Apache-2.0",
+      "Category": "notice",
+      "PkgName": "libssl3t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "Artistic-2.0",
+      "Category": "notice",
+      "PkgName": "libssl3t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-1.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libssl3t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-1.0-only",
+      "Category": "restricted",
+      "PkgName": "libssl3t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-or-later",
+      "Category": "restricted",
+      "PkgName": "libsystemd0",
+      "FilePath": ""
+    },
+    {
+      "Name": "CC0-1.0",
+      "Category": "unencumbered",
+      "PkgName": "libsystemd0",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2 with Linux-syscall-note exception",
+      "Category": "unknown",
+      "PkgName": "libsystemd0",
+      "FilePath": ""
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "libsystemd0",
+      "FilePath": ""
+    },
+    {
+      "Name": "public-domain",
+      "Category": "unknown",
+      "PkgName": "libsystemd0",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libsystemd0",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libsystemd0",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-only",
+      "Category": "restricted",
+      "PkgName": "libsystemd0",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libtasn1-6",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-only",
+      "Category": "restricted",
+      "PkgName": "libtasn1-6",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "libtasn1-6",
+      "FilePath": ""
+    },
+    {
+      "Name": "GFDL-1.3-only",
+      "Category": "unknown",
+      "PkgName": "libtasn1-6",
+      "FilePath": ""
+    },
+    {
+      "Name": "MIT/X11",
+      "Category": "unknown",
+      "PkgName": "libtinfo6",
+      "FilePath": ""
+    },
+    {
+      "Name": "X11",
+      "Category": "notice",
+      "PkgName": "libtinfo6",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "libtinfo6",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-or-later",
+      "Category": "restricted",
+      "PkgName": "libudev1",
+      "FilePath": ""
+    },
+    {
+      "Name": "CC0-1.0",
+      "Category": "unencumbered",
+      "PkgName": "libudev1",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2 with Linux-syscall-note exception",
+      "Category": "unknown",
+      "PkgName": "libudev1",
+      "FilePath": ""
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "libudev1",
+      "FilePath": ""
+    },
+    {
+      "Name": "public-domain",
+      "Category": "unknown",
+      "PkgName": "libudev1",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libudev1",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libudev1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-only",
+      "Category": "restricted",
+      "PkgName": "libudev1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libunistring5",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libunistring5",
+      "FilePath": ""
+    },
+    {
+      "Name": "FreeSoftware",
+      "Category": "unknown",
+      "PkgName": "libunistring5",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libunistring5",
+      "FilePath": ""
+    },
+    {
+      "Name": "GFDL-1.2-no-invariants-or-later",
+      "Category": "unknown",
+      "PkgName": "libunistring5",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2+ with distribution exception",
+      "Category": "unknown",
+      "PkgName": "libunistring5",
+      "FilePath": ""
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "libunistring5",
+      "FilePath": ""
+    },
+    {
+      "Name": "X11",
+      "Category": "notice",
+      "PkgName": "libunistring5",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "libunistring5",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "libunistring5",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libunistring5",
+      "FilePath": ""
+    },
+    {
+      "Name": "GFDL-1.2-only",
+      "Category": "unknown",
+      "PkgName": "libunistring5",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libuuid1",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libuuid1",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libuuid1",
+      "FilePath": ""
+    },
+    {
+      "Name": "public-domain",
+      "Category": "unknown",
+      "PkgName": "libuuid1",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-4-Clause",
+      "Category": "notice",
+      "PkgName": "libuuid1",
+      "FilePath": ""
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "libuuid1",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "libuuid1",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSLA",
+      "Category": "unknown",
+      "PkgName": "libuuid1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libuuid1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-or-later",
+      "Category": "restricted",
+      "PkgName": "libuuid1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libuuid1",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "libuuid1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libuuid1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-only",
+      "Category": "restricted",
+      "PkgName": "libuuid1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "libuuid1",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-2-Clause",
+      "Category": "notice",
+      "PkgName": "libxxhash0",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libxxhash0",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libxxhash0",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "libzstd1",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libzstd1",
+      "FilePath": ""
+    },
+    {
+      "Name": "Zlib",
+      "Category": "notice",
+      "PkgName": "libzstd1",
+      "FilePath": ""
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "libzstd1",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "login",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-1.0-only",
+      "Category": "restricted",
+      "PkgName": "login",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "login",
+      "FilePath": ""
+    },
+    {
+      "Name": "public-domain",
+      "Category": "unknown",
+      "PkgName": "login",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "login",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "logsave",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "logsave",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "logsave",
+      "FilePath": ""
+    },
+    {
+      "Name": "Apache-2.0",
+      "Category": "notice",
+      "PkgName": "logsave",
+      "FilePath": ""
+    },
+    {
+      "Name": "ISC",
+      "Category": "notice",
+      "PkgName": "logsave",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "logsave",
+      "FilePath": ""
+    },
+    {
+      "Name": "MIT-US-export",
+      "Category": "unknown",
+      "PkgName": "logsave",
+      "FilePath": ""
+    },
+    {
+      "Name": "Kazlib",
+      "Category": "unknown",
+      "PkgName": "logsave",
+      "FilePath": ""
+    },
+    {
+      "Name": "Latex2e",
+      "Category": "unknown",
+      "PkgName": "logsave",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2+ with Texinfo exception",
+      "Category": "unknown",
+      "PkgName": "logsave",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "mawk",
+      "FilePath": ""
+    },
+    {
+      "Name": "X11",
+      "Category": "notice",
+      "PkgName": "mawk",
+      "FilePath": ""
+    },
+    {
+      "Name": "CC-BY-3.0",
+      "Category": "notice",
+      "PkgName": "mawk",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "mount",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "mount",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "mount",
+      "FilePath": ""
+    },
+    {
+      "Name": "public-domain",
+      "Category": "unknown",
+      "PkgName": "mount",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-4-Clause",
+      "Category": "notice",
+      "PkgName": "mount",
+      "FilePath": ""
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "mount",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "mount",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSLA",
+      "Category": "unknown",
+      "PkgName": "mount",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "mount",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-or-later",
+      "Category": "restricted",
+      "PkgName": "mount",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "mount",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "mount",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "mount",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-only",
+      "Category": "restricted",
+      "PkgName": "mount",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "mount",
+      "FilePath": ""
+    },
+    {
+      "Name": "MIT/X11",
+      "Category": "unknown",
+      "PkgName": "ncurses-base",
+      "FilePath": ""
+    },
+    {
+      "Name": "X11",
+      "Category": "notice",
+      "PkgName": "ncurses-base",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "ncurses-base",
+      "FilePath": ""
+    },
+    {
+      "Name": "MIT/X11",
+      "Category": "unknown",
+      "PkgName": "ncurses-bin",
+      "FilePath": ""
+    },
+    {
+      "Name": "X11",
+      "Category": "notice",
+      "PkgName": "ncurses-bin",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "ncurses-bin",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "passwd",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-1.0-only",
+      "Category": "restricted",
+      "PkgName": "passwd",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "passwd",
+      "FilePath": ""
+    },
+    {
+      "Name": "public-domain",
+      "Category": "unknown",
+      "PkgName": "passwd",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "passwd",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-1.0-or-later",
+      "Category": "restricted",
+      "PkgName": "perl-base",
+      "FilePath": ""
+    },
+    {
+      "Name": "Artistic-2.0",
+      "Category": "notice",
+      "PkgName": "perl-base",
+      "FilePath": ""
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "perl-base",
+      "FilePath": ""
+    },
+    {
+      "Name": "REGCOMP",
+      "Category": "unknown",
+      "PkgName": "perl-base",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-with-bison-exception+",
+      "Category": "restricted",
+      "PkgName": "perl-base",
+      "FilePath": ""
+    },
+    {
+      "Name": "Unicode",
+      "Category": "unknown",
+      "PkgName": "perl-base",
+      "FilePath": ""
+    },
+    {
+      "Name": "BZIP",
+      "Category": "unknown",
+      "PkgName": "perl-base",
+      "FilePath": ""
+    },
+    {
+      "Name": "Zlib",
+      "Category": "notice",
+      "PkgName": "perl-base",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "perl-base",
+      "FilePath": ""
+    },
+    {
+      "Name": "FSFAP",
+      "Category": "unknown",
+      "PkgName": "perl-base",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-clause-with-weird-numbering",
+      "Category": "unknown",
+      "PkgName": "perl-base",
+      "FilePath": ""
+    },
+    {
+      "Name": "CC0-1.0",
+      "Category": "unencumbered",
+      "PkgName": "perl-base",
+      "FilePath": ""
+    },
+    {
+      "Name": "TEXT-TABS",
+      "Category": "unknown",
+      "PkgName": "perl-base",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-4-clause-POWERDOG",
+      "Category": "unknown",
+      "PkgName": "perl-base",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-clause-GENERIC",
+      "Category": "unknown",
+      "PkgName": "perl-base",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "perl-base",
+      "FilePath": ""
+    },
+    {
+      "Name": "SDBM-PUBLIC-DOMAIN",
+      "Category": "unknown",
+      "PkgName": "perl-base",
+      "FilePath": ""
+    },
+    {
+      "Name": "DONT-CHANGE-THE-GPL",
+      "Category": "unknown",
+      "PkgName": "perl-base",
+      "FilePath": ""
+    },
+    {
+      "Name": "Artistic-dist",
+      "Category": "unknown",
+      "PkgName": "perl-base",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-only",
+      "Category": "restricted",
+      "PkgName": "perl-base",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-1.0-only",
+      "Category": "restricted",
+      "PkgName": "perl-base",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "perl-base",
+      "FilePath": ""
+    },
+    {
+      "Name": "Artistic-2",
+      "Category": "unknown",
+      "PkgName": "perl-base",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-or-later",
+      "Category": "restricted",
+      "PkgName": "procps",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "procps",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "procps",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "procps",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "procps",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-only",
+      "Category": "restricted",
+      "PkgName": "procps",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "sed",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "sed",
+      "FilePath": ""
+    },
+    {
+      "Name": "X11",
+      "Category": "notice",
+      "PkgName": "sed",
+      "FilePath": ""
+    },
+    {
+      "Name": "GFDL-1.3-no-invariants-or-later",
+      "Category": "unknown",
+      "PkgName": "sed",
+      "FilePath": ""
+    },
+    {
+      "Name": "GFDL-1.3-only",
+      "Category": "unknown",
+      "PkgName": "sed",
+      "FilePath": ""
+    },
+    {
+      "Name": "ISC",
+      "Category": "notice",
+      "PkgName": "sed",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-4-Clause-UC",
+      "Category": "notice",
+      "PkgName": "sed",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSL-1",
+      "Category": "unknown",
+      "PkgName": "sed",
+      "FilePath": ""
+    },
+    {
+      "Name": "pcre",
+      "Category": "unknown",
+      "PkgName": "sed",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "sensible-utils",
+      "FilePath": ""
+    },
+    {
+      "Name": "All-permissive",
+      "Category": "unknown",
+      "PkgName": "sensible-utils",
+      "FilePath": ""
+    },
+    {
+      "Name": "configure",
+      "Category": "unknown",
+      "PkgName": "sensible-utils",
+      "FilePath": ""
+    },
+    {
+      "Name": "installsh",
+      "Category": "unknown",
+      "PkgName": "sensible-utils",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-2-Clause",
+      "Category": "notice",
+      "PkgName": "sensible-utils",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "sensible-utils",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "sysvinit-utils",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-or-later",
+      "Category": "restricted",
+      "PkgName": "sysvinit-utils",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "sysvinit-utils",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "sysvinit-utils",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-only",
+      "Category": "restricted",
+      "PkgName": "sysvinit-utils",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "tar",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "tar",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3+ with Bison exception",
+      "Category": "unknown",
+      "PkgName": "tar",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-or-later",
+      "Category": "restricted",
+      "PkgName": "tar",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-only",
+      "Category": "restricted",
+      "PkgName": "tar",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "tar",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "tar",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "tar",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "tar",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "ubuntu-keyring",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "unminimize",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "unminimize",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "util-linux",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "util-linux",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "util-linux",
+      "FilePath": ""
+    },
+    {
+      "Name": "public-domain",
+      "Category": "unknown",
+      "PkgName": "util-linux",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-4-Clause",
+      "Category": "notice",
+      "PkgName": "util-linux",
+      "FilePath": ""
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "util-linux",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "util-linux",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSLA",
+      "Category": "unknown",
+      "PkgName": "util-linux",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "util-linux",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-or-later",
+      "Category": "restricted",
+      "PkgName": "util-linux",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "util-linux",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "util-linux",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "util-linux",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-only",
+      "Category": "restricted",
+      "PkgName": "util-linux",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "util-linux",
+      "FilePath": ""
+    },
+    {
+      "Name": "Zlib",
+      "Category": "notice",
+      "PkgName": "zlib1g",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0",
+      "Category": "restricted",
+      "PkgName": "",
+      "FilePath": "usr/share/dpkg/sh/dpkg-error.sh"
+    },
+    {
+      "Name": "GPL-3.0",
+      "Category": "restricted",
+      "PkgName": "",
+      "FilePath": "usr/share/gcc/python/libstdcxx/v6/__init__.py"
+    },
+    {
+      "Name": "GPL-3.0",
+      "Category": "restricted",
+      "PkgName": "",
+      "FilePath": "usr/share/gcc/python/libstdcxx/v6/printers.py"
+    },
+    {
+      "Name": "GPL-3.0",
+      "Category": "restricted",
+      "PkgName": "",
+      "FilePath": "usr/share/gcc/python/libstdcxx/v6/xmethods.py"
+    }
+  ]
+}

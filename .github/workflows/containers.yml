@@ -28,7 +28,7 @@ jobs:
           version: 'v3.19.0'
       - run: helm lint k8s/afri-ai && helm template ci k8s/afri-ai
   build:
-    timeout-minutes: 25
+    timeout-minutes: 45
     needs: validate
     runs-on: ubuntu-latest
     permissions:
@@ -60,6 +60,32 @@ jobs:
           context: .
           file: ${{ matrix.dockerfile }}
           platforms: linux/amd64
-          push: ${{ github.event_name == 'push' }}
+          push: false
+          load: true
           tags: ${{ steps.image.outputs.name }}:${{ github.sha }}
           build-args: LLAMA_COMMIT=6050b467c07a95c7b87debd4ddac2f8ba8d9b807
+          cache-from: type=gha,scope=${{ matrix.service }}
+          cache-to: type=gha,mode=max,scope=${{ matrix.service }}
+      - name: Install checksum-verified image scanner
+        shell: bash
+        run: |
+          curl --fail --silent --show-error --location https://github.com/aquasecurity/trivy/releases/download/v0.76.1/trivy_0.76.1_Linux-64bit.tar.gz -o "$RUNNER_TEMP/trivy.tar.gz"
+          echo "c7cbe3137fb8a48a17574bede3dd6beb16742d1e9772929940fc90082c39d9c0  $RUNNER_TEMP/trivy.tar.gz" | sha256sum --check --strict
+          tar -xzf "$RUNNER_TEMP/trivy.tar.gz" -C "$RUNNER_TEMP" trivy
+      - name: Audit runtime packages and licenses
+        env:
+          IMAGE: ${{ steps.image.outputs.name }}:${{ github.sha }}
+        run: |
+          "$RUNNER_TEMP/trivy" image --scanners vuln,license --license-full --timeout 15m --format json --output image-audit.json "$IMAGE"
+          python scripts/audit_image_report.py image-audit.json --summary image-audit-summary.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: image-audit-${{ matrix.service }}
+          path: image-audit*.json
+          if-no-files-found: warn
+      - name: Publish checked image
+        if: github.event_name == 'push'
+        env:
+          IMAGE: ${{ steps.image.outputs.name }}:${{ github.sha }}
+        run: docker push "$IMAGE"

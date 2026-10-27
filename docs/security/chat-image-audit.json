@@ -1,0 +1,6138 @@
+{
+  "service": "chat",
+  "scanner": "Trivy 0.76.1; official release checksum verified",
+  "scanned_at": "2026-10-27T23:57:36.966933785+01:00",
+  "image_id": "sha256:8a2646f1e3ab0fcc3eb2bd42579f14a54a66a5e64bcb8d91a4f8c1daf6116855",
+  "os": {
+    "Family": "debian",
+    "Name": "13.7"
+  },
+  "scanners": [
+    "vulnerability",
+    "full license"
+  ],
+  "full_raw_report_sha256": "ffb458b86f9d568f329701b3671e987c628e65584438c14b49fe6d0788f4e12a",
+  "vulnerabilities_by_severity": {
+    "LOW": 62,
+    "HIGH": 44,
+    "MEDIUM": 63,
+    "UNKNOWN": 1
+  },
+  "fixable_high_critical": 0,
+  "license_classifications": {
+    "restricted": 324,
+    "unknown": 184,
+    "notice": 217,
+    "reciprocal": 4,
+    "unencumbered": 5
+  },
+  "status": "Findings recorded; no production clearance",
+  "vulnerabilities": [
+    {
+      "VulnerabilityID": "CVE-2011-3374",
+      "PkgName": "apt",
+      "InstalledVersion": "3.0.3",
+      "FixedVersion": null,
+      "Severity": "LOW",
+      "Status": "affected",
+      "Title": "It was found that apt-key in apt, all versions, do not correctly valid ...",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2011-3374"
+    },
+    {
+      "VulnerabilityID": "TEMP-0841856-B18BAF",
+      "PkgName": "bash",
+      "InstalledVersion": "5.2.37-2+b10",
+      "FixedVersion": null,
+      "Severity": "LOW",
+      "Status": "affected",
+      "Title": "[Privilege escalation possible to other user than root]",
+      "PrimaryURL": "https://security-tracker.debian.org/tracker/TEMP-0841856-B18BAF"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-76642",
+      "PkgName": "bsdutils",
+      "InstalledVersion": "1:2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "Status": "affected",
+      "Title": "util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-76642"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-78408",
+      "PkgName": "bsdutils",
+      "InstalledVersion": "1:2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "Status": "affected",
+      "Title": "util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-78408"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-78409",
+      "PkgName": "bsdutils",
+      "InstalledVersion": "1:2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "Status": "affected",
+      "Title": "util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-78409"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-78410",
+      "PkgName": "bsdutils",
+      "InstalledVersion": "1:2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "Status": "affected",
+      "Title": "util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-78410"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-3184",
+      "PkgName": "bsdutils",
+      "InstalledVersion": "1:2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "util-linux: util-linux: Access control bypass due to improper hostname canonicalization",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-3184"
+    },
+    {
+      "VulnerabilityID": "CVE-2022-0563",
+      "PkgName": "bsdutils",
+      "InstalledVersion": "1:2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "LOW",
+      "Status": "affected",
+      "Title": "util-linux: partial disclosure of arbitrary files in chfn and chsh when compiled with libreadline",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-0563"
+    },
+    {
+      "VulnerabilityID": "CVE-2017-18018",
+      "PkgName": "coreutils",
+      "InstalledVersion": "9.7-3",
+      "FixedVersion": null,
+      "Severity": "LOW",
+      "Status": "affected",
+      "Title": "coreutils: race condition vulnerability in chown and chgrp",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2017-18018"
+    },
+    {
+      "VulnerabilityID": "CVE-2025-5278",
+      "PkgName": "coreutils",
+      "InstalledVersion": "9.7-3",
+      "FixedVersion": null,
+      "Severity": "LOW",
+      "Status": "affected",
+      "Title": "coreutils: Heap Buffer Under-Read in GNU Coreutils sort via Key Specification",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-5278"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-56391",
+      "PkgName": "coreutils",
+      "InstalledVersion": "9.7-3",
+      "FixedVersion": null,
+      "Severity": "LOW",
+      "Status": "affected",
+      "Title": "coreutils: GNU coreutils uniq: Denial of Service and information disclosure via out-of-bounds read with multibyte input",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-56391"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-56392",
+      "PkgName": "coreutils",
+      "InstalledVersion": "9.7-3",
+      "FixedVersion": null,
+      "Severity": "LOW",
+      "Status": "affected",
+      "Title": "coreutils: GNU coreutils unexpand: Denial of Service via crafted tab stop values",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-56392"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-102473",
+      "PkgName": "dash",
+      "InstalledVersion": "0.5.12-12",
+      "FixedVersion": null,
+      "Severity": "LOW",
+      "Status": "affected",
+      "Title": "dash: dash: Super-polynomial backtracking in pmatch when libc fnmatch is disabled",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-102473"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-102474",
+      "PkgName": "dash",
+      "InstalledVersion": "0.5.12-12",
+      "FixedVersion": null,
+      "Severity": "LOW",
+      "Status": "affected",
+      "Title": "dash: dash: Heap out-of-bounds write in conv_escape via undersized Unicode escape reservation",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-102474"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-53910",
+      "PkgName": "diffutils",
+      "InstalledVersion": "1:3.10-4",
+      "FixedVersion": null,
+      "Severity": "LOW",
+      "Status": "affected",
+      "Title": "diffutils: heap\u2011based buffer overflow due to multiple signed integer overflows in line\u2011mapping calculations",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-53910"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-102010",
+      "PkgName": "gcc-14-base",
+      "InstalledVersion": "14.2.0-19",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "gcc-toolset-15-gcc: gcc: gcc-toolset-16: gcc: Denial of Service via use-after-free in binary heap erase_if",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-102010"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-95619",
+      "PkgName": "gcc-14-base",
+      "InstalledVersion": "14.2.0-19",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "gcc: libstdc++ integer overflow in `new` operator",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-95619"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-54369",
+      "PkgName": "libacl1",
+      "InstalledVersion": "2.3.2-2+b1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "Status": "affected",
+      "Title": "acl: Symlink traversal privilege escalation via libacl functions",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-54369"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-54370",
+      "PkgName": "libacl1",
+      "InstalledVersion": "2.3.2-2+b1",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "acl: TOCTOU Symlink Traversal via getfacl/setfacl",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-54370"
+    },
+    {
+      "VulnerabilityID": "CVE-2011-3374",
+      "PkgName": "libapt-pkg7.0",
+      "InstalledVersion": "3.0.3",
+      "FixedVersion": null,
+      "Severity": "LOW",
+      "Status": "affected",
+      "Title": "It was found that apt-key in apt, all versions, do not correctly valid ...",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2011-3374"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-54371",
+      "PkgName": "libattr1",
+      "InstalledVersion": "1:2.5.2-3",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "attr: attr: Symlink Traversal Privilege Escalation via getfattr and setfattr",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-54371"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-76642",
+      "PkgName": "libblkid1",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "Status": "affected",
+      "Title": "util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-76642"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-78408",
+      "PkgName": "libblkid1",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "Status": "affected",
+      "Title": "util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-78408"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-78409",
+      "PkgName": "libblkid1",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "Status": "affected",
+      "Title": "util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-78409"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-78410",
+      "PkgName": "libblkid1",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "Status": "affected",
+      "Title": "util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-78410"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-3184",
+      "PkgName": "libblkid1",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "util-linux: util-linux: Access control bypass due to improper hostname canonicalization",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-3184"
+    },
+    {
+      "VulnerabilityID": "CVE-2022-0563",
+      "PkgName": "libblkid1",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "LOW",
+      "Status": "affected",
+      "Title": "util-linux: partial disclosure of arbitrary files in chfn and chsh when compiled with libreadline",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-0563"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-42250",
+      "PkgName": "libbz2-1.0",
+      "InstalledVersion": "1.0.8-6",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "bzip2: bzip2: Denial of Service in bzip2recover via a specially crafted file",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-42250"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-18374",
+      "PkgName": "libc-bin",
+      "InstalledVersion": "2.41-12+deb13u4",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "glibc: glibc: Heap buffer overflow via attacker-controlled fopen mode string",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-18374"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-19499",
+      "PkgName": "libc-bin",
+      "InstalledVersion": "2.41-12+deb13u4",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "glibc: Buffer Overflow in strfmon right-justification padding",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-19499"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-19542",
+      "PkgName": "libc-bin",
+      "InstalledVersion": "2.41-12+deb13u4",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "glibc: Fix out-of-bounds array write in tdelete",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-19542"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-5435",
+      "PkgName": "libc-bin",
+      "InstalledVersion": "2.41-12+deb13u4",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "glibc: glibc: Out-of-bounds write via TSIG record processing",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-5435"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-6238",
+      "PkgName": "libc-bin",
+      "InstalledVersion": "2.41-12+deb13u4",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "glibc: glibc: Application crash or uninitialized memory read via crafted DNS response",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-6238"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-6368",
+      "PkgName": "libc-bin",
+      "InstalledVersion": "2.41-12+deb13u4",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "glibc: glibc: Process abort due to invalid memory in wordexp",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-6368"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-6791",
+      "PkgName": "libc-bin",
+      "InstalledVersion": "2.41-12+deb13u4",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "glibc: Glibc: Denial of Service via stack exhaustion during tilde expansion",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-6791"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-77117",
+      "PkgName": "libc-bin",
+      "InstalledVersion": "2.41-12+deb13u4",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "glibc: Non-progress DoS in SHIFT_JISX0213 -&gt",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-77117"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-80489",
+      "PkgName": "libc-bin",
+      "InstalledVersion": "2.41-12+deb13u4",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "glibc: Non-progress DoS in EUC_JISX0213 -> UCS-4 conversion state",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-80489"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-8674",
+      "PkgName": "libc-bin",
+      "InstalledVersion": "2.41-12+deb13u4",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "glibc: glibc DNS stub resolver: Denial of Service via long search domain in configuration",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-8674"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-86805",
+      "PkgName": "libc-bin",
+      "InstalledVersion": "2.41-12+deb13u4",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "glibc: glibc: Privilege escalation and arbitrary code execution via TOCTOU race condition in dynamic loader",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-86805"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-89092",
+      "PkgName": "libc-bin",
+      "InstalledVersion": "2.41-12+deb13u4",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "glibc: nscd stack overflow leads to degraded DNS resolution",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-89092"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-95818",
+      "PkgName": "libc-bin",
+      "InstalledVersion": "2.41-12+deb13u4",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "glibc: glibc: Local attacker can cause denial of service and information disclosure via stack-based buffer overflow.",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-95818"
+    },
+    {
+      "VulnerabilityID": "CVE-2010-4756",
+      "PkgName": "libc-bin",
+      "InstalledVersion": "2.41-12+deb13u4",
+      "FixedVersion": null,
+      "Severity": "LOW",
+      "Status": "affected",
+      "Title": "glibc: glob implementation can cause excessive CPU and memory consumption due to crafted glob expressions",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2010-4756"
+    },
+    {
+      "VulnerabilityID": "CVE-2018-20796",
+      "PkgName": "libc-bin",
+      "InstalledVersion": "2.41-12+deb13u4",
+      "FixedVersion": null,
+      "Severity": "LOW",
+      "Status": "affected",
+      "Title": "glibc: uncontrolled recursion in function check_dst_limits_calc_pos_1 in posix/regexec.c",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2018-20796"
+    },
+    {
+      "VulnerabilityID": "CVE-2019-1010022",
+      "PkgName": "libc-bin",
+      "InstalledVersion": "2.41-12+deb13u4",
+      "FixedVersion": null,
+      "Severity": "LOW",
+      "Status": "affected",
+      "Title": "glibc: stack guard protection bypass",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2019-1010022"
+    },
+    {
+      "VulnerabilityID": "CVE-2019-1010023",
+      "PkgName": "libc-bin",
+      "InstalledVersion": "2.41-12+deb13u4",
+      "FixedVersion": null,
+      "Severity": "LOW",
+      "Status": "affected",
+      "Title": "glibc: running ldd on malicious ELF leads to code execution because of wrong size computation",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2019-1010023"
+    },
+    {
+      "VulnerabilityID": "CVE-2019-1010024",
+      "PkgName": "libc-bin",
+      "InstalledVersion": "2.41-12+deb13u4",
+      "FixedVersion": null,
+      "Severity": "LOW",
+      "Status": "affected",
+      "Title": "glibc: ASLR bypass using cache of thread stack and heap",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2019-1010024"
+    },
+    {
+      "VulnerabilityID": "CVE-2019-1010025",
+      "PkgName": "libc-bin",
+      "InstalledVersion": "2.41-12+deb13u4",
+      "FixedVersion": null,
+      "Severity": "LOW",
+      "Status": "affected",
+      "Title": "glibc: information disclosure of heap addresses of pthread_created thread",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2019-1010025"
+    },
+    {
+      "VulnerabilityID": "CVE-2019-9192",
+      "PkgName": "libc-bin",
+      "InstalledVersion": "2.41-12+deb13u4",
+      "FixedVersion": null,
+      "Severity": "LOW",
+      "Status": "affected",
+      "Title": "glibc: uncontrolled recursion in function check_dst_limits_calc_pos_1 in posix/regexec.c",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2019-9192"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-97399",
+      "PkgName": "libc-bin",
+      "InstalledVersion": "2.41-12+deb13u4",
+      "FixedVersion": null,
+      "Severity": "LOW",
+      "Status": "affected",
+      "Title": "glibc: glibc: Denial of Service via out-of-bounds read in strncasecmp",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-97399"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-18374",
+      "PkgName": "libc6",
+      "InstalledVersion": "2.41-12+deb13u4",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "glibc: glibc: Heap buffer overflow via attacker-controlled fopen mode string",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-18374"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-19499",
+      "PkgName": "libc6",
+      "InstalledVersion": "2.41-12+deb13u4",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "glibc: Buffer Overflow in strfmon right-justification padding",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-19499"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-19542",
+      "PkgName": "libc6",
+      "InstalledVersion": "2.41-12+deb13u4",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "glibc: Fix out-of-bounds array write in tdelete",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-19542"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-5435",
+      "PkgName": "libc6",
+      "InstalledVersion": "2.41-12+deb13u4",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "glibc: glibc: Out-of-bounds write via TSIG record processing",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-5435"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-6238",
+      "PkgName": "libc6",
+      "InstalledVersion": "2.41-12+deb13u4",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "glibc: glibc: Application crash or uninitialized memory read via crafted DNS response",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-6238"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-6368",
+      "PkgName": "libc6",
+      "InstalledVersion": "2.41-12+deb13u4",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "glibc: glibc: Process abort due to invalid memory in wordexp",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-6368"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-6791",
+      "PkgName": "libc6",
+      "InstalledVersion": "2.41-12+deb13u4",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "glibc: Glibc: Denial of Service via stack exhaustion during tilde expansion",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-6791"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-77117",
+      "PkgName": "libc6",
+      "InstalledVersion": "2.41-12+deb13u4",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "glibc: Non-progress DoS in SHIFT_JISX0213 -&gt",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-77117"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-80489",
+      "PkgName": "libc6",
+      "InstalledVersion": "2.41-12+deb13u4",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "glibc: Non-progress DoS in EUC_JISX0213 -> UCS-4 conversion state",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-80489"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-8674",
+      "PkgName": "libc6",
+      "InstalledVersion": "2.41-12+deb13u4",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "glibc: glibc DNS stub resolver: Denial of Service via long search domain in configuration",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-8674"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-86805",
+      "PkgName": "libc6",
+      "InstalledVersion": "2.41-12+deb13u4",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "glibc: glibc: Privilege escalation and arbitrary code execution via TOCTOU race condition in dynamic loader",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-86805"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-89092",
+      "PkgName": "libc6",
+      "InstalledVersion": "2.41-12+deb13u4",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "glibc: nscd stack overflow leads to degraded DNS resolution",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-89092"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-95818",
+      "PkgName": "libc6",
+      "InstalledVersion": "2.41-12+deb13u4",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "glibc: glibc: Local attacker can cause denial of service and information disclosure via stack-based buffer overflow.",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-95818"
+    },
+    {
+      "VulnerabilityID": "CVE-2010-4756",
+      "PkgName": "libc6",
+      "InstalledVersion": "2.41-12+deb13u4",
+      "FixedVersion": null,
+      "Severity": "LOW",
+      "Status": "affected",
+      "Title": "glibc: glob implementation can cause excessive CPU and memory consumption due to crafted glob expressions",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2010-4756"
+    },
+    {
+      "VulnerabilityID": "CVE-2018-20796",
+      "PkgName": "libc6",
+      "InstalledVersion": "2.41-12+deb13u4",
+      "FixedVersion": null,
+      "Severity": "LOW",
+      "Status": "affected",
+      "Title": "glibc: uncontrolled recursion in function check_dst_limits_calc_pos_1 in posix/regexec.c",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2018-20796"
+    },
+    {
+      "VulnerabilityID": "CVE-2019-1010022",
+      "PkgName": "libc6",
+      "InstalledVersion": "2.41-12+deb13u4",
+      "FixedVersion": null,
+      "Severity": "LOW",
+      "Status": "affected",
+      "Title": "glibc: stack guard protection bypass",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2019-1010022"
+    },
+    {
+      "VulnerabilityID": "CVE-2019-1010023",
+      "PkgName": "libc6",
+      "InstalledVersion": "2.41-12+deb13u4",
+      "FixedVersion": null,
+      "Severity": "LOW",
+      "Status": "affected",
+      "Title": "glibc: running ldd on malicious ELF leads to code execution because of wrong size computation",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2019-1010023"
+    },
+    {
+      "VulnerabilityID": "CVE-2019-1010024",
+      "PkgName": "libc6",
+      "InstalledVersion": "2.41-12+deb13u4",
+      "FixedVersion": null,
+      "Severity": "LOW",
+      "Status": "affected",
+      "Title": "glibc: ASLR bypass using cache of thread stack and heap",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2019-1010024"
+    },
+    {
+      "VulnerabilityID": "CVE-2019-1010025",
+      "PkgName": "libc6",
+      "InstalledVersion": "2.41-12+deb13u4",
+      "FixedVersion": null,
+      "Severity": "LOW",
+      "Status": "affected",
+      "Title": "glibc: information disclosure of heap addresses of pthread_created thread",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2019-1010025"
+    },
+    {
+      "VulnerabilityID": "CVE-2019-9192",
+      "PkgName": "libc6",
+      "InstalledVersion": "2.41-12+deb13u4",
+      "FixedVersion": null,
+      "Severity": "LOW",
+      "Status": "affected",
+      "Title": "glibc: uncontrolled recursion in function check_dst_limits_calc_pos_1 in posix/regexec.c",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2019-9192"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-97399",
+      "PkgName": "libc6",
+      "InstalledVersion": "2.41-12+deb13u4",
+      "FixedVersion": null,
+      "Severity": "LOW",
+      "Status": "affected",
+      "Title": "glibc: glibc: Denial of Service via out-of-bounds read in strncasecmp",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-97399"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-102010",
+      "PkgName": "libgcc-s1",
+      "InstalledVersion": "14.2.0-19",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "gcc-toolset-15-gcc: gcc: gcc-toolset-16: gcc: Denial of Service via use-after-free in binary heap erase_if",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-102010"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-95619",
+      "PkgName": "libgcc-s1",
+      "InstalledVersion": "14.2.0-19",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "gcc: libstdc++ integer overflow in `new` operator",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-95619"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-76642",
+      "PkgName": "liblastlog2-2",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "Status": "affected",
+      "Title": "util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-76642"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-78408",
+      "PkgName": "liblastlog2-2",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "Status": "affected",
+      "Title": "util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-78408"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-78409",
+      "PkgName": "liblastlog2-2",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "Status": "affected",
+      "Title": "util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-78409"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-78410",
+      "PkgName": "liblastlog2-2",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "Status": "affected",
+      "Title": "util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-78410"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-3184",
+      "PkgName": "liblastlog2-2",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "util-linux: util-linux: Access control bypass due to improper hostname canonicalization",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-3184"
+    },
+    {
+      "VulnerabilityID": "CVE-2022-0563",
+      "PkgName": "liblastlog2-2",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "LOW",
+      "Status": "affected",
+      "Title": "util-linux: partial disclosure of arbitrary files in chfn and chsh when compiled with libreadline",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-0563"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-76642",
+      "PkgName": "libmount1",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "Status": "affected",
+      "Title": "util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-76642"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-78408",
+      "PkgName": "libmount1",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "Status": "affected",
+      "Title": "util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-78408"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-78409",
+      "PkgName": "libmount1",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "Status": "affected",
+      "Title": "util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-78409"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-78410",
+      "PkgName": "libmount1",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "Status": "affected",
+      "Title": "util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-78410"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-3184",
+      "PkgName": "libmount1",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "util-linux: util-linux: Access control bypass due to improper hostname canonicalization",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-3184"
+    },
+    {
+      "VulnerabilityID": "CVE-2022-0563",
+      "PkgName": "libmount1",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "LOW",
+      "Status": "affected",
+      "Title": "util-linux: partial disclosure of arbitrary files in chfn and chsh when compiled with libreadline",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-0563"
+    },
+    {
+      "VulnerabilityID": "CVE-2025-69720",
+      "PkgName": "libncursesw6",
+      "InstalledVersion": "6.5+20250216-2",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "Status": "affected",
+      "Title": "ncurses: ncurses: Buffer overflow vulnerability may lead to arbitrary code execution.",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-69720"
+    },
+    {
+      "VulnerabilityID": "CVE-2025-6141",
+      "PkgName": "libncursesw6",
+      "InstalledVersion": "6.5+20250216-2",
+      "FixedVersion": null,
+      "Severity": "LOW",
+      "Status": "affected",
+      "Title": "gnu-ncurses: ncurses Stack Buffer Overflow",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-6141"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-54411",
+      "PkgName": "libpam-modules",
+      "InstalledVersion": "1.7.0-5",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "linux-pam: Plaintext password recovery via timing discrepancy in pam_userdb module",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-54411"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-54411",
+      "PkgName": "libpam-modules-bin",
+      "InstalledVersion": "1.7.0-5",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "linux-pam: Plaintext password recovery via timing discrepancy in pam_userdb module",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-54411"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-54411",
+      "PkgName": "libpam-runtime",
+      "InstalledVersion": "1.7.0-5",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "linux-pam: Plaintext password recovery via timing discrepancy in pam_userdb module",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-54411"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-54411",
+      "PkgName": "libpam0g",
+      "InstalledVersion": "1.7.0-5",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "linux-pam: Plaintext password recovery via timing discrepancy in pam_userdb module",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-54411"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-76642",
+      "PkgName": "libsmartcols1",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "Status": "affected",
+      "Title": "util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-76642"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-78408",
+      "PkgName": "libsmartcols1",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "Status": "affected",
+      "Title": "util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-78408"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-78409",
+      "PkgName": "libsmartcols1",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "Status": "affected",
+      "Title": "util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-78409"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-78410",
+      "PkgName": "libsmartcols1",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "Status": "affected",
+      "Title": "util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-78410"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-3184",
+      "PkgName": "libsmartcols1",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "util-linux: util-linux: Access control bypass due to improper hostname canonicalization",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-3184"
+    },
+    {
+      "VulnerabilityID": "CVE-2022-0563",
+      "PkgName": "libsmartcols1",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "LOW",
+      "Status": "affected",
+      "Title": "util-linux: partial disclosure of arbitrary files in chfn and chsh when compiled with libreadline",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-0563"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-50812",
+      "PkgName": "libsqlite3-0",
+      "InstalledVersion": "3.46.1-7+deb13u2",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "sqlite: SQLite: Denial of Service via malformed changeset in Session Extension",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-50812"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-50813",
+      "PkgName": "libsqlite3-0",
+      "InstalledVersion": "3.46.1-7+deb13u2",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "sqlite: SQLite: Information disclosure via Session Extension changeset merge path",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-50813"
+    },
+    {
+      "VulnerabilityID": "CVE-2021-45346",
+      "PkgName": "libsqlite3-0",
+      "InstalledVersion": "3.46.1-7+deb13u2",
+      "FixedVersion": null,
+      "Severity": "LOW",
+      "Status": "affected",
+      "Title": "sqlite: crafted SQL query allows a malicious user to obtain sensitive information",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2021-45346"
+    },
+    {
+      "VulnerabilityID": "CVE-2025-70873",
+      "PkgName": "libsqlite3-0",
+      "InstalledVersion": "3.46.1-7+deb13u2",
+      "FixedVersion": null,
+      "Severity": "LOW",
+      "Status": "affected",
+      "Title": "sqlite: SQLite: Information Disclosure via Crafted ZIP File",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-70873"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-102010",
+      "PkgName": "libstdc++6",
+      "InstalledVersion": "14.2.0-19",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "gcc-toolset-15-gcc: gcc: gcc-toolset-16: gcc: Denial of Service via use-after-free in binary heap erase_if",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-102010"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-95619",
+      "PkgName": "libstdc++6",
+      "InstalledVersion": "14.2.0-19",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "gcc: libstdc++ integer overflow in `new` operator",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-95619"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-16742",
+      "PkgName": "libsystemd0",
+      "InstalledVersion": "257.13-1~deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "Status": "affected",
+      "Title": "systemd: systemd-homed: Local privilege escalation via missing home-record signature verification",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-16742"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-15059",
+      "PkgName": "libsystemd0",
+      "InstalledVersion": "257.13-1~deb13u1",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "systemd: systemd-oomd: Unprivileged users can terminate arbitrary processes via IPC API",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-15059"
+    },
+    {
+      "VulnerabilityID": "CVE-2013-4392",
+      "PkgName": "libsystemd0",
+      "InstalledVersion": "257.13-1~deb13u1",
+      "FixedVersion": null,
+      "Severity": "LOW",
+      "Status": "affected",
+      "Title": "systemd: TOCTOU race condition when updating file permissions and SELinux security contexts",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2013-4392"
+    },
+    {
+      "VulnerabilityID": "CVE-2023-31437",
+      "PkgName": "libsystemd0",
+      "InstalledVersion": "257.13-1~deb13u1",
+      "FixedVersion": null,
+      "Severity": "LOW",
+      "Status": "affected",
+      "Title": "An issue was discovered in systemd 253. An attacker can modify a seale ...",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-31437"
+    },
+    {
+      "VulnerabilityID": "CVE-2023-31438",
+      "PkgName": "libsystemd0",
+      "InstalledVersion": "257.13-1~deb13u1",
+      "FixedVersion": null,
+      "Severity": "LOW",
+      "Status": "affected",
+      "Title": "An issue was discovered in systemd 253. An attacker can truncate a sea ...",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-31438"
+    },
+    {
+      "VulnerabilityID": "CVE-2023-31439",
+      "PkgName": "libsystemd0",
+      "InstalledVersion": "257.13-1~deb13u1",
+      "FixedVersion": null,
+      "Severity": "LOW",
+      "Status": "affected",
+      "Title": "An issue was discovered in systemd 253. An attacker can modify the con ...",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-31439"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-40228",
+      "PkgName": "libsystemd0",
+      "InstalledVersion": "257.13-1~deb13u1",
+      "FixedVersion": null,
+      "Severity": "LOW",
+      "Status": "affected",
+      "Title": "systemd: systemd-journald: Unintended output to user terminals via logger command",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-40228"
+    },
+    {
+      "VulnerabilityID": "CVE-2025-69720",
+      "PkgName": "libtinfo6",
+      "InstalledVersion": "6.5+20250216-2",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "Status": "affected",
+      "Title": "ncurses: ncurses: Buffer overflow vulnerability may lead to arbitrary code execution.",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-69720"
+    },
+    {
+      "VulnerabilityID": "CVE-2025-6141",
+      "PkgName": "libtinfo6",
+      "InstalledVersion": "6.5+20250216-2",
+      "FixedVersion": null,
+      "Severity": "LOW",
+      "Status": "affected",
+      "Title": "gnu-ncurses: ncurses Stack Buffer Overflow",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-6141"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-16742",
+      "PkgName": "libudev1",
+      "InstalledVersion": "257.13-1~deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "Status": "affected",
+      "Title": "systemd: systemd-homed: Local privilege escalation via missing home-record signature verification",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-16742"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-15059",
+      "PkgName": "libudev1",
+      "InstalledVersion": "257.13-1~deb13u1",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "systemd: systemd-oomd: Unprivileged users can terminate arbitrary processes via IPC API",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-15059"
+    },
+    {
+      "VulnerabilityID": "CVE-2013-4392",
+      "PkgName": "libudev1",
+      "InstalledVersion": "257.13-1~deb13u1",
+      "FixedVersion": null,
+      "Severity": "LOW",
+      "Status": "affected",
+      "Title": "systemd: TOCTOU race condition when updating file permissions and SELinux security contexts",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2013-4392"
+    },
+    {
+      "VulnerabilityID": "CVE-2023-31437",
+      "PkgName": "libudev1",
+      "InstalledVersion": "257.13-1~deb13u1",
+      "FixedVersion": null,
+      "Severity": "LOW",
+      "Status": "affected",
+      "Title": "An issue was discovered in systemd 253. An attacker can modify a seale ...",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-31437"
+    },
+    {
+      "VulnerabilityID": "CVE-2023-31438",
+      "PkgName": "libudev1",
+      "InstalledVersion": "257.13-1~deb13u1",
+      "FixedVersion": null,
+      "Severity": "LOW",
+      "Status": "affected",
+      "Title": "An issue was discovered in systemd 253. An attacker can truncate a sea ...",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-31438"
+    },
+    {
+      "VulnerabilityID": "CVE-2023-31439",
+      "PkgName": "libudev1",
+      "InstalledVersion": "257.13-1~deb13u1",
+      "FixedVersion": null,
+      "Severity": "LOW",
+      "Status": "affected",
+      "Title": "An issue was discovered in systemd 253. An attacker can modify the con ...",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-31439"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-40228",
+      "PkgName": "libudev1",
+      "InstalledVersion": "257.13-1~deb13u1",
+      "FixedVersion": null,
+      "Severity": "LOW",
+      "Status": "affected",
+      "Title": "systemd: systemd-journald: Unintended output to user terminals via logger command",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-40228"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-76642",
+      "PkgName": "libuuid1",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "Status": "affected",
+      "Title": "util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-76642"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-78408",
+      "PkgName": "libuuid1",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "Status": "affected",
+      "Title": "util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-78408"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-78409",
+      "PkgName": "libuuid1",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "Status": "affected",
+      "Title": "util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-78409"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-78410",
+      "PkgName": "libuuid1",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "Status": "affected",
+      "Title": "util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-78410"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-3184",
+      "PkgName": "libuuid1",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "util-linux: util-linux: Access control bypass due to improper hostname canonicalization",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-3184"
+    },
+    {
+      "VulnerabilityID": "CVE-2022-0563",
+      "PkgName": "libuuid1",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "LOW",
+      "Status": "affected",
+      "Title": "util-linux: partial disclosure of arbitrary files in chfn and chsh when compiled with libreadline",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-0563"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-76642",
+      "PkgName": "login",
+      "InstalledVersion": "1:4.16.0-2+really2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "Status": "affected",
+      "Title": "util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-76642"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-78408",
+      "PkgName": "login",
+      "InstalledVersion": "1:4.16.0-2+really2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "Status": "affected",
+      "Title": "util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-78408"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-78409",
+      "PkgName": "login",
+      "InstalledVersion": "1:4.16.0-2+really2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "Status": "affected",
+      "Title": "util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-78409"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-78410",
+      "PkgName": "login",
+      "InstalledVersion": "1:4.16.0-2+really2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "Status": "affected",
+      "Title": "util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-78410"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-3184",
+      "PkgName": "login",
+      "InstalledVersion": "1:4.16.0-2+really2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "util-linux: util-linux: Access control bypass due to improper hostname canonicalization",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-3184"
+    },
+    {
+      "VulnerabilityID": "CVE-2022-0563",
+      "PkgName": "login",
+      "InstalledVersion": "1:4.16.0-2+really2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "LOW",
+      "Status": "affected",
+      "Title": "util-linux: partial disclosure of arbitrary files in chfn and chsh when compiled with libreadline",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-0563"
+    },
+    {
+      "VulnerabilityID": "CVE-2007-5686",
+      "PkgName": "login.defs",
+      "InstalledVersion": "1:4.17.4-2",
+      "FixedVersion": null,
+      "Severity": "LOW",
+      "Status": "affected",
+      "Title": "initscripts in rPath Linux 1 sets insecure permissions for the /var/lo ...",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2007-5686"
+    },
+    {
+      "VulnerabilityID": "CVE-2024-56433",
+      "PkgName": "login.defs",
+      "InstalledVersion": "1:4.17.4-2",
+      "FixedVersion": null,
+      "Severity": "LOW",
+      "Status": "affected",
+      "Title": "shadow-utils: Default subordinate ID configuration in /etc/login.defs could lead to compromise",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-56433"
+    },
+    {
+      "VulnerabilityID": "TEMP-0628843-DBAD28",
+      "PkgName": "login.defs",
+      "InstalledVersion": "1:4.17.4-2",
+      "FixedVersion": null,
+      "Severity": "LOW",
+      "Status": "affected",
+      "Title": "[more related to CVE-2005-4890]",
+      "PrimaryURL": "https://security-tracker.debian.org/tracker/TEMP-0628843-DBAD28"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-76642",
+      "PkgName": "mount",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "Status": "affected",
+      "Title": "util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-76642"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-78408",
+      "PkgName": "mount",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "Status": "affected",
+      "Title": "util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-78408"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-78409",
+      "PkgName": "mount",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "Status": "affected",
+      "Title": "util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-78409"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-78410",
+      "PkgName": "mount",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "Status": "affected",
+      "Title": "util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-78410"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-3184",
+      "PkgName": "mount",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "util-linux: util-linux: Access control bypass due to improper hostname canonicalization",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-3184"
+    },
+    {
+      "VulnerabilityID": "CVE-2022-0563",
+      "PkgName": "mount",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "LOW",
+      "Status": "affected",
+      "Title": "util-linux: partial disclosure of arbitrary files in chfn and chsh when compiled with libreadline",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-0563"
+    },
+    {
+      "VulnerabilityID": "CVE-2025-69720",
+      "PkgName": "ncurses-base",
+      "InstalledVersion": "6.5+20250216-2",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "Status": "affected",
+      "Title": "ncurses: ncurses: Buffer overflow vulnerability may lead to arbitrary code execution.",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-69720"
+    },
+    {
+      "VulnerabilityID": "CVE-2025-6141",
+      "PkgName": "ncurses-base",
+      "InstalledVersion": "6.5+20250216-2",
+      "FixedVersion": null,
+      "Severity": "LOW",
+      "Status": "affected",
+      "Title": "gnu-ncurses: ncurses Stack Buffer Overflow",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-6141"
+    },
+    {
+      "VulnerabilityID": "CVE-2025-69720",
+      "PkgName": "ncurses-bin",
+      "InstalledVersion": "6.5+20250216-2",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "Status": "affected",
+      "Title": "ncurses: ncurses: Buffer overflow vulnerability may lead to arbitrary code execution.",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-69720"
+    },
+    {
+      "VulnerabilityID": "CVE-2025-6141",
+      "PkgName": "ncurses-bin",
+      "InstalledVersion": "6.5+20250216-2",
+      "FixedVersion": null,
+      "Severity": "LOW",
+      "Status": "affected",
+      "Title": "gnu-ncurses: ncurses Stack Buffer Overflow",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-6141"
+    },
+    {
+      "VulnerabilityID": "CVE-2007-5686",
+      "PkgName": "passwd",
+      "InstalledVersion": "1:4.17.4-2",
+      "FixedVersion": null,
+      "Severity": "LOW",
+      "Status": "affected",
+      "Title": "initscripts in rPath Linux 1 sets insecure permissions for the /var/lo ...",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2007-5686"
+    },
+    {
+      "VulnerabilityID": "CVE-2024-56433",
+      "PkgName": "passwd",
+      "InstalledVersion": "1:4.17.4-2",
+      "FixedVersion": null,
+      "Severity": "LOW",
+      "Status": "affected",
+      "Title": "shadow-utils: Default subordinate ID configuration in /etc/login.defs could lead to compromise",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-56433"
+    },
+    {
+      "VulnerabilityID": "TEMP-0628843-DBAD28",
+      "PkgName": "passwd",
+      "InstalledVersion": "1:4.17.4-2",
+      "FixedVersion": null,
+      "Severity": "LOW",
+      "Status": "affected",
+      "Title": "[more related to CVE-2005-4890]",
+      "PrimaryURL": "https://security-tracker.debian.org/tracker/TEMP-0628843-DBAD28"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-9538",
+      "PkgName": "perl-base",
+      "InstalledVersion": "5.40.1-6+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "Status": "fix_deferred",
+      "Title": "perl-Archive-Tar: perl-Archive-Tar: Denial of Service via crafted tar header with large entry size",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-9538"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-15534",
+      "PkgName": "perl-base",
+      "InstalledVersion": "5.40.1-6+deb13u1",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "fix_deferred",
+      "Title": "perl: Perl: Arbitrary code execution via out-of-bounds memory access in regular expression engine.",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-15534"
+    },
+    {
+      "VulnerabilityID": "CVE-2011-4116",
+      "PkgName": "perl-base",
+      "InstalledVersion": "5.40.1-6+deb13u1",
+      "FixedVersion": null,
+      "Severity": "LOW",
+      "Status": "affected",
+      "Title": "perl: File:: Temp insecure temporary file handling",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2011-4116"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-82560",
+      "PkgName": "perl-base",
+      "InstalledVersion": "5.40.1-6+deb13u1",
+      "FixedVersion": null,
+      "Severity": "UNKNOWN",
+      "Status": "affected",
+      "Title": "Pod::Text versions before 6.1.1 for Perl allow CPU and memory exhausti ...",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-82560"
+    },
+    {
+      "VulnerabilityID": "TEMP-0517018-A83CE6",
+      "PkgName": "sysvinit-utils",
+      "InstalledVersion": "3.14-4",
+      "FixedVersion": null,
+      "Severity": "LOW",
+      "Status": "affected",
+      "Title": "[sysvinit: no-root option in expert installer exposes locally exploitable security flaw]",
+      "PrimaryURL": "https://security-tracker.debian.org/tracker/TEMP-0517018-A83CE6"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-18477",
+      "PkgName": "tar",
+      "InstalledVersion": "1.35+dfsg-3.1",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "tar: tar: TOCTOU in incremental dumpdir 'X' rename handling allows restore path escape",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-18477"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-18508",
+      "PkgName": "tar",
+      "InstalledVersion": "1.35+dfsg-3.1",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "tar: tar: --one-top-level hardlink targets not confined to top-level directory enabling arbitrary file overwrite",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-18508"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-5704",
+      "PkgName": "tar",
+      "InstalledVersion": "1.35+dfsg-3.1",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "tar: tar: Hidden file injection via crafted archives",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-5704"
+    },
+    {
+      "VulnerabilityID": "CVE-2005-2541",
+      "PkgName": "tar",
+      "InstalledVersion": "1.35+dfsg-3.1",
+      "FixedVersion": null,
+      "Severity": "LOW",
+      "Status": "affected",
+      "Title": "tar: does not properly warn the user when extracting setuid or setgid files",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2005-2541"
+    },
+    {
+      "VulnerabilityID": "TEMP-0290435-0B57B5",
+      "PkgName": "tar",
+      "InstalledVersion": "1.35+dfsg-3.1",
+      "FixedVersion": null,
+      "Severity": "LOW",
+      "Status": "affected",
+      "Title": "[tar's rmt command may have undesired side effects]",
+      "PrimaryURL": "https://security-tracker.debian.org/tracker/TEMP-0290435-0B57B5"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-76642",
+      "PkgName": "util-linux",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "Status": "affected",
+      "Title": "util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-76642"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-78408",
+      "PkgName": "util-linux",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "Status": "affected",
+      "Title": "util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-78408"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-78409",
+      "PkgName": "util-linux",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "Status": "affected",
+      "Title": "util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-78409"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-78410",
+      "PkgName": "util-linux",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "HIGH",
+      "Status": "affected",
+      "Title": "util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-78410"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-3184",
+      "PkgName": "util-linux",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "util-linux: util-linux: Access control bypass due to improper hostname canonicalization",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-3184"
+    },
+    {
+      "VulnerabilityID": "CVE-2022-0563",
+      "PkgName": "util-linux",
+      "InstalledVersion": "2.41.5-0+deb13u1",
+      "FixedVersion": null,
+      "Severity": "LOW",
+      "Status": "affected",
+      "Title": "util-linux: partial disclosure of arbitrary files in chfn and chsh when compiled with libreadline",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-0563"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-27171",
+      "PkgName": "zlib1g",
+      "InstalledVersion": "1:1.3.dfsg+really1.3.1-1+b1",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "zlib: zlib: Denial of Service via infinite loop in CRC32 combine functions",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-27171"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-85091",
+      "PkgName": "zlib1g",
+      "InstalledVersion": "1:1.3.dfsg+really1.3.1-1+b1",
+      "FixedVersion": null,
+      "Severity": "MEDIUM",
+      "Status": "affected",
+      "Title": "zlib versions 1.3.1.2 through 1.3.2 contain a heap buffer overflow vul ...",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-85091"
+    },
+    {
+      "VulnerabilityID": "CVE-2025-8869",
+      "PkgName": "pip",
+      "InstalledVersion": "25.0.1",
+      "FixedVersion": "25.3",
+      "Severity": "MEDIUM",
+      "Status": "fixed",
+      "Title": "pip: pip missing checks on symbolic link extraction",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-8869"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-13346",
+      "PkgName": "pip",
+      "InstalledVersion": "25.0.1",
+      "FixedVersion": "26.2.0",
+      "Severity": "MEDIUM",
+      "Status": "fixed",
+      "Title": "pip: pip: Arbitrary file installation via malicious package indexes",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-13346"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-3219",
+      "PkgName": "pip",
+      "InstalledVersion": "25.0.1",
+      "FixedVersion": "26.1",
+      "Severity": "MEDIUM",
+      "Status": "fixed",
+      "Title": "pip: pip: Incorrect file installation due to improper archive handling",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-3219"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-6357",
+      "PkgName": "pip",
+      "InstalledVersion": "25.0.1",
+      "FixedVersion": "26.1",
+      "Severity": "MEDIUM",
+      "Status": "fixed",
+      "Title": "pip: pip: Arbitrary code execution or information disclosure via malicious wheel package installation",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-6357"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-8643",
+      "PkgName": "pip",
+      "InstalledVersion": "25.0.1",
+      "FixedVersion": "26.1.2",
+      "Severity": "MEDIUM",
+      "Status": "fixed",
+      "Title": "python-pip: Path traversal via malicious entry point name in pip wheel installation allows arbitrary file overwrite",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-8643"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-1703",
+      "PkgName": "pip",
+      "InstalledVersion": "25.0.1",
+      "FixedVersion": "26.0",
+      "Severity": "LOW",
+      "Status": "fixed",
+      "Title": "pip: pip: Information disclosure via path traversal when installing crafted wheel archives",
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-1703"
+    }
+  ],
+  "licenses": [
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "adduser",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "adduser",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "apt",
+      "FilePath": ""
+    },
+    {
+      "Name": "curl",
+      "Category": "unknown",
+      "PkgName": "apt",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "apt",
+      "FilePath": ""
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "apt",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "apt",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "base-files",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "base-files",
+      "FilePath": ""
+    },
+    {
+      "Name": "verbatim",
+      "Category": "unknown",
+      "PkgName": "base-files",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "base-passwd",
+      "FilePath": ""
+    },
+    {
+      "Name": "public-domain",
+      "Category": "unknown",
+      "PkgName": "base-passwd",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "bash",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "bash",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3+ with Bison exception",
+      "Category": "unknown",
+      "PkgName": "bash",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "bash",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "bash",
+      "FilePath": ""
+    },
+    {
+      "Name": "GFDL-1.3-no-invariants-only",
+      "Category": "unknown",
+      "PkgName": "bash",
+      "FilePath": ""
+    },
+    {
+      "Name": "GFDL-1.3-only",
+      "Category": "unknown",
+      "PkgName": "bash",
+      "FilePath": ""
+    },
+    {
+      "Name": "Latex2e",
+      "Category": "unknown",
+      "PkgName": "bash",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-4-Clause-UC",
+      "Category": "notice",
+      "PkgName": "bash",
+      "FilePath": ""
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "bash",
+      "FilePath": ""
+    },
+    {
+      "Name": "permissive",
+      "Category": "unknown",
+      "PkgName": "bash",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "bsdutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "bsdutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "bsdutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-or-later",
+      "Category": "restricted",
+      "PkgName": "bsdutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "public-domain",
+      "Category": "unknown",
+      "PkgName": "bsdutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-4-Clause",
+      "Category": "notice",
+      "PkgName": "bsdutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "bsdutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "ISC",
+      "Category": "notice",
+      "PkgName": "bsdutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "bsdutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSLA",
+      "Category": "unknown",
+      "PkgName": "bsdutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "bsdutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-2-Clause",
+      "Category": "notice",
+      "PkgName": "bsdutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "bsdutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "bsdutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "bsdutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-only",
+      "Category": "restricted",
+      "PkgName": "bsdutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "bsdutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "ca-certificates",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "ca-certificates",
+      "FilePath": ""
+    },
+    {
+      "Name": "MPL-2.0",
+      "Category": "reciprocal",
+      "PkgName": "ca-certificates",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "coreutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-4-Clause-UC",
+      "Category": "notice",
+      "PkgName": "coreutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "coreutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "ISC",
+      "Category": "notice",
+      "PkgName": "coreutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "FSFULLR",
+      "Category": "unknown",
+      "PkgName": "coreutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "GFDL-1.3-no-invariants-only",
+      "Category": "unknown",
+      "PkgName": "coreutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "GFDL-1.3-only",
+      "Category": "unknown",
+      "PkgName": "coreutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "dash",
+      "FilePath": ""
+    },
+    {
+      "Name": "public-domain",
+      "Category": "unknown",
+      "PkgName": "dash",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "dash",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "dash",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-2-Clause",
+      "Category": "notice",
+      "PkgName": "debconf",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "debian-archive-keyring",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "debianutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "debianutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "public-domain",
+      "Category": "unknown",
+      "PkgName": "debianutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "SMAIL-GPL",
+      "Category": "unknown",
+      "PkgName": "debianutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "diffutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "FSFULLR",
+      "Category": "unknown",
+      "PkgName": "diffutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-or-later",
+      "Category": "restricted",
+      "PkgName": "diffutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-with-autoconf-exception+",
+      "Category": "restricted",
+      "PkgName": "diffutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "diffutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3+ with texinfo exception",
+      "Category": "unknown",
+      "PkgName": "diffutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "diffutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "diffutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "X11",
+      "Category": "notice",
+      "PkgName": "diffutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "FSFAP",
+      "Category": "unknown",
+      "PkgName": "diffutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "GFDL-1.3-no-invariants-only",
+      "Category": "unknown",
+      "PkgName": "diffutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "diffutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "diffutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "public-domain",
+      "Category": "unknown",
+      "PkgName": "diffutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "diffutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-only",
+      "Category": "restricted",
+      "PkgName": "diffutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "diffutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "GFDL-1.3-only",
+      "Category": "unknown",
+      "PkgName": "diffutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "dpkg",
+      "FilePath": ""
+    },
+    {
+      "Name": "public-domain-s-s-d",
+      "Category": "unknown",
+      "PkgName": "dpkg",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "dpkg",
+      "FilePath": ""
+    },
+    {
+      "Name": "GFDL-1.3-no-invariants-or-later",
+      "Category": "unknown",
+      "PkgName": "findutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "findutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "FSFAP",
+      "Category": "unknown",
+      "PkgName": "findutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2+ with Autoconf-data exception",
+      "Category": "unknown",
+      "PkgName": "findutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3+ with Autoconf-data exception",
+      "Category": "unknown",
+      "PkgName": "findutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "FSFULLR",
+      "Category": "unknown",
+      "PkgName": "findutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "findutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "X11",
+      "Category": "notice",
+      "PkgName": "findutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "public-domain",
+      "Category": "unknown",
+      "PkgName": "findutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-or-later",
+      "Category": "restricted",
+      "PkgName": "findutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL with automake exception",
+      "Category": "unknown",
+      "PkgName": "findutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "findutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "findutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "findutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3+ with Bison-2.2 exception",
+      "Category": "unknown",
+      "PkgName": "findutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "findutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "ISC",
+      "Category": "notice",
+      "PkgName": "findutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "GFDL-1.3-only",
+      "Category": "unknown",
+      "PkgName": "findutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "findutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "findutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "findutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-only",
+      "Category": "restricted",
+      "PkgName": "findutils",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "gcc-14-base",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "gcc-14-base",
+      "FilePath": ""
+    },
+    {
+      "Name": "GFDL-1.2-only",
+      "Category": "unknown",
+      "PkgName": "gcc-14-base",
+      "FilePath": ""
+    },
+    {
+      "Name": "Artistic-2.0",
+      "Category": "notice",
+      "PkgName": "gcc-14-base",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "gcc-14-base",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "grep",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "grep",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "gzip",
+      "FilePath": ""
+    },
+    {
+      "Name": "GFDL-1.3+-no-invariant",
+      "Category": "unknown",
+      "PkgName": "gzip",
+      "FilePath": ""
+    },
+    {
+      "Name": "FSF-manpages",
+      "Category": "unknown",
+      "PkgName": "gzip",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "gzip",
+      "FilePath": ""
+    },
+    {
+      "Name": "GFDL-3",
+      "Category": "unknown",
+      "PkgName": "gzip",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "hostname",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "init-system-helpers",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "init-system-helpers",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "init-system-helpers",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libacl1",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libacl1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libacl1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-only",
+      "Category": "restricted",
+      "PkgName": "libacl1",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libapt-pkg7.0",
+      "FilePath": ""
+    },
+    {
+      "Name": "curl",
+      "Category": "unknown",
+      "PkgName": "libapt-pkg7.0",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "libapt-pkg7.0",
+      "FilePath": ""
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "libapt-pkg7.0",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libapt-pkg7.0",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libattr1",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libattr1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libattr1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-only",
+      "Category": "restricted",
+      "PkgName": "libattr1",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libaudit-common",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-only",
+      "Category": "restricted",
+      "PkgName": "libaudit-common",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-1.0-only",
+      "Category": "restricted",
+      "PkgName": "libaudit-common",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libaudit1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-only",
+      "Category": "restricted",
+      "PkgName": "libaudit1",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-1.0-only",
+      "Category": "restricted",
+      "PkgName": "libaudit1",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libblkid1",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libblkid1",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libblkid1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-or-later",
+      "Category": "restricted",
+      "PkgName": "libblkid1",
+      "FilePath": ""
+    },
+    {
+      "Name": "public-domain",
+      "Category": "unknown",
+      "PkgName": "libblkid1",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-4-Clause",
+      "Category": "notice",
+      "PkgName": "libblkid1",
+      "FilePath": ""
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "libblkid1",
+      "FilePath": ""
+    },
+    {
+      "Name": "ISC",
+      "Category": "notice",
+      "PkgName": "libblkid1",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "libblkid1",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSLA",
+      "Category": "unknown",
+      "PkgName": "libblkid1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libblkid1",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-2-Clause",
+      "Category": "notice",
+      "PkgName": "libblkid1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libblkid1",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "libblkid1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libblkid1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-only",
+      "Category": "restricted",
+      "PkgName": "libblkid1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "libblkid1",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "libbsd0",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-clause-Regents",
+      "Category": "unknown",
+      "PkgName": "libbsd0",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-2-Clause-NetBSD",
+      "Category": "notice",
+      "PkgName": "libbsd0",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-clause-author",
+      "Category": "unknown",
+      "PkgName": "libbsd0",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-clause-John-Birrell",
+      "Category": "unknown",
+      "PkgName": "libbsd0",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-5-clause-Peter-Wemm",
+      "Category": "unknown",
+      "PkgName": "libbsd0",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-2-Clause",
+      "Category": "notice",
+      "PkgName": "libbsd0",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-2-clause-verbatim",
+      "Category": "unknown",
+      "PkgName": "libbsd0",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-2-clause-author",
+      "Category": "unknown",
+      "PkgName": "libbsd0",
+      "FilePath": ""
+    },
+    {
+      "Name": "ISC",
+      "Category": "notice",
+      "PkgName": "libbsd0",
+      "FilePath": ""
+    },
+    {
+      "Name": "ISC-Original",
+      "Category": "unknown",
+      "PkgName": "libbsd0",
+      "FilePath": ""
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "libbsd0",
+      "FilePath": ""
+    },
+    {
+      "Name": "public-domain",
+      "Category": "unknown",
+      "PkgName": "libbsd0",
+      "FilePath": ""
+    },
+    {
+      "Name": "Beerware",
+      "Category": "unknown",
+      "PkgName": "libbsd0",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "libbz2-1.0",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libbz2-1.0",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-or-later",
+      "Category": "restricted",
+      "PkgName": "libc-bin",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libc-bin",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1+-with-link-exception",
+      "Category": "unknown",
+      "PkgName": "libc-bin",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libc-bin",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libc-bin",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2+-with-link-exception",
+      "Category": "unknown",
+      "PkgName": "libc-bin",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libc-bin",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libc-bin",
+      "FilePath": ""
+    },
+    {
+      "Name": "FSFAP",
+      "Category": "unknown",
+      "PkgName": "libc-bin",
+      "FilePath": ""
+    },
+    {
+      "Name": "Carnegie",
+      "Category": "unknown",
+      "PkgName": "libc-bin",
+      "FilePath": ""
+    },
+    {
+      "Name": "Inner-Net",
+      "Category": "unknown",
+      "PkgName": "libc-bin",
+      "FilePath": ""
+    },
+    {
+      "Name": "MIT-like-Lord",
+      "Category": "unknown",
+      "PkgName": "libc-bin",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-like-Spencer",
+      "Category": "unknown",
+      "PkgName": "libc-bin",
+      "FilePath": ""
+    },
+    {
+      "Name": "PCRE",
+      "Category": "unknown",
+      "PkgName": "libc-bin",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-clause-Carnegie",
+      "Category": "unknown",
+      "PkgName": "libc-bin",
+      "FilePath": ""
+    },
+    {
+      "Name": "Unicode-DFS-2016",
+      "Category": "notice",
+      "PkgName": "libc-bin",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSL-1.0",
+      "Category": "notice",
+      "PkgName": "libc-bin",
+      "FilePath": ""
+    },
+    {
+      "Name": "SunPro",
+      "Category": "unknown",
+      "PkgName": "libc-bin",
+      "FilePath": ""
+    },
+    {
+      "Name": "CORE-MATH",
+      "Category": "unknown",
+      "PkgName": "libc-bin",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-clause-Berkeley",
+      "Category": "unknown",
+      "PkgName": "libc-bin",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-clause-WIDE",
+      "Category": "unknown",
+      "PkgName": "libc-bin",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-2-Clause",
+      "Category": "notice",
+      "PkgName": "libc-bin",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-clause-Oracle",
+      "Category": "unknown",
+      "PkgName": "libc-bin",
+      "FilePath": ""
+    },
+    {
+      "Name": "DEC",
+      "Category": "unknown",
+      "PkgName": "libc-bin",
+      "FilePath": ""
+    },
+    {
+      "Name": "IBM",
+      "Category": "unknown",
+      "PkgName": "libc-bin",
+      "FilePath": ""
+    },
+    {
+      "Name": "ISC",
+      "Category": "notice",
+      "PkgName": "libc-bin",
+      "FilePath": ""
+    },
+    {
+      "Name": "Univ-Coimbra",
+      "Category": "unknown",
+      "PkgName": "libc-bin",
+      "FilePath": ""
+    },
+    {
+      "Name": "public-domain",
+      "Category": "unknown",
+      "PkgName": "libc-bin",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "libc-bin",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libc-bin",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-only",
+      "Category": "restricted",
+      "PkgName": "libc-bin",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "libc-bin",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-or-later",
+      "Category": "restricted",
+      "PkgName": "libc6",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libc6",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1+-with-link-exception",
+      "Category": "unknown",
+      "PkgName": "libc6",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libc6",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libc6",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2+-with-link-exception",
+      "Category": "unknown",
+      "PkgName": "libc6",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libc6",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libc6",
+      "FilePath": ""
+    },
+    {
+      "Name": "FSFAP",
+      "Category": "unknown",
+      "PkgName": "libc6",
+      "FilePath": ""
+    },
+    {
+      "Name": "Carnegie",
+      "Category": "unknown",
+      "PkgName": "libc6",
+      "FilePath": ""
+    },
+    {
+      "Name": "Inner-Net",
+      "Category": "unknown",
+      "PkgName": "libc6",
+      "FilePath": ""
+    },
+    {
+      "Name": "MIT-like-Lord",
+      "Category": "unknown",
+      "PkgName": "libc6",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-like-Spencer",
+      "Category": "unknown",
+      "PkgName": "libc6",
+      "FilePath": ""
+    },
+    {
+      "Name": "PCRE",
+      "Category": "unknown",
+      "PkgName": "libc6",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-clause-Carnegie",
+      "Category": "unknown",
+      "PkgName": "libc6",
+      "FilePath": ""
+    },
+    {
+      "Name": "Unicode-DFS-2016",
+      "Category": "notice",
+      "PkgName": "libc6",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSL-1.0",
+      "Category": "notice",
+      "PkgName": "libc6",
+      "FilePath": ""
+    },
+    {
+      "Name": "SunPro",
+      "Category": "unknown",
+      "PkgName": "libc6",
+      "FilePath": ""
+    },
+    {
+      "Name": "CORE-MATH",
+      "Category": "unknown",
+      "PkgName": "libc6",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-clause-Berkeley",
+      "Category": "unknown",
+      "PkgName": "libc6",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-clause-WIDE",
+      "Category": "unknown",
+      "PkgName": "libc6",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-2-Clause",
+      "Category": "notice",
+      "PkgName": "libc6",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-clause-Oracle",
+      "Category": "unknown",
+      "PkgName": "libc6",
+      "FilePath": ""
+    },
+    {
+      "Name": "DEC",
+      "Category": "unknown",
+      "PkgName": "libc6",
+      "FilePath": ""
+    },
+    {
+      "Name": "IBM",
+      "Category": "unknown",
+      "PkgName": "libc6",
+      "FilePath": ""
+    },
+    {
+      "Name": "ISC",
+      "Category": "notice",
+      "PkgName": "libc6",
+      "FilePath": ""
+    },
+    {
+      "Name": "Univ-Coimbra",
+      "Category": "unknown",
+      "PkgName": "libc6",
+      "FilePath": ""
+    },
+    {
+      "Name": "public-domain",
+      "Category": "unknown",
+      "PkgName": "libc6",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "libc6",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libc6",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-only",
+      "Category": "restricted",
+      "PkgName": "libc6",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "libc6",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-or-later",
+      "Category": "restricted",
+      "PkgName": "libcap-ng0",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libcap-ng0",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "libcap-ng0",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-only",
+      "Category": "restricted",
+      "PkgName": "libcap-ng0",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libcap-ng0",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "libcap2",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libcap2",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libcap2",
+      "FilePath": ""
+    },
+    {
+      "Name": "Sleepycat",
+      "Category": "restricted",
+      "PkgName": "libdb5.3t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "libdb5.3t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "MS-PL",
+      "Category": "notice",
+      "PkgName": "libdb5.3t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libdb5.3t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "Artistic-2.0",
+      "Category": "notice",
+      "PkgName": "libdb5.3t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "X11",
+      "Category": "notice",
+      "PkgName": "libdb5.3t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "MIT-old",
+      "Category": "unknown",
+      "PkgName": "libdb5.3t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "TCL-like",
+      "Category": "unknown",
+      "PkgName": "libdb5.3t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-clause-fjord",
+      "Category": "unknown",
+      "PkgName": "libdb5.3t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "libdb5.3t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "Zlib",
+      "Category": "notice",
+      "PkgName": "libdb5.3t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-2-Clause",
+      "Category": "notice",
+      "PkgName": "libdebconfclient0",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libdebconfclient0",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libdebconfclient0",
+      "FilePath": ""
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "libffi8",
+      "FilePath": ""
+    },
+    {
+      "Name": "X11",
+      "Category": "notice",
+      "PkgName": "libffi8",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libffi8",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libffi8",
+      "FilePath": ""
+    },
+    {
+      "Name": "MPL-1.1",
+      "Category": "reciprocal",
+      "PkgName": "libffi8",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-or-later",
+      "Category": "restricted",
+      "PkgName": "libffi8",
+      "FilePath": ""
+    },
+    {
+      "Name": "public-domain",
+      "Category": "unknown",
+      "PkgName": "libffi8",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libgdbm6t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libgdbm6t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "GFDL-1.3-no-invariants-or-later",
+      "Category": "unknown",
+      "PkgName": "libgdbm6t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "libgdbm6t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libgdbm6t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libgmp10",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libgmp10",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libgmp10",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3+ with Bison exception",
+      "Category": "unknown",
+      "PkgName": "libgmp10",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libgmp10",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "libgmp10",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "libgmp10",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libhogweed6t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libhogweed6t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libhogweed6t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libhogweed6t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "libhogweed6t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-with-autoconf-exception+",
+      "Category": "restricted",
+      "PkgName": "libhogweed6t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "public-domain",
+      "Category": "unknown",
+      "PkgName": "libhogweed6t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libhogweed6t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "GAP",
+      "Category": "unknown",
+      "PkgName": "libhogweed6t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "liblastlog2-2",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "liblastlog2-2",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "liblastlog2-2",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-or-later",
+      "Category": "restricted",
+      "PkgName": "liblastlog2-2",
+      "FilePath": ""
+    },
+    {
+      "Name": "public-domain",
+      "Category": "unknown",
+      "PkgName": "liblastlog2-2",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-4-Clause",
+      "Category": "notice",
+      "PkgName": "liblastlog2-2",
+      "FilePath": ""
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "liblastlog2-2",
+      "FilePath": ""
+    },
+    {
+      "Name": "ISC",
+      "Category": "notice",
+      "PkgName": "liblastlog2-2",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "liblastlog2-2",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSLA",
+      "Category": "unknown",
+      "PkgName": "liblastlog2-2",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "liblastlog2-2",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-2-Clause",
+      "Category": "notice",
+      "PkgName": "liblastlog2-2",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "liblastlog2-2",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "liblastlog2-2",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "liblastlog2-2",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-only",
+      "Category": "restricted",
+      "PkgName": "liblastlog2-2",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "liblastlog2-2",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "liblz4-1",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-2-Clause",
+      "Category": "notice",
+      "PkgName": "liblz4-1",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "liblz4-1",
+      "FilePath": ""
+    },
+    {
+      "Name": "0BSD",
+      "Category": "unencumbered",
+      "PkgName": "liblzma5",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "liblzma5",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-or-later",
+      "Category": "restricted",
+      "PkgName": "liblzma5",
+      "FilePath": ""
+    },
+    {
+      "Name": "FSFULLR",
+      "Category": "unknown",
+      "PkgName": "liblzma5",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-or-later-WITH-Autoconf-exception-macro",
+      "Category": "unknown",
+      "PkgName": "liblzma5",
+      "FilePath": ""
+    },
+    {
+      "Name": "none",
+      "Category": "unknown",
+      "PkgName": "liblzma5",
+      "FilePath": ""
+    },
+    {
+      "Name": "PD",
+      "Category": "unknown",
+      "PkgName": "liblzma5",
+      "FilePath": ""
+    },
+    {
+      "Name": "permissive-nowarranty",
+      "Category": "unknown",
+      "PkgName": "liblzma5",
+      "FilePath": ""
+    },
+    {
+      "Name": "FSFUL",
+      "Category": "unknown",
+      "PkgName": "liblzma5",
+      "FilePath": ""
+    },
+    {
+      "Name": "noderivs",
+      "Category": "unknown",
+      "PkgName": "liblzma5",
+      "FilePath": ""
+    },
+    {
+      "Name": "PD-debian",
+      "Category": "unknown",
+      "PkgName": "liblzma5",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-only",
+      "Category": "restricted",
+      "PkgName": "liblzma5",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "liblzma5",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "liblzma5",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "libmd0",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-clause-Aaron-D-Gifford",
+      "Category": "unknown",
+      "PkgName": "libmd0",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-2-Clause",
+      "Category": "notice",
+      "PkgName": "libmd0",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-2-Clause-NetBSD",
+      "Category": "notice",
+      "PkgName": "libmd0",
+      "FilePath": ""
+    },
+    {
+      "Name": "ISC",
+      "Category": "notice",
+      "PkgName": "libmd0",
+      "FilePath": ""
+    },
+    {
+      "Name": "Beerware",
+      "Category": "unknown",
+      "PkgName": "libmd0",
+      "FilePath": ""
+    },
+    {
+      "Name": "public-domain-md4",
+      "Category": "unknown",
+      "PkgName": "libmd0",
+      "FilePath": ""
+    },
+    {
+      "Name": "public-domain-md5",
+      "Category": "unknown",
+      "PkgName": "libmd0",
+      "FilePath": ""
+    },
+    {
+      "Name": "public-domain-sha1",
+      "Category": "unknown",
+      "PkgName": "libmd0",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libmount1",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libmount1",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libmount1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-or-later",
+      "Category": "restricted",
+      "PkgName": "libmount1",
+      "FilePath": ""
+    },
+    {
+      "Name": "public-domain",
+      "Category": "unknown",
+      "PkgName": "libmount1",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-4-Clause",
+      "Category": "notice",
+      "PkgName": "libmount1",
+      "FilePath": ""
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "libmount1",
+      "FilePath": ""
+    },
+    {
+      "Name": "ISC",
+      "Category": "notice",
+      "PkgName": "libmount1",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "libmount1",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSLA",
+      "Category": "unknown",
+      "PkgName": "libmount1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libmount1",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-2-Clause",
+      "Category": "notice",
+      "PkgName": "libmount1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libmount1",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "libmount1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libmount1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-only",
+      "Category": "restricted",
+      "PkgName": "libmount1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "libmount1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libnettle8t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libnettle8t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libnettle8t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libnettle8t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "libnettle8t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-with-autoconf-exception+",
+      "Category": "restricted",
+      "PkgName": "libnettle8t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "public-domain",
+      "Category": "unknown",
+      "PkgName": "libnettle8t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libnettle8t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "GAP",
+      "Category": "unknown",
+      "PkgName": "libnettle8t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "libpam-modules",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libpam-modules",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-1.0-only",
+      "Category": "restricted",
+      "PkgName": "libpam-modules",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libpam-modules",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "libpam-modules",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3+ with Bison exception",
+      "Category": "unknown",
+      "PkgName": "libpam-modules",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-tcp_wrappers",
+      "Category": "unknown",
+      "PkgName": "libpam-modules",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libpam-modules",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libpam-modules",
+      "FilePath": ""
+    },
+    {
+      "Name": "public-domain",
+      "Category": "unknown",
+      "PkgName": "libpam-modules",
+      "FilePath": ""
+    },
+    {
+      "Name": "Beerware",
+      "Category": "unknown",
+      "PkgName": "libpam-modules",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "libpam-modules-bin",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libpam-modules-bin",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-1.0-only",
+      "Category": "restricted",
+      "PkgName": "libpam-modules-bin",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libpam-modules-bin",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "libpam-modules-bin",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3+ with Bison exception",
+      "Category": "unknown",
+      "PkgName": "libpam-modules-bin",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-tcp_wrappers",
+      "Category": "unknown",
+      "PkgName": "libpam-modules-bin",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libpam-modules-bin",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libpam-modules-bin",
+      "FilePath": ""
+    },
+    {
+      "Name": "public-domain",
+      "Category": "unknown",
+      "PkgName": "libpam-modules-bin",
+      "FilePath": ""
+    },
+    {
+      "Name": "Beerware",
+      "Category": "unknown",
+      "PkgName": "libpam-modules-bin",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "libpam-runtime",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libpam-runtime",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-1.0-only",
+      "Category": "restricted",
+      "PkgName": "libpam-runtime",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libpam-runtime",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "libpam-runtime",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3+ with Bison exception",
+      "Category": "unknown",
+      "PkgName": "libpam-runtime",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-tcp_wrappers",
+      "Category": "unknown",
+      "PkgName": "libpam-runtime",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libpam-runtime",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libpam-runtime",
+      "FilePath": ""
+    },
+    {
+      "Name": "public-domain",
+      "Category": "unknown",
+      "PkgName": "libpam-runtime",
+      "FilePath": ""
+    },
+    {
+      "Name": "Beerware",
+      "Category": "unknown",
+      "PkgName": "libpam-runtime",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "libpam0g",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libpam0g",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-1.0-only",
+      "Category": "restricted",
+      "PkgName": "libpam0g",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libpam0g",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "libpam0g",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3+ with Bison exception",
+      "Category": "unknown",
+      "PkgName": "libpam0g",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-tcp_wrappers",
+      "Category": "unknown",
+      "PkgName": "libpam0g",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libpam0g",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libpam0g",
+      "FilePath": ""
+    },
+    {
+      "Name": "public-domain",
+      "Category": "unknown",
+      "PkgName": "libpam0g",
+      "FilePath": ""
+    },
+    {
+      "Name": "Beerware",
+      "Category": "unknown",
+      "PkgName": "libpam0g",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-clause-Cambridge with BINARY LIBRARY-LIKE PACKAGES exception",
+      "Category": "unknown",
+      "PkgName": "libpcre2-8-0",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "libpcre2-8-0",
+      "FilePath": ""
+    },
+    {
+      "Name": "X11",
+      "Category": "notice",
+      "PkgName": "libpcre2-8-0",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-2-Clause",
+      "Category": "notice",
+      "PkgName": "libpcre2-8-0",
+      "FilePath": ""
+    },
+    {
+      "Name": "public-domain",
+      "Category": "unknown",
+      "PkgName": "libpcre2-8-0",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libreadline8t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "libreadline8t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libreadline8t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libreadline8t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "GFDL-1.3-no-invariants-or-later",
+      "Category": "unknown",
+      "PkgName": "libreadline8t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "GFDL-1.3-or-later",
+      "Category": "unknown",
+      "PkgName": "libreadline8t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "ISC-no-attribution",
+      "Category": "unknown",
+      "PkgName": "libreadline8t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-only",
+      "Category": "restricted",
+      "PkgName": "libseccomp2",
+      "FilePath": ""
+    },
+    {
+      "Name": "public-domain",
+      "Category": "unknown",
+      "PkgName": "libselinux1",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libselinux1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-or-later",
+      "Category": "restricted",
+      "PkgName": "libsemanage-common",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-only",
+      "Category": "restricted",
+      "PkgName": "libsemanage-common",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libsemanage-common",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-or-later",
+      "Category": "restricted",
+      "PkgName": "libsemanage2",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-only",
+      "Category": "restricted",
+      "PkgName": "libsemanage2",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libsemanage2",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-or-later",
+      "Category": "restricted",
+      "PkgName": "libsepol2",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-only",
+      "Category": "restricted",
+      "PkgName": "libsepol2",
+      "FilePath": ""
+    },
+    {
+      "Name": "Zlib",
+      "Category": "notice",
+      "PkgName": "libsepol2",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libsepol2",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libsepol2",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libsmartcols1",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libsmartcols1",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libsmartcols1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-or-later",
+      "Category": "restricted",
+      "PkgName": "libsmartcols1",
+      "FilePath": ""
+    },
+    {
+      "Name": "public-domain",
+      "Category": "unknown",
+      "PkgName": "libsmartcols1",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-4-Clause",
+      "Category": "notice",
+      "PkgName": "libsmartcols1",
+      "FilePath": ""
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "libsmartcols1",
+      "FilePath": ""
+    },
+    {
+      "Name": "ISC",
+      "Category": "notice",
+      "PkgName": "libsmartcols1",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "libsmartcols1",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSLA",
+      "Category": "unknown",
+      "PkgName": "libsmartcols1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libsmartcols1",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-2-Clause",
+      "Category": "notice",
+      "PkgName": "libsmartcols1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libsmartcols1",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "libsmartcols1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libsmartcols1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-only",
+      "Category": "restricted",
+      "PkgName": "libsmartcols1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "libsmartcols1",
+      "FilePath": ""
+    },
+    {
+      "Name": "public-domain",
+      "Category": "unknown",
+      "PkgName": "libsqlite3-0",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libsqlite3-0",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libsqlite3-0",
+      "FilePath": ""
+    },
+    {
+      "Name": "Apache-2.0",
+      "Category": "notice",
+      "PkgName": "libssl3t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "Artistic-2.0",
+      "Category": "notice",
+      "PkgName": "libssl3t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-1.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libssl3t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-1.0-only",
+      "Category": "restricted",
+      "PkgName": "libssl3t64",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-or-later",
+      "Category": "restricted",
+      "PkgName": "libsystemd0",
+      "FilePath": ""
+    },
+    {
+      "Name": "CC0-1.0",
+      "Category": "unencumbered",
+      "PkgName": "libsystemd0",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2 with Linux-syscall-note exception",
+      "Category": "unknown",
+      "PkgName": "libsystemd0",
+      "FilePath": ""
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "libsystemd0",
+      "FilePath": ""
+    },
+    {
+      "Name": "public-domain",
+      "Category": "unknown",
+      "PkgName": "libsystemd0",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libsystemd0",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libsystemd0",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-only",
+      "Category": "restricted",
+      "PkgName": "libsystemd0",
+      "FilePath": ""
+    },
+    {
+      "Name": "MIT/X11",
+      "Category": "unknown",
+      "PkgName": "libtinfo6",
+      "FilePath": ""
+    },
+    {
+      "Name": "X11",
+      "Category": "notice",
+      "PkgName": "libtinfo6",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "libtinfo6",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-or-later",
+      "Category": "restricted",
+      "PkgName": "libudev1",
+      "FilePath": ""
+    },
+    {
+      "Name": "CC0-1.0",
+      "Category": "unencumbered",
+      "PkgName": "libudev1",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2 with Linux-syscall-note exception",
+      "Category": "unknown",
+      "PkgName": "libudev1",
+      "FilePath": ""
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "libudev1",
+      "FilePath": ""
+    },
+    {
+      "Name": "public-domain",
+      "Category": "unknown",
+      "PkgName": "libudev1",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libudev1",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libudev1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-only",
+      "Category": "restricted",
+      "PkgName": "libudev1",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libuuid1",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libuuid1",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libuuid1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-or-later",
+      "Category": "restricted",
+      "PkgName": "libuuid1",
+      "FilePath": ""
+    },
+    {
+      "Name": "public-domain",
+      "Category": "unknown",
+      "PkgName": "libuuid1",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-4-Clause",
+      "Category": "notice",
+      "PkgName": "libuuid1",
+      "FilePath": ""
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "libuuid1",
+      "FilePath": ""
+    },
+    {
+      "Name": "ISC",
+      "Category": "notice",
+      "PkgName": "libuuid1",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "libuuid1",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSLA",
+      "Category": "unknown",
+      "PkgName": "libuuid1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libuuid1",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-2-Clause",
+      "Category": "notice",
+      "PkgName": "libuuid1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libuuid1",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "libuuid1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libuuid1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-only",
+      "Category": "restricted",
+      "PkgName": "libuuid1",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "libuuid1",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-2-Clause",
+      "Category": "notice",
+      "PkgName": "libxxhash0",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "libxxhash0",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libxxhash0",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "libzstd1",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "libzstd1",
+      "FilePath": ""
+    },
+    {
+      "Name": "Zlib",
+      "Category": "notice",
+      "PkgName": "libzstd1",
+      "FilePath": ""
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "libzstd1",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "login",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "login",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "login",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-or-later",
+      "Category": "restricted",
+      "PkgName": "login",
+      "FilePath": ""
+    },
+    {
+      "Name": "public-domain",
+      "Category": "unknown",
+      "PkgName": "login",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-4-Clause",
+      "Category": "notice",
+      "PkgName": "login",
+      "FilePath": ""
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "login",
+      "FilePath": ""
+    },
+    {
+      "Name": "ISC",
+      "Category": "notice",
+      "PkgName": "login",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "login",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSLA",
+      "Category": "unknown",
+      "PkgName": "login",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "login",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-2-Clause",
+      "Category": "notice",
+      "PkgName": "login",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "login",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "login",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "login",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-only",
+      "Category": "restricted",
+      "PkgName": "login",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "login",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "login.defs",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-1.0-only",
+      "Category": "restricted",
+      "PkgName": "login.defs",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "login.defs",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "login.defs",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "mawk",
+      "FilePath": ""
+    },
+    {
+      "Name": "X11",
+      "Category": "notice",
+      "PkgName": "mawk",
+      "FilePath": ""
+    },
+    {
+      "Name": "CC-BY-3.0",
+      "Category": "notice",
+      "PkgName": "mawk",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "mount",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "mount",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "mount",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-or-later",
+      "Category": "restricted",
+      "PkgName": "mount",
+      "FilePath": ""
+    },
+    {
+      "Name": "public-domain",
+      "Category": "unknown",
+      "PkgName": "mount",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-4-Clause",
+      "Category": "notice",
+      "PkgName": "mount",
+      "FilePath": ""
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "mount",
+      "FilePath": ""
+    },
+    {
+      "Name": "ISC",
+      "Category": "notice",
+      "PkgName": "mount",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "mount",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSLA",
+      "Category": "unknown",
+      "PkgName": "mount",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "mount",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-2-Clause",
+      "Category": "notice",
+      "PkgName": "mount",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "mount",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "mount",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "mount",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-only",
+      "Category": "restricted",
+      "PkgName": "mount",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "mount",
+      "FilePath": ""
+    },
+    {
+      "Name": "MIT/X11",
+      "Category": "unknown",
+      "PkgName": "ncurses-base",
+      "FilePath": ""
+    },
+    {
+      "Name": "X11",
+      "Category": "notice",
+      "PkgName": "ncurses-base",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "ncurses-base",
+      "FilePath": ""
+    },
+    {
+      "Name": "MIT/X11",
+      "Category": "unknown",
+      "PkgName": "ncurses-bin",
+      "FilePath": ""
+    },
+    {
+      "Name": "X11",
+      "Category": "notice",
+      "PkgName": "ncurses-bin",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "ncurses-bin",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "netbase",
+      "FilePath": ""
+    },
+    {
+      "Name": "Apache-2.0",
+      "Category": "notice",
+      "PkgName": "openssl",
+      "FilePath": ""
+    },
+    {
+      "Name": "Artistic-2.0",
+      "Category": "notice",
+      "PkgName": "openssl",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-1.0-or-later",
+      "Category": "restricted",
+      "PkgName": "openssl",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-1.0-only",
+      "Category": "restricted",
+      "PkgName": "openssl",
+      "FilePath": ""
+    },
+    {
+      "Name": "Apache-2.0",
+      "Category": "notice",
+      "PkgName": "openssl-provider-legacy",
+      "FilePath": ""
+    },
+    {
+      "Name": "Artistic-2.0",
+      "Category": "notice",
+      "PkgName": "openssl-provider-legacy",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-1.0-or-later",
+      "Category": "restricted",
+      "PkgName": "openssl-provider-legacy",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-1.0-only",
+      "Category": "restricted",
+      "PkgName": "openssl-provider-legacy",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "passwd",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-1.0-only",
+      "Category": "restricted",
+      "PkgName": "passwd",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "passwd",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "passwd",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-1.0-or-later",
+      "Category": "restricted",
+      "PkgName": "perl-base",
+      "FilePath": ""
+    },
+    {
+      "Name": "Artistic-2.0",
+      "Category": "notice",
+      "PkgName": "perl-base",
+      "FilePath": ""
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "perl-base",
+      "FilePath": ""
+    },
+    {
+      "Name": "REGCOMP",
+      "Category": "unknown",
+      "PkgName": "perl-base",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-with-bison-exception+",
+      "Category": "restricted",
+      "PkgName": "perl-base",
+      "FilePath": ""
+    },
+    {
+      "Name": "Unicode",
+      "Category": "unknown",
+      "PkgName": "perl-base",
+      "FilePath": ""
+    },
+    {
+      "Name": "BZIP",
+      "Category": "unknown",
+      "PkgName": "perl-base",
+      "FilePath": ""
+    },
+    {
+      "Name": "Zlib",
+      "Category": "notice",
+      "PkgName": "perl-base",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "perl-base",
+      "FilePath": ""
+    },
+    {
+      "Name": "FSFAP",
+      "Category": "unknown",
+      "PkgName": "perl-base",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-clause-with-weird-numbering",
+      "Category": "unknown",
+      "PkgName": "perl-base",
+      "FilePath": ""
+    },
+    {
+      "Name": "CC0-1.0",
+      "Category": "unencumbered",
+      "PkgName": "perl-base",
+      "FilePath": ""
+    },
+    {
+      "Name": "TEXT-TABS",
+      "Category": "unknown",
+      "PkgName": "perl-base",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-4-clause-POWERDOG",
+      "Category": "unknown",
+      "PkgName": "perl-base",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-clause-GENERIC",
+      "Category": "unknown",
+      "PkgName": "perl-base",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "perl-base",
+      "FilePath": ""
+    },
+    {
+      "Name": "SDBM-PUBLIC-DOMAIN",
+      "Category": "unknown",
+      "PkgName": "perl-base",
+      "FilePath": ""
+    },
+    {
+      "Name": "DONT-CHANGE-THE-GPL",
+      "Category": "unknown",
+      "PkgName": "perl-base",
+      "FilePath": ""
+    },
+    {
+      "Name": "Artistic-dist",
+      "Category": "unknown",
+      "PkgName": "perl-base",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-only",
+      "Category": "restricted",
+      "PkgName": "perl-base",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-1.0-only",
+      "Category": "restricted",
+      "PkgName": "perl-base",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "perl-base",
+      "FilePath": ""
+    },
+    {
+      "Name": "Artistic-2",
+      "Category": "unknown",
+      "PkgName": "perl-base",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "readline-common",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "readline-common",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "readline-common",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "readline-common",
+      "FilePath": ""
+    },
+    {
+      "Name": "GFDL-1.3-no-invariants-or-later",
+      "Category": "unknown",
+      "PkgName": "readline-common",
+      "FilePath": ""
+    },
+    {
+      "Name": "GFDL-1.3-or-later",
+      "Category": "unknown",
+      "PkgName": "readline-common",
+      "FilePath": ""
+    },
+    {
+      "Name": "ISC-no-attribution",
+      "Category": "unknown",
+      "PkgName": "readline-common",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "sed",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "sed",
+      "FilePath": ""
+    },
+    {
+      "Name": "X11",
+      "Category": "notice",
+      "PkgName": "sed",
+      "FilePath": ""
+    },
+    {
+      "Name": "GFDL-1.3-no-invariants-or-later",
+      "Category": "unknown",
+      "PkgName": "sed",
+      "FilePath": ""
+    },
+    {
+      "Name": "GFDL-1.3-only",
+      "Category": "unknown",
+      "PkgName": "sed",
+      "FilePath": ""
+    },
+    {
+      "Name": "ISC",
+      "Category": "notice",
+      "PkgName": "sed",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-4-Clause-UC",
+      "Category": "notice",
+      "PkgName": "sed",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSL-1",
+      "Category": "unknown",
+      "PkgName": "sed",
+      "FilePath": ""
+    },
+    {
+      "Name": "pcre",
+      "Category": "unknown",
+      "PkgName": "sed",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "sqv",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "sqv",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "sysvinit-utils",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-or-later",
+      "Category": "restricted",
+      "PkgName": "sysvinit-utils",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "sysvinit-utils",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "sysvinit-utils",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-only",
+      "Category": "restricted",
+      "PkgName": "sysvinit-utils",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "tar",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "tar",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3+ with Bison exception",
+      "Category": "unknown",
+      "PkgName": "tar",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-or-later",
+      "Category": "restricted",
+      "PkgName": "tar",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-only",
+      "Category": "restricted",
+      "PkgName": "tar",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "tar",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "tar",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "tar",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "tar",
+      "FilePath": ""
+    },
+    {
+      "Name": "public-domain",
+      "Category": "unknown",
+      "PkgName": "tzdata",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "util-linux",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "util-linux",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "util-linux",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-or-later",
+      "Category": "restricted",
+      "PkgName": "util-linux",
+      "FilePath": ""
+    },
+    {
+      "Name": "public-domain",
+      "Category": "unknown",
+      "PkgName": "util-linux",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-4-Clause",
+      "Category": "notice",
+      "PkgName": "util-linux",
+      "FilePath": ""
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "util-linux",
+      "FilePath": ""
+    },
+    {
+      "Name": "ISC",
+      "Category": "notice",
+      "PkgName": "util-linux",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "util-linux",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSLA",
+      "Category": "unknown",
+      "PkgName": "util-linux",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-or-later",
+      "Category": "restricted",
+      "PkgName": "util-linux",
+      "FilePath": ""
+    },
+    {
+      "Name": "BSD-2-Clause",
+      "Category": "notice",
+      "PkgName": "util-linux",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-3.0-or-later",
+      "Category": "restricted",
+      "PkgName": "util-linux",
+      "FilePath": ""
+    },
+    {
+      "Name": "GPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "util-linux",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.0-only",
+      "Category": "restricted",
+      "PkgName": "util-linux",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-2.1-only",
+      "Category": "restricted",
+      "PkgName": "util-linux",
+      "FilePath": ""
+    },
+    {
+      "Name": "LGPL-3.0-only",
+      "Category": "restricted",
+      "PkgName": "util-linux",
+      "FilePath": ""
+    },
+    {
+      "Name": "Zlib",
+      "Category": "notice",
+      "PkgName": "zlib1g",
+      "FilePath": ""
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "annotated-doc",
+      "FilePath": "usr/local/lib/python3.12/site-packages/annotated_doc-0.0.5.dist-info/METADATA"
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "annotated-types",
+      "FilePath": "usr/local/lib/python3.12/site-packages/annotated_types-0.8.0.dist-info/METADATA"
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "anyio",
+      "FilePath": "usr/local/lib/python3.12/site-packages/anyio-4.15.1.dist-info/METADATA"
+    },
+    {
+      "Name": "MPL-2.0",
+      "Category": "reciprocal",
+      "PkgName": "certifi",
+      "FilePath": "usr/local/lib/python3.12/site-packages/certifi-2026.10.23.dist-info/METADATA"
+    },
+    {
+      "Name": "MIT-0",
+      "Category": "unknown",
+      "PkgName": "cffi",
+      "FilePath": "usr/local/lib/python3.12/site-packages/cffi-2.1.1.dist-info/METADATA"
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "click",
+      "FilePath": "usr/local/lib/python3.12/site-packages/click-8.5.0.dist-info/METADATA"
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "fastapi",
+      "FilePath": "usr/local/lib/python3.12/site-packages/fastapi-0.162.0.dist-info/METADATA"
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "h11",
+      "FilePath": "usr/local/lib/python3.12/site-packages/h11-0.16.0.dist-info/METADATA"
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "httpcore",
+      "FilePath": "usr/local/lib/python3.12/site-packages/httpcore-1.0.9.dist-info/METADATA"
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "httpx",
+      "FilePath": "usr/local/lib/python3.12/site-packages/httpx-0.28.1.dist-info/METADATA"
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "idna",
+      "FilePath": "usr/local/lib/python3.12/site-packages/idna-3.20.dist-info/METADATA"
+    },
+    {
+      "Name": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0",
+      "Category": "notice",
+      "PkgName": "numpy",
+      "FilePath": "usr/local/lib/python3.12/site-packages/numpy-2.5.4.dist-info/METADATA"
+    },
+    {
+      "Name": "Apache-2.0",
+      "Category": "notice",
+      "PkgName": "opentelemetry-api",
+      "FilePath": "usr/local/lib/python3.12/site-packages/opentelemetry_api-1.45.1.dist-info/METADATA"
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "pip",
+      "FilePath": "usr/local/lib/python3.12/site-packages/pip-25.0.1.dist-info/METADATA"
+    },
+    {
+      "Name": "Apache-2.0 AND BSD-2-Clause",
+      "Category": "notice",
+      "PkgName": "prometheus_client",
+      "FilePath": "usr/local/lib/python3.12/site-packages/prometheus_client-0.26.0.dist-info/METADATA"
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "pycparser",
+      "FilePath": "usr/local/lib/python3.12/site-packages/pycparser-3.12.dist-info/METADATA"
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "pydantic",
+      "FilePath": "usr/local/lib/python3.12/site-packages/pydantic-2.14.1.dist-info/METADATA"
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "pydantic_core",
+      "FilePath": "usr/local/lib/python3.12/site-packages/pydantic_core-2.50.1.dist-info/METADATA"
+    },
+    {
+      "Name": "Apache-2.0",
+      "Category": "notice",
+      "PkgName": "python-multipart",
+      "FilePath": "usr/local/lib/python3.12/site-packages/python_multipart-0.0.32.dist-info/METADATA"
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "soundfile",
+      "FilePath": "usr/local/lib/python3.12/site-packages/soundfile-0.14.0.dist-info/METADATA"
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "starlette",
+      "FilePath": "usr/local/lib/python3.12/site-packages/starlette-1.10.0.dist-info/METADATA"
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "typing-inspection",
+      "FilePath": "usr/local/lib/python3.12/site-packages/typing_inspection-0.4.4.dist-info/METADATA"
+    },
+    {
+      "Name": "PSF-2.0",
+      "Category": "unknown",
+      "PkgName": "typing_extensions",
+      "FilePath": "usr/local/lib/python3.12/site-packages/typing_extensions-4.16.0.dist-info/METADATA"
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "uvicorn",
+      "FilePath": "usr/local/lib/python3.12/site-packages/uvicorn-0.54.0.dist-info/METADATA"
+    },
+    {
+      "Name": "Apache-2.0",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/profile.py"
+    },
+    {
+      "Name": "Apache-2.0",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/pstats.py"
+    },
+    {
+      "Name": "MPL-2.0",
+      "Category": "reciprocal",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/site-packages/certifi-2026.10.23.dist-info/licenses/LICENSE"
+    },
+    {
+      "Name": "Apache-2.0",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/site-packages/multipart/__init__.py"
+    },
+    {
+      "Name": "Apache-2.0",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/site-packages/pip/_vendor/distro/distro.py"
+    },
+    {
+      "Name": "Apache-2.0",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/site-packages/python_multipart/__init__.py"
+    },
+    {
+      "Name": "GPL-2.0",
+      "Category": "restricted",
+      "PkgName": "",
+      "FilePath": "usr/share/dpkg/sh/dpkg-error.sh"
+    },
+    {
+      "Name": "GPL-3.0",
+      "Category": "restricted",
+      "PkgName": "",
+      "FilePath": "usr/share/gcc/python/libstdcxx/v6/__init__.py"
+    },
+    {
+      "Name": "GPL-3.0",
+      "Category": "restricted",
+      "PkgName": "",
+      "FilePath": "usr/share/gcc/python/libstdcxx/v6/printers.py"
+    },
+    {
+      "Name": "GPL-3.0",
+      "Category": "restricted",
+      "PkgName": "",
+      "FilePath": "usr/share/gcc/python/libstdcxx/v6/xmethods.py"
+    },
+    {
+      "Name": "BSD-0-Clause",
+      "Category": "unknown",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/LICENSE.txt"
+    },
+    {
+      "Name": "BeOpen",
+      "Category": "unknown",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/LICENSE.txt"
+    },
+    {
+      "Name": "CNRI-Python-GPL-Compatible",
+      "Category": "unknown",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/LICENSE.txt"
+    },
+    {
+      "Name": "Python-2.0",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/LICENSE.txt"
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/optparse.py"
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/site-packages/annotated_doc-0.0.5.dist-info/licenses/LICENSE"
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/site-packages/annotated_types-0.8.0.dist-info/licenses/LICENSE"
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/site-packages/anyio-4.15.1.dist-info/licenses/LICENSE"
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/site-packages/cffi/_cffi_gen_src.py"
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/site-packages/click-8.5.0.dist-info/licenses/LICENSE.txt"
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/site-packages/fastapi-0.162.0.dist-info/licenses/LICENSE"
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/site-packages/h11-0.16.0.dist-info/licenses/LICENSE.txt"
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/site-packages/httpcore-1.0.9.dist-info/licenses/LICENSE.md"
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/site-packages/httpx-0.28.1.dist-info/licenses/LICENSE.md"
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/site-packages/idna-3.20.dist-info/licenses/LICENSE.md"
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/site-packages/numpy-2.5.4.dist-info/licenses/LICENSE.txt"
+    },
+    {
+      "Name": "BSD-3-Clause-OpenMPI",
+      "Category": "unknown",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/site-packages/numpy-2.5.4.dist-info/licenses/LICENSE.txt"
+    },
+    {
+      "Name": "Entenssa",
+      "Category": "unknown",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/site-packages/numpy-2.5.4.dist-info/licenses/LICENSE.txt"
+    },
+    {
+      "Name": "GPL-3.0",
+      "Category": "restricted",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/site-packages/numpy-2.5.4.dist-info/licenses/LICENSE.txt"
+    },
+    {
+      "Name": "GPL-3.0-with-GCC-exception",
+      "Category": "restricted",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/site-packages/numpy-2.5.4.dist-info/licenses/LICENSE.txt"
+    },
+    {
+      "Name": "Zlib",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/site-packages/numpy-2.5.4.dist-info/licenses/numpy/_core/include/numpy/libdivide/LICENSE.txt"
+    },
+    {
+      "Name": "Apache-2.0",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/site-packages/numpy-2.5.4.dist-info/licenses/numpy/_core/src/highway/LICENSE"
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/site-packages/numpy-2.5.4.dist-info/licenses/numpy/_core/src/highway/LICENSE"
+    },
+    {
+      "Name": "CC0-1.0",
+      "Category": "unencumbered",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/site-packages/numpy-2.5.4.dist-info/licenses/numpy/_core/src/highway/LICENSE"
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/site-packages/numpy-2.5.4.dist-info/licenses/numpy/_core/src/multiarray/dragon4_LICENSE.txt"
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/site-packages/numpy-2.5.4.dist-info/licenses/numpy/_core/src/npysort/x86-simd-sort/LICENSE.md"
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/site-packages/numpy-2.5.4.dist-info/licenses/numpy/_core/src/umath/svml/LICENSE"
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/site-packages/numpy-2.5.4.dist-info/licenses/numpy/fft/pocketfft/LICENSE.md"
+    },
+    {
+      "Name": "BSD-3-Clause-OpenMPI",
+      "Category": "unknown",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/site-packages/numpy-2.5.4.dist-info/licenses/numpy/linalg/lapack_lite/LICENSE.txt"
+    },
+    {
+      "Name": "Entenssa",
+      "Category": "unknown",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/site-packages/numpy-2.5.4.dist-info/licenses/numpy/linalg/lapack_lite/LICENSE.txt"
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/site-packages/numpy-2.5.4.dist-info/licenses/numpy/ma/LICENSE"
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/site-packages/numpy-2.5.4.dist-info/licenses/numpy/random/LICENSE.md"
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/site-packages/numpy-2.5.4.dist-info/licenses/numpy/random/src/distributions/LICENSE.md"
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/site-packages/numpy-2.5.4.dist-info/licenses/numpy/random/src/distributions/LICENSE.md"
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/site-packages/numpy-2.5.4.dist-info/licenses/numpy/random/src/mt19937/LICENSE.md"
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/site-packages/numpy-2.5.4.dist-info/licenses/numpy/random/src/mt19937/LICENSE.md"
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/site-packages/numpy-2.5.4.dist-info/licenses/numpy/random/src/pcg64/LICENSE.md"
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/site-packages/numpy-2.5.4.dist-info/licenses/numpy/random/src/philox/LICENSE.md"
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/site-packages/numpy-2.5.4.dist-info/licenses/numpy/random/src/sfc64/LICENSE.md"
+    },
+    {
+      "Name": "Zlib",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/site-packages/numpy/_core/include/numpy/random/LICENSE.txt"
+    },
+    {
+      "Name": "BSD-2-Clause",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/site-packages/numpy/_utils/_pep440.py"
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/site-packages/numpy/ma/LICENSE"
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/site-packages/numpy/random/LICENSE.md"
+    },
+    {
+      "Name": "Apache-2.0",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/site-packages/opentelemetry_api-1.45.1.dist-info/licenses/LICENSE"
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/site-packages/pip-25.0.1.dist-info/LICENSE.txt"
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/site-packages/pip/_internal/utils/_jaraco_text.py"
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/site-packages/pip/_vendor/packaging/licenses/__init__.py"
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/site-packages/pip/_vendor/rich/_spinners.py"
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/site-packages/pip/_vendor/urllib3/contrib/_securetransport/bindings.py"
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/site-packages/pip/_vendor/urllib3/contrib/securetransport.py"
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/site-packages/pip/_vendor/urllib3/packages/six.py"
+    },
+    {
+      "Name": "Apache-2.0",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/site-packages/prometheus_client-0.26.0.dist-info/licenses/LICENSE"
+    },
+    {
+      "Name": "BSD-2-Clause",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/site-packages/prometheus_client/decorator.py"
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/site-packages/pycparser-3.12.dist-info/licenses/LICENSE"
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/site-packages/pydantic-2.14.1.dist-info/licenses/LICENSE"
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/site-packages/pydantic_core-2.50.1.dist-info/licenses/LICENSE"
+    },
+    {
+      "Name": "Apache-2.0",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/site-packages/python_multipart-0.0.32.dist-info/licenses/LICENSE.txt"
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/site-packages/soundfile-0.14.0.dist-info/LICENSE"
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/site-packages/starlette-1.10.0.dist-info/licenses/LICENSE.md"
+    },
+    {
+      "Name": "BSD-0-Clause",
+      "Category": "unknown",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/site-packages/typing_extensions-4.16.0.dist-info/licenses/LICENSE"
+    },
+    {
+      "Name": "BeOpen",
+      "Category": "unknown",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/site-packages/typing_extensions-4.16.0.dist-info/licenses/LICENSE"
+    },
+    {
+      "Name": "CNRI-Python-GPL-Compatible",
+      "Category": "unknown",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/site-packages/typing_extensions-4.16.0.dist-info/licenses/LICENSE"
+    },
+    {
+      "Name": "Python-2.0",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/site-packages/typing_extensions-4.16.0.dist-info/licenses/LICENSE"
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/site-packages/typing_inspection-0.4.4.dist-info/licenses/LICENSE"
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/site-packages/uvicorn-0.54.0.dist-info/licenses/LICENSE.md"
+    },
+    {
+      "Name": "BSD-3-Clause",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/site-packages/uvicorn/_types.py"
+    },
+    {
+      "Name": "Zlib",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/sqlite3/__init__.py"
+    },
+    {
+      "Name": "Zlib",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/sqlite3/dbapi2.py"
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/tarfile.py"
+    },
+    {
+      "Name": "Zlib",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/turtle.py"
+    },
+    {
+      "Name": "PIL",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/xml/etree/ElementInclude.py"
+    },
+    {
+      "Name": "PIL",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/xml/etree/ElementPath.py"
+    },
+    {
+      "Name": "PIL",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/xml/etree/ElementTree.py"
+    },
+    {
+      "Name": "PIL",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/xml/etree/__init__.py"
+    },
+    {
+      "Name": "PIL",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/xmlrpc/client.py"
+    }
+  ]
+}

@@ -24,10 +24,17 @@ quality, continuous availability or a finished four-project release.
 - Both Python runtime lockfiles were audited with pip-audit 2.10.1: 23 gateway
   and 40 speech package records, no known findings or skipped packages in that
   snapshot. Receipts and lockfile hashes are in `security/`. CI repeats the audit.
-  Native/OS image components and full dependency license review remain outstanding.
+  The subsequent full image scan found OS vulnerabilities and unresolved license
+  classifications, recorded in `security/`. These findings are not cleared by the
+  passing Python audit.
 - Model staging generates reviewed SHA256 values and checks transferred bytes
   on each node. Helm init containers refuse to start services when the model
   manifest is empty or bytes differ. Final-cluster verification remains a gate.
+- Real fine-tuned int8 and Qwen Q4 models passed the three-container integration
+  check with read-only roots, dropped capabilities, memory limits and loopback
+  ports. Gateway image source hashes match the checkout; exact image/model hashes
+  and verified removal of temporary containers/network are in
+  `fine-tuned-container-integration.json`. This remains a local integration test.
 
 ## Gates before sign-off
 
