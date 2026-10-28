@@ -20,10 +20,15 @@ write_files:
     content: |
       #!/usr/bin/env bash
       set -euo pipefail
+%{ if lifetime_seconds > 0 ~}
+      # Queue expiry in cloud-final, after early boot dependencies are ready.
+      systemd-run --no-block --unit=afri-cluster-expiry --on-active=${lifetime_seconds}s /usr/sbin/shutdown -h now
+%{ endif ~}
       # Preserve private cluster/admin connectivity when an image has host firewall rules.
       iptables -I INPUT -s 10.30.0.0/16 -j ACCEPT
       iptables -I INPUT -s ${admin_cidr} -p tcp -m multiport --dports 22,80,443,6443 -j ACCEPT
-      curl --fail --silent --show-error --location https://get.k3s.io -o /root/install-k3s.sh
+      curl --fail --silent --show-error --location 'https://raw.githubusercontent.com/k3s-io/k3s/${version}/install.sh' -o /root/install-k3s.sh
+      printf '%s  %s\n' '${installer_sha256}' /root/install-k3s.sh | sha256sum --check --status
       INSTALL_K3S_VERSION='${version}' sh /root/install-k3s.sh ${role}
       systemctl is-active k3s${role == "agent" ? "-agent" : ""}
 runcmd:

@@ -47,7 +47,28 @@ variable "instance_type" {
 }
 variable "k3s_version" {
   type    = string
-  default = "v1.33.5+k3s1"
+  default = "v1.36.5+k3s1"
+  validation {
+    condition     = can(regex("^v[0-9]+\\.[0-9]+\\.[0-9]+\\+k3s[0-9]+$", var.k3s_version))
+    error_message = "Use an exact k3s release tag and its matching installer checksum."
+  }
+}
+variable "k3s_installer_sha256" {
+  type    = string
+  default = "46177d4c99440b4c0311b67233823a8e8a2fc09693f6c89af1a7161e152fbfad"
+  validation {
+    condition     = can(regex("^[a-f0-9]{64}$", var.k3s_installer_sha256))
+    error_message = "Supply the SHA256 of install.sh from the exact release tag."
+  }
+}
+variable "research_lifetime_hours" {
+  type        = number
+  default     = 0
+  description = "Zero for an operator-managed deployment; 1–24 for a bounded research run that terminates its instances on expiry."
+  validation {
+    condition     = var.research_lifetime_hours == 0 || (var.research_lifetime_hours >= 1 && var.research_lifetime_hours <= 24)
+    error_message = "Choose zero, or a finite research lifetime from one to 24 hours."
+  }
 }
 variable "project_name" {
   type    = string
@@ -135,21 +156,24 @@ resource "aws_key_pair" "nodes" {
   public_key      = file(pathexpand(var.ssh_public_key_path))
 }
 resource "aws_instance" "node" {
-  count                       = var.node_count
-  ami                         = data.aws_ami.ubuntu.id
-  instance_type               = var.instance_type
-  subnet_id                   = aws_subnet.main.id
-  private_ip                  = "10.30.1.${10 + count.index}"
-  vpc_security_group_ids      = [aws_security_group.nodes.id]
-  key_name                    = aws_key_pair.nodes.key_name
-  user_data_replace_on_change = true
+  count                                = var.node_count
+  ami                                  = data.aws_ami.ubuntu.id
+  instance_type                        = var.instance_type
+  subnet_id                            = aws_subnet.main.id
+  private_ip                           = "10.30.1.${10 + count.index}"
+  vpc_security_group_ids               = [aws_security_group.nodes.id]
+  key_name                             = aws_key_pair.nodes.key_name
+  user_data_replace_on_change          = true
+  instance_initiated_shutdown_behavior = var.research_lifetime_hours > 0 ? "terminate" : "stop"
   user_data = templatefile("${path.module}/cloud-init.yaml.tftpl", {
-    role       = count.index == 0 ? "server" : "agent"
-    server     = "10.30.1.10"
-    version    = var.k3s_version
-    token      = random_password.join.result
-    node_ip    = "10.30.1.${10 + count.index}"
-    admin_cidr = var.admin_cidr
+    role             = count.index == 0 ? "server" : "agent"
+    server           = "10.30.1.10"
+    version          = var.k3s_version
+    token            = random_password.join.result
+    node_ip          = "10.30.1.${10 + count.index}"
+    admin_cidr       = var.admin_cidr
+    installer_sha256 = var.k3s_installer_sha256
+    lifetime_seconds = ceil(var.research_lifetime_hours * 3600)
   })
   root_block_device {
     volume_type           = "gp3"

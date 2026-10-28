@@ -6,6 +6,11 @@ remaining credits and region-specific prices before provisioning; the code does
 not assume EC2 is permanently free.
 
 Install Terraform 1.13.4, Helm 3.19.0, kubectl matching k3s, Docker, AWS CLI and k6.
+New installations pin k3s `v1.36.5+k3s1` and verify the release-tagged installer
+against a recorded SHA256 before executing it. Change the version and checksum
+together. This does not upgrade an existing cluster or alter historical runs,
+which used `v1.33.5+k3s1`. The new default awaits a fresh cluster validation;
+see [the official release notes](https://docs.k3s.io/release-notes/v1.36.X).
 Credentials belong in `~/.aws/credentials` under `[afri-research]`, or use an
 appropriately scoped temporary profile. Keep its session token outside the repo.
 Check the intended identity without printing credentials:
@@ -38,6 +43,14 @@ Use the wrapper so Terraform state and the k3s join token remain outside git:
 bash scripts/terraform.sh plan -var-file=local.tfvars
 bash scripts/terraform.sh apply -var-file=local.tfvars
 ```
+
+For a finite research experiment, set `research_lifetime_hours = 6` in the
+external variable file. Cloud-final queues an asynchronous expiry timer; EC2
+terminates the instance on guest shutdown. Verify `afri-cluster-expiry.timer`
+is active on every node before measuring. The controller must still run
+`terraform destroy`: the timer only removes compute and its boot disk, while
+Terraform also removes the VPC, firewall and SSH registration. The default zero
+leaves lifetime management to the operator for an ongoing deployment.
 
 The wrapper uses `infra/` and a dedicated external AWS state directory.
 The default AWS topology is one `m7i-flex.large` (2 vCPU, 8 GiB).
@@ -136,6 +149,42 @@ For TLS ingress, provide a TLS Secret and set `ingress.enabled`, `ingress.host`
 and `ingress.tlsSecretName`; public DNS and exposure are separate prerequisites.
 
 ## Measurement and teardown
+
+For the final-artifact fresh-cluster validation, `scripts.validate_cluster`
+checks the integrated local image IDs, gateway source hashes and model hashes,
+then provisions a new dedicated Terraform state. It streams the source-built
+images into each node, verifies imported identities, stages/hashes models,
+installs monitoring and the application, checks real TLS requests, upgrades and
+rolls back the chart, and runs the existing bounded load/failure/capacity tests.
+It exports monitoring before destroying its own resources and checking teardown.
+The new controller still awaits its first completed cloud run.
+
+Use kubectl **v1.36.5** in the supplied tools directory, alongside Terraform,
+Helm and k6. Build/tag the three images as `afri-research-{speech,chat,llama}:local`
+and repeat real-model integration/image review first if their IDs or gateway
+sources differ from `fine-tuned-container-integration.json`. Supply actual local
+artifact paths and refreshed prices:
+
+```bash
+python -m scripts.validate_cluster \
+  --out docs/runs/final-one-node-YYYYMMDD \
+  --state-dir "$HOME/.local/state/afri-ai-serving/final-one-node-YYYYMMDD" \
+  --tools-dir /absolute/tools-with-kubectl-1.36.5 \
+  --asr-dir /absolute/selected-tiny-ct2-int8 \
+  --llm-file /absolute/qwen-q4.gguf --audio /absolute/test.wav \
+  --prices docs/aws-public-prices.json --account-id YOUR_ACCOUNT_ID \
+  --nodes 1 --max-hours 4 --budget-usd 1
+```
+
+The state directory contains credentials/configuration and must stay outside
+Git; its command logs are private. Public evidence is limited to selected run
+metadata, model/image IDs, measurements and teardown checks. Local forwarding
+uses ports 36443, 34443 and 29090 and refuses occupied ports. TLS uses a temporary
+private research certificate for localhost, trusted explicitly by the clients;
+this does not establish public-domain certificate renewal. Guest expiry and
+controller teardown are independent safeguards. A new run needs empty dedicated
+state and a fresh evidence directory. The controller never imports registry
+credentials or queries billing.
 
 ```bash
 export BASE_URL=http://127.0.0.1:8000
