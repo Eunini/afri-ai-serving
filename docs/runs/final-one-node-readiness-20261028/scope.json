@@ -1,0 +1,6 @@
+{
+  "status": "aborted at post-install readiness assertion",
+  "evidence": "Exact imported OCI identities, remote model SHA256, monitoring/application Helm installs and expiry timer verified. The immediate assertion did not observe all expected completed model init statuses; its snapshot was not retained. No load or model quality result is claimed.",
+  "fix": "Boundedly wait for all active application pods to be Ready with successful hash init; retain sanitized pod states before checking and fail immediately on a nonzero init exit. Pending HPA replicas are not treated as completed or failed.",
+  "cleanup": "Known instance, boot volume, VPC and registered public key destroyed and independently checked."
+}

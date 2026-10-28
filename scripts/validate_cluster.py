@@ -65,6 +65,7 @@ def main():
 
     from services.artifacts import manifests
     from scripts.image_identity import verify_imported_image
+    from scripts.cluster_readiness import model_pod_states
 
     parser = argparse.ArgumentParser()
     parser.add_argument("--out", type=Path, required=True)
@@ -605,28 +606,24 @@ def main():
         ]
         run("application-install", install, timeout=920)
         # Readiness requires verified init containers, not merely a created Deployment.
-        pods = json.loads(
-            run(
-                "application-pods",
-                kubectl + ["-n", "afri-ai", "get", "pods", "-o", "json"],
-                capture=True,
+        for _ in range(120):
+            pods = json.loads(
+                run(
+                    "application-pods",
+                    kubectl + ["-n", "afri-ai", "get", "pods", "-o", "json"],
+                    capture=True,
+                )
             )
-        )
-        verified = [
-            {
-                "pod": p["metadata"]["name"],
-                "node": p["spec"]["nodeName"],
-                "init_exit_codes": [
-                    c.get("state", {}).get("terminated", {}).get("exitCode")
-                    for c in p["status"].get("initContainerStatuses", [])
-                ],
-                "images": [c.get("imageID") for c in p["status"].get("containerStatuses", [])],
-            }
-            for p in pods["items"]
-        ]
-        if len(verified) < 2 or any(p["init_exit_codes"] != [0] for p in verified):
-            raise ValueError("Every final-model pod must pass its init hash verification")
-        write(args.out / "model-init-verification.json", verified)
+            verified, ready, fatal = model_pod_states(pods["items"])
+            # Preserve diagnostic states before checking, including pending replicas.
+            write(args.out / "model-init-verification.json", verified)
+            if fatal:
+                raise ValueError("A final-model pod failed its init hash verification")
+            if ready:
+                break
+            time.sleep(5)
+        else:
+            raise TimeoutError("Final-model pods did not all become verified and ready")
         base = "https://localhost:34443"
         context = ssl.create_default_context(cafile=str(args.state_dir / "benchmark-tls.crt"))
 
