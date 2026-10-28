@@ -1,0 +1,273 @@
+{
+  "started_at": "2026-10-28T02:34:42.753660+00:00",
+  "source_commit": "6eceebd498f58b166e9c082bc4f31c55d45459fc",
+  "status": "measurements_complete",
+  "topology": "1xm7i-flex.large",
+  "max_hours": 4.0,
+  "hourly_usd": 0.10404767123287671,
+  "maximum_compute_storage_ipv4_usd": 0.41619068493150685,
+  "cost_exclusions": "Tax and traffic; remaining credits not independently accessible",
+  "stages": [
+    {
+      "name": "kubectl-version",
+      "at": "2026-10-28T02:34:43.090862+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "image-inspect-speech",
+      "at": "2026-10-28T02:34:43.298712+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "image-inspect-chat",
+      "at": "2026-10-28T02:34:43.392794+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "image-inspect-llama",
+      "at": "2026-10-28T02:34:43.508875+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "terraform-init",
+      "at": "2026-10-28T02:34:54.831692+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "terraform-apply",
+      "at": "2026-10-28T02:35:41.935859+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "terraform-output",
+      "at": "2026-10-28T02:35:46.736845+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "remote",
+      "at": "2026-10-28T02:35:49.822594+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "remote",
+      "at": "2026-10-28T02:36:10.801538+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "remote",
+      "at": "2026-10-28T02:36:12.075856+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "remote",
+      "at": "2026-10-28T02:36:13.346883+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "remote",
+      "at": "2026-10-28T02:36:39.839924+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "remote",
+      "at": "2026-10-28T02:36:41.197115+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "remote",
+      "at": "2026-10-28T02:36:42.489844+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "remote",
+      "at": "2026-10-28T02:36:43.926110+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "remote",
+      "at": "2026-10-28T02:36:45.279015+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "remote",
+      "at": "2026-10-28T02:36:46.636475+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "remote",
+      "at": "2026-10-28T02:36:48.124982+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "remote",
+      "at": "2026-10-28T02:36:49.490957+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "remote",
+      "at": "2026-10-28T02:36:50.859034+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "stage-models",
+      "at": "2026-10-28T02:38:02.186830+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "remote",
+      "at": "2026-10-28T02:38:03.469024+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "kubeconfig-json",
+      "at": "2026-10-28T02:38:03.606760+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "nodes-joining",
+      "at": "2026-10-28T02:38:07.126487+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "nodes-ready",
+      "at": "2026-10-28T02:38:07.945352+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "nodes",
+      "at": "2026-10-28T02:38:08.539472+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "namespace",
+      "at": "2026-10-28T02:38:09.108770+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "api-secret",
+      "at": "2026-10-28T02:38:10.281427+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "tls-certificate",
+      "at": "2026-10-28T02:38:10.952905+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "tls-secret",
+      "at": "2026-10-28T02:38:12.123477+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "monitoring-repo",
+      "at": "2026-10-28T02:38:14.532428+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "monitoring-install",
+      "at": "2026-10-28T02:39:55.796787+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "dashboard",
+      "at": "2026-10-28T02:39:57.084019+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "application-install",
+      "at": "2026-10-28T02:40:03.551455+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "application-pods",
+      "at": "2026-10-28T02:40:04.147803+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "application-pods",
+      "at": "2026-10-28T02:40:09.706296+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "application-pods",
+      "at": "2026-10-28T02:40:15.242365+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "application-pods",
+      "at": "2026-10-28T02:40:20.922498+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "application-pods",
+      "at": "2026-10-28T02:40:26.422538+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "network-policy-verification",
+      "at": "2026-10-28T02:40:35.571654+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "upgrade",
+      "at": "2026-10-28T02:40:49.954245+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "rollback",
+      "at": "2026-10-28T02:40:57.908143+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "load-and-failure",
+      "at": "2026-10-28T03:11:27.227001+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "steady-capacity",
+      "at": "2026-10-28T03:23:48.038025+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "monitoring-export",
+      "at": "2026-10-28T03:23:52.867356+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "dashboard-capture",
+      "at": "2026-10-28T03:24:18.631832+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "terraform-output",
+      "at": "2026-10-28T03:24:24.930197+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "terraform-destroy",
+      "at": "2026-10-28T03:25:22.098250+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "teardown-verification",
+      "at": "2026-10-28T03:25:25.082361+00:00",
+      "exit_code": 0
+    }
+  ],
+  "kubectl_version": "v1.36.5",
+  "expiry_timers_verified": true,
+  "smoke_checks": {
+    "unauthorized_401": true,
+    "chat_200": true,
+    "transcription_200": true
+  },
+  "post_rollback_smoke_checks": {
+    "unauthorized_401": true,
+    "chat_200": true,
+    "transcription_200": true
+  },
+  "dashboard_capture_exit_code": 0,
+  "managed_state_empty": true,
+  "teardown_verified": true,
+  "finished_at": "2026-10-28T03:25:25.084080+00:00"
+}

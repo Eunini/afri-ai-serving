@@ -1,0 +1,26 @@
+{
+  "checked_at": "2026-10-28T02:40:26.499716+00:00",
+  "controls": {
+    "ip-10-30-1-10": {
+      "dns_ok": true,
+      "public_tcp_connected": true
+    }
+  },
+  "protected_pods": [
+    {
+      "pod": "afri-ai-chat-64f5c7967f-cw98k",
+      "node": "ip-10-30-1-10",
+      "dns_ok": true,
+      "public_tcp_connected": false
+    },
+    {
+      "pod": "afri-ai-speech-6d9b6c557-zhrrg",
+      "node": "ip-10-30-1-10",
+      "dns_ok": true,
+      "public_tcp_connected": false
+    }
+  ],
+  "scope": "DNS and one public TCP endpoint only; same-node unselected controls. Does not prove universal egress isolation or prevent DNS exfiltration.",
+  "passed": true,
+  "temporary_control_jobs_removed": true
+}

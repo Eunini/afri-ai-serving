@@ -1,0 +1,8 @@
+{
+  "deleted_pod": "afri-ai-chat-64f5c7967f-65f49",
+  "started_at": "2026-10-28T07:53:45.317698+00:00",
+  "ready_before": 2,
+  "status": "recovered",
+  "recovery_seconds": 191.0457598239882,
+  "replacement_pod": "afri-ai-chat-64f5c7967f-z97fm"
+}

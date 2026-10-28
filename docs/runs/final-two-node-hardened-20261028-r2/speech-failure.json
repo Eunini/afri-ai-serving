@@ -1,0 +1,8 @@
+{
+  "deleted_pod": "afri-ai-speech-6d9b6c557-ddksp",
+  "started_at": "2026-10-28T07:38:25.316896+00:00",
+  "ready_before": 2,
+  "status": "recovered",
+  "recovery_seconds": 6.291819997946732,
+  "replacement_pod": "afri-ai-speech-6d9b6c557-627j2"
+}

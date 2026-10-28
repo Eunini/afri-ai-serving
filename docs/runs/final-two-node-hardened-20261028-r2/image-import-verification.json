@@ -1,0 +1,62 @@
+[
+  {
+    "node_index": 0,
+    "service": "speech",
+    "tag": "docker.io/library/afri-research-speech:local",
+    "integrated_docker_image_id": "sha256:293d961b3862e65c47920e3a6514a04ffc36b76c2efe794e7f918959476468df",
+    "imported_manifest_sha256": "sha256:293d961b3862e65c47920e3a6514a04ffc36b76c2efe794e7f918959476468df",
+    "imported_config_sha256": "sha256:fd31f51f422b6804b7fd1f138fe2e2d5a6e973d0ba1cb7aae695a9ffa68b2602",
+    "cri_image_id": "sha256:fd31f51f422b6804b7fd1f138fe2e2d5a6e973d0ba1cb7aae695a9ffa68b2602",
+    "manifest_bytes_hash_verified": true
+  },
+  {
+    "node_index": 0,
+    "service": "chat",
+    "tag": "docker.io/library/afri-research-chat:local",
+    "integrated_docker_image_id": "sha256:7c6493dca39d395b7660c6a548607328f123c4272cbcde536fea4c082e77a2d7",
+    "imported_manifest_sha256": "sha256:7c6493dca39d395b7660c6a548607328f123c4272cbcde536fea4c082e77a2d7",
+    "imported_config_sha256": "sha256:dc34c212672833c1367920b1625ea3bdda60b306e1ae67271cf88e354034e1c4",
+    "cri_image_id": "sha256:dc34c212672833c1367920b1625ea3bdda60b306e1ae67271cf88e354034e1c4",
+    "manifest_bytes_hash_verified": true
+  },
+  {
+    "node_index": 0,
+    "service": "llama",
+    "tag": "docker.io/library/afri-research-llama:local",
+    "integrated_docker_image_id": "sha256:2fb1e05eaabb47a71d44346028e439e2e29bd3fabdb1ac455151a48ee67f074b",
+    "imported_manifest_sha256": "sha256:2fb1e05eaabb47a71d44346028e439e2e29bd3fabdb1ac455151a48ee67f074b",
+    "imported_config_sha256": "sha256:dbde11c590a75662841cfd5d10493631c5240fb9a6dab2ed8951afe3bcfc4e1e",
+    "cri_image_id": "sha256:dbde11c590a75662841cfd5d10493631c5240fb9a6dab2ed8951afe3bcfc4e1e",
+    "manifest_bytes_hash_verified": true
+  },
+  {
+    "node_index": 1,
+    "service": "speech",
+    "tag": "docker.io/library/afri-research-speech:local",
+    "integrated_docker_image_id": "sha256:293d961b3862e65c47920e3a6514a04ffc36b76c2efe794e7f918959476468df",
+    "imported_manifest_sha256": "sha256:293d961b3862e65c47920e3a6514a04ffc36b76c2efe794e7f918959476468df",
+    "imported_config_sha256": "sha256:fd31f51f422b6804b7fd1f138fe2e2d5a6e973d0ba1cb7aae695a9ffa68b2602",
+    "cri_image_id": "sha256:fd31f51f422b6804b7fd1f138fe2e2d5a6e973d0ba1cb7aae695a9ffa68b2602",
+    "manifest_bytes_hash_verified": true
+  },
+  {
+    "node_index": 1,
+    "service": "chat",
+    "tag": "docker.io/library/afri-research-chat:local",
+    "integrated_docker_image_id": "sha256:7c6493dca39d395b7660c6a548607328f123c4272cbcde536fea4c082e77a2d7",
+    "imported_manifest_sha256": "sha256:7c6493dca39d395b7660c6a548607328f123c4272cbcde536fea4c082e77a2d7",
+    "imported_config_sha256": "sha256:dc34c212672833c1367920b1625ea3bdda60b306e1ae67271cf88e354034e1c4",
+    "cri_image_id": "sha256:dc34c212672833c1367920b1625ea3bdda60b306e1ae67271cf88e354034e1c4",
+    "manifest_bytes_hash_verified": true
+  },
+  {
+    "node_index": 1,
+    "service": "llama",
+    "tag": "docker.io/library/afri-research-llama:local",
+    "integrated_docker_image_id": "sha256:2fb1e05eaabb47a71d44346028e439e2e29bd3fabdb1ac455151a48ee67f074b",
+    "imported_manifest_sha256": "sha256:2fb1e05eaabb47a71d44346028e439e2e29bd3fabdb1ac455151a48ee67f074b",
+    "imported_config_sha256": "sha256:dbde11c590a75662841cfd5d10493631c5240fb9a6dab2ed8951afe3bcfc4e1e",
+    "cri_image_id": "sha256:dbde11c590a75662841cfd5d10493631c5240fb9a6dab2ed8951afe3bcfc4e1e",
+    "manifest_bytes_hash_verified": true
+  }
+]

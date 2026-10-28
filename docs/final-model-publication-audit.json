@@ -1,0 +1,31 @@
+{
+  "status": "credential scan reviewed; no unresolved finding",
+  "source_commit": "6eceebd498f58b166e9c082bc4f31c55d45459fc",
+  "reviewed_false_positives": [
+    {
+      "file": "docs/runs/final-two-node-hardened-20261028-r2/deployment-values.json",
+      "line": 7,
+      "disposition": "Verified tokenizer artifact SHA256, not a credential",
+      "sha256": "7b469ff15eb7816315aa45eec391f5943d639b9d73d110f5c003df5192fd54e3"
+    },
+    {
+      "file": "docs/runs/final-one-node-hardened-20261028-r2/run.json",
+      "line": 12,
+      "disposition": "Verified tokenizer artifact SHA256, not a credential",
+      "sha256": "7b469ff15eb7816315aa45eec391f5943d639b9d73d110f5c003df5192fd54e3"
+    },
+    {
+      "file": "docs/runs/final-two-node-hardened-20261028-r2/run.json",
+      "line": 12,
+      "disposition": "Verified tokenizer artifact SHA256, not a credential",
+      "sha256": "7b469ff15eb7816315aa45eec391f5943d639b9d73d110f5c003df5192fd54e3"
+    },
+    {
+      "file": "docs/runs/final-one-node-hardened-20261028-r2/deployment-values.json",
+      "line": 7,
+      "disposition": "Verified tokenizer artifact SHA256, not a credential",
+      "sha256": "7b469ff15eb7816315aa45eec391f5943d639b9d73d110f5c003df5192fd54e3"
+    }
+  ],
+  "scope": "Explicitly selected sanitized measurements; private command logs, browser auth and Terraform state excluded"
+}

@@ -1,0 +1,35 @@
+[
+  {
+    "pod": "afri-ai-chat-64f5c7967f-65f49",
+    "app": "afri-ai-chat",
+    "node": "ip-10-30-1-10",
+    "phase": "Running",
+    "ready": true,
+    "init_exit_codes": [
+      0
+    ],
+    "init_waiting_reasons": [
+      null
+    ],
+    "images": [
+      "sha256:dc34c212672833c1367920b1625ea3bdda60b306e1ae67271cf88e354034e1c4",
+      "sha256:dbde11c590a75662841cfd5d10493631c5240fb9a6dab2ed8951afe3bcfc4e1e"
+    ]
+  },
+  {
+    "pod": "afri-ai-speech-6d9b6c557-q5csj",
+    "app": "afri-ai-speech",
+    "node": "ip-10-30-1-11",
+    "phase": "Running",
+    "ready": true,
+    "init_exit_codes": [
+      0
+    ],
+    "init_waiting_reasons": [
+      null
+    ],
+    "images": [
+      "sha256:fd31f51f422b6804b7fd1f138fe2e2d5a6e973d0ba1cb7aae695a9ffa68b2602"
+    ]
+  }
+]

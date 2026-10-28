@@ -92,3 +92,5 @@ Save sanitized destroy output and confirm the state list is empty. Check the AWS
 console for residual boot volumes and other billable resources. The report must
 say **destroy verified** only after this evidence exists. See
 [the cost protocol](docs/experiment.md) and [completion record](docs/completion.md).
+
+Final selected-model validation: [measured one-/two-node results](docs/final-model-serving.md), with exact artifacts, policy checks and verified teardown. Production sign-off remains pending.

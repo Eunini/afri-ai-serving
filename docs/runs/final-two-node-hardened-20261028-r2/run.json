@@ -1,0 +1,48 @@
+{
+  "started_at": "2026-10-28T07:24:00.270021+00:00",
+  "source_commit": "6eceebd498f58b166e9c082bc4f31c55d45459fc",
+  "topology": "2xc7i-flex.large",
+  "k3s_version": "v1.36.5+k3s1",
+  "monitoring_chart": "kube-prometheus-stack 92.13.1",
+  "models": {
+    "asr": {
+      "config.json": "a73a28cdfe1c43ccc7202fa333d1f89c202477271407ae9a7f19afa52039cac8",
+      "model.bin": "c84765e8164efb0e6062455f4e10d558dd5953e72015e79799634503c1903586",
+      "preprocessor_config.json": "994838f1fa6462c8b9b3c90edada831f11f3dd8b4664634e18f4694d005c9dbf",
+      "tokenizer.json": "7b469ff15eb7816315aa45eec391f5943d639b9d73d110f5c003df5192fd54e3",
+      "vocabulary.json": "5ad28279db5e546349708b9a74736e2c018737ac5a600f1048f1f26c99b85b47"
+    },
+    "llm": "6a1a2eb6d15622bf3c96857206351ba97e1af16c30d7a74ee38970e434e9407e"
+  },
+  "asr_artifact": "WAXAL fine-tuned whisper-tiny; validation-selected step 800; v6; canonical PCM admission and retained notices",
+  "llm_artifact": "qwen-q4.gguf",
+  "speech_workload": {
+    "audio_seconds": 5.76,
+    "sha256": "306938593445316a5ed515200fc22908d0b2916701f03d1a8e7674597b4b8879",
+    "format": "WAV"
+  },
+  "chat_workload": {
+    "prompt": "Explain photosynthesis in two sentences.",
+    "max_tokens": 64,
+    "temperature": 0,
+    "stream": false,
+    "language": "English"
+  },
+  "images": {
+    "speech": {
+      "tag": "docker.io/library/afri-research-speech:local",
+      "id": "sha256:293d961b3862e65c47920e3a6514a04ffc36b76c2efe794e7f918959476468df"
+    },
+    "chat": {
+      "tag": "docker.io/library/afri-research-chat:local",
+      "id": "sha256:7c6493dca39d395b7660c6a548607328f123c4272cbcde536fea4c082e77a2d7"
+    },
+    "llama": {
+      "tag": "docker.io/library/afri-research-llama:local",
+      "id": "sha256:2fb1e05eaabb47a71d44346028e439e2e29bd3fabdb1ac455151a48ee67f074b"
+    }
+  },
+  "hourly_usd": 0.18615534246575344,
+  "price_evidence_sha256": "e44d5271ce7742e8aac3f4a93fb21ced31a4b9292b1f6fb05762217f75294ff5",
+  "scope": "Administrator-only TLS ingress via SSH; research-only fine-tuned model; source-built exact images imported without registry credentials"
+}

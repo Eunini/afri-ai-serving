@@ -1,0 +1,24 @@
+{
+  "vpc_id": "vpc-06b22fe8ef2595af8",
+  "key_name": "afri-ai-research-57b277e5076235359a3fef0bf0",
+  "instances": [
+    {
+      "id": "i-0cc5a3d7e86706e00",
+      "launch_time": "2026-10-28T07:24:45+00:00",
+      "type": "c7i-flex.large",
+      "ami": "ami-0d6dd9e8265d48906",
+      "volume_ids": [
+        "vol-034b6556f7bd5c8fe"
+      ]
+    },
+    {
+      "id": "i-014881aca4d8ca2ae",
+      "launch_time": "2026-10-28T07:24:45+00:00",
+      "type": "c7i-flex.large",
+      "ami": "ami-0d6dd9e8265d48906",
+      "volume_ids": [
+        "vol-0763e7ea405fd0c7b"
+      ]
+    }
+  ]
+}

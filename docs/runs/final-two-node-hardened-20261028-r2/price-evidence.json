@@ -1,0 +1,296 @@
+{
+  "checked_at": "2026-10-28T07:23:40.825624+00:00",
+  "region": "us-east-1",
+  "currency": "USD",
+  "sources": [
+    {
+      "url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonEC2/current/us-east-1/index.json",
+      "version": "20261027193004",
+      "publicationDate": "2026-10-27T19:30:04Z",
+      "products": [
+        {
+          "sku": "JG3KUJMBRGHV3N8G",
+          "attributes": {
+            "servicecode": "AmazonEC2",
+            "location": "US East (N. Virginia)",
+            "locationType": "AWS Region",
+            "storageMedia": "SSD-backed",
+            "volumeType": "General Purpose",
+            "maxVolumeSize": "64 TiB",
+            "maxIopsvolume": "80000",
+            "maxThroughputvolume": "2000 MiB/s",
+            "usagetype": "EBS:VolumeUsage.gp3",
+            "operation": "",
+            "regionCode": "us-east-1",
+            "servicename": "Amazon Elastic Compute Cloud",
+            "volumeApiName": "gp3"
+          },
+          "price": {
+            "effectiveDate": "2026-10-01T00:00:00Z",
+            "description": "$0.08 per GB-month of General Purpose (gp3) provisioned storage - US East (N. Virginia)",
+            "unit": "GB-Mo",
+            "USD": "0.0800000000"
+          }
+        },
+        {
+          "sku": "SD5Q9AZVZ786UZA2",
+          "attributes": {
+            "servicecode": "AmazonEC2",
+            "location": "US East (N. Virginia)",
+            "locationType": "AWS Region",
+            "instanceType": "m7i-flex.large",
+            "currentGeneration": "Yes",
+            "instanceFamily": "General purpose",
+            "vcpu": "2",
+            "physicalProcessor": "Intel Xeon Scalable (Sapphire Rapids)",
+            "clockSpeed": "3.5 GHz",
+            "memory": "8 GiB",
+            "storage": "EBS only",
+            "networkPerformance": "Up to 12500 Megabit",
+            "processorArchitecture": "64-bit",
+            "tenancy": "Shared",
+            "operatingSystem": "Linux",
+            "licenseModel": "No License required",
+            "usagetype": "BoxUsage:m7i-flex.large",
+            "operation": "RunInstances",
+            "availabilityzone": "NA",
+            "capacitystatus": "Used",
+            "classicnetworkingsupport": "false",
+            "dedicatedEbsThroughput": "Up to 10000 Mbps",
+            "dedicatedEbsThroughputDescription": "312 Mbps",
+            "ecu": "NA",
+            "enhancedNetworkingSupported": "Yes",
+            "gpuMemory": "NA",
+            "instanceFamilyCategory": "General Purpose",
+            "intelAvxAvailable": "Yes",
+            "intelAvx2Available": "Yes",
+            "intelTurboAvailable": "Yes",
+            "marketoption": "OnDemand",
+            "normalizationSizeFactor": "4",
+            "preInstalledSw": "NA",
+            "processorFeatures": "Intel AVX; Intel AVX2; Intel AVX512; Intel Turbo; Intel AMX",
+            "regionCode": "us-east-1",
+            "servicename": "Amazon Elastic Compute Cloud",
+            "vpcnetworkingsupport": "true"
+          },
+          "price": {
+            "effectiveDate": "2026-10-01T00:00:00Z",
+            "description": "$0.09576 per On Demand Linux m7i-flex.large Instance Hour",
+            "unit": "Hrs",
+            "USD": "0.0957600000"
+          }
+        },
+        {
+          "sku": "W8MD4QK5G3J3QYWR",
+          "attributes": {
+            "servicecode": "AmazonEC2",
+            "location": "US East (N. Virginia)",
+            "locationType": "AWS Region",
+            "instanceType": "m7i.xlarge",
+            "currentGeneration": "Yes",
+            "instanceFamily": "General purpose",
+            "vcpu": "4",
+            "physicalProcessor": "Intel Xeon Scalable (Sapphire Rapids)",
+            "clockSpeed": "3.2 GHz",
+            "memory": "16 GiB",
+            "storage": "EBS only",
+            "networkPerformance": "Up to 12500 Megabit",
+            "processorArchitecture": "64-bit",
+            "tenancy": "Shared",
+            "operatingSystem": "Linux",
+            "licenseModel": "No License required",
+            "usagetype": "BoxUsage:m7i.xlarge",
+            "operation": "RunInstances",
+            "availabilityzone": "NA",
+            "capacitystatus": "Used",
+            "classicnetworkingsupport": "false",
+            "dedicatedEbsThroughput": "Up to 10000 Mbps",
+            "dedicatedEbsThroughputDescription": "1250 Mbps",
+            "ecu": "NA",
+            "enhancedNetworkingSupported": "Yes",
+            "gpuMemory": "NA",
+            "instanceFamilyCategory": "General Purpose",
+            "intelAvxAvailable": "Yes",
+            "intelAvx2Available": "Yes",
+            "intelTurboAvailable": "Yes",
+            "marketoption": "OnDemand",
+            "normalizationSizeFactor": "8",
+            "preInstalledSw": "NA",
+            "processorFeatures": "Intel AVX; Intel AVX2; Intel AVX512; Intel Turbo; Intel AMX",
+            "regionCode": "us-east-1",
+            "servicename": "Amazon Elastic Compute Cloud",
+            "vpcnetworkingsupport": "true"
+          },
+          "price": {
+            "effectiveDate": "2026-10-01T00:00:00Z",
+            "description": "$0.2016 per On Demand Linux m7i.xlarge Instance Hour",
+            "unit": "Hrs",
+            "USD": "0.2016000000"
+          }
+        },
+        {
+          "sku": "EPG9NBG9GRCHRP3F",
+          "attributes": {
+            "servicecode": "AmazonEC2",
+            "location": "US East (N. Virginia)",
+            "locationType": "AWS Region",
+            "instanceType": "c7i-flex.large",
+            "currentGeneration": "Yes",
+            "instanceFamily": "Compute optimized",
+            "vcpu": "2",
+            "physicalProcessor": "Intel Xeon Scalable (Sapphire Rapids)",
+            "clockSpeed": "3.2 GHz",
+            "memory": "4 GiB",
+            "storage": "EBS only",
+            "networkPerformance": "Up to 12500 Megabit",
+            "processorArchitecture": "64-bit",
+            "tenancy": "Shared",
+            "operatingSystem": "Linux",
+            "licenseModel": "No License required",
+            "usagetype": "BoxUsage:c7i-flex.large",
+            "operation": "RunInstances",
+            "availabilityzone": "NA",
+            "capacitystatus": "Used",
+            "classicnetworkingsupport": "false",
+            "dedicatedEbsThroughput": "Up to 10000 Mbps",
+            "dedicatedEbsThroughputDescription": "312 Mbps",
+            "ecu": "NA",
+            "enhancedNetworkingSupported": "Yes",
+            "gpuMemory": "NA",
+            "instanceFamilyCategory": "Compute Optimized",
+            "intelAvxAvailable": "Yes",
+            "intelAvx2Available": "Yes",
+            "intelTurboAvailable": "Yes",
+            "marketoption": "OnDemand",
+            "normalizationSizeFactor": "4",
+            "preInstalledSw": "NA",
+            "processorFeatures": "Intel AMX; Intel AVX; Intel AVX2; Intel AVX512; Intel Turbo",
+            "regionCode": "us-east-1",
+            "servicename": "Amazon Elastic Compute Cloud",
+            "vpcnetworkingsupport": "true"
+          },
+          "price": {
+            "effectiveDate": "2026-10-01T00:00:00Z",
+            "description": "$0.08479 per On Demand Linux c7i-flex.large Instance Hour",
+            "unit": "Hrs",
+            "USD": "0.0847900000"
+          }
+        },
+        {
+          "sku": "HDXWAGH5PKCWGFHZ",
+          "attributes": {
+            "servicecode": "AmazonEC2",
+            "location": "US East (N. Virginia)",
+            "locationType": "AWS Region",
+            "instanceType": "m7i.large",
+            "currentGeneration": "Yes",
+            "instanceFamily": "General purpose",
+            "vcpu": "2",
+            "physicalProcessor": "Intel Xeon Scalable (Sapphire Rapids)",
+            "clockSpeed": "3.2 GHz",
+            "memory": "8 GiB",
+            "storage": "EBS only",
+            "networkPerformance": "Up to 12500 Megabit",
+            "processorArchitecture": "64-bit",
+            "tenancy": "Shared",
+            "operatingSystem": "Linux",
+            "licenseModel": "No License required",
+            "usagetype": "BoxUsage:m7i.large",
+            "operation": "RunInstances",
+            "availabilityzone": "NA",
+            "capacitystatus": "Used",
+            "classicnetworkingsupport": "false",
+            "dedicatedEbsThroughput": "Up to 10000 Mbps",
+            "dedicatedEbsThroughputDescription": "650 Mbps",
+            "ecu": "NA",
+            "enhancedNetworkingSupported": "Yes",
+            "gpuMemory": "NA",
+            "instanceFamilyCategory": "General Purpose",
+            "intelAvxAvailable": "Yes",
+            "intelAvx2Available": "Yes",
+            "intelTurboAvailable": "Yes",
+            "marketoption": "OnDemand",
+            "normalizationSizeFactor": "4",
+            "preInstalledSw": "NA",
+            "processorFeatures": "Intel AVX; Intel AVX2; Intel AVX512; Intel Turbo; Intel AMX",
+            "regionCode": "us-east-1",
+            "servicename": "Amazon Elastic Compute Cloud",
+            "vpcnetworkingsupport": "true"
+          },
+          "price": {
+            "effectiveDate": "2026-10-01T00:00:00Z",
+            "description": "$0.1008 per On Demand Linux m7i.large Instance Hour",
+            "unit": "Hrs",
+            "USD": "0.1008000000"
+          }
+        }
+      ]
+    },
+    {
+      "url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonVPC/current/us-east-1/index.json",
+      "version": "20261016224321",
+      "publicationDate": "2026-10-16T22:43:21Z",
+      "products": [
+        {
+          "sku": "4GQUNXTFWVSGPUZK",
+          "attributes": {
+            "servicecode": "AmazonVPC",
+            "location": "US East (N. Virginia)",
+            "locationType": "AWS Region",
+            "group": "VPCPublicIPv4Address",
+            "groupDescription": "Hourly charge for In-use Public IPv4 Addresses",
+            "usagetype": "USE1-PublicIPv4:InUseAddress",
+            "operation": "",
+            "regionCode": "us-east-1",
+            "servicename": "Amazon Virtual Private Cloud"
+          },
+          "price": {
+            "effectiveDate": "2026-10-01T00:00:00Z",
+            "description": "$0.005 per In-use public IPv4 address per hour",
+            "unit": "Hrs",
+            "USD": "0.0050000000"
+          }
+        }
+      ]
+    }
+  ],
+  "topologies": {
+    "1xm7i.xlarge": {
+      "node_count": 1,
+      "ec2_usd_per_node_hour": 0.2016,
+      "ipv4_usd_per_node_hour": 0.005,
+      "gp3_usd_per_gb_month": 0.08,
+      "gp3_gb_per_node": 30,
+      "monthly_to_hourly_convention_hours": 730,
+      "cluster_usd_per_hour": 0.20988767123287672
+    },
+    "2xm7i.large": {
+      "node_count": 2,
+      "ec2_usd_per_node_hour": 0.1008,
+      "ipv4_usd_per_node_hour": 0.005,
+      "gp3_usd_per_gb_month": 0.08,
+      "gp3_gb_per_node": 30,
+      "monthly_to_hourly_convention_hours": 730,
+      "cluster_usd_per_hour": 0.21817534246575343
+    },
+    "1xm7i-flex.large": {
+      "node_count": 1,
+      "ec2_usd_per_node_hour": 0.09576,
+      "ipv4_usd_per_node_hour": 0.005,
+      "gp3_usd_per_gb_month": 0.08,
+      "gp3_gb_per_node": 30,
+      "monthly_to_hourly_convention_hours": 730,
+      "cluster_usd_per_hour": 0.10404767123287671
+    },
+    "2xc7i-flex.large": {
+      "node_count": 2,
+      "ec2_usd_per_node_hour": 0.08479,
+      "ipv4_usd_per_node_hour": 0.005,
+      "gp3_usd_per_gb_month": 0.08,
+      "gp3_gb_per_node": 30,
+      "monthly_to_hourly_convention_hours": 730,
+      "cluster_usd_per_hour": 0.18615534246575344
+    }
+  },
+  "scope": "On-demand Linux compute + provisioned 30 GB/node gp3 + one public IPv4/node. Excludes tax and traffic charges; credits do not change list prices. No NAT or paid load balancer."
+}
