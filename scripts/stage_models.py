@@ -16,6 +16,7 @@ def main():
     p.add_argument("--llm-file", type=Path, required=True)
     p.add_argument("--hosts", nargs="+", required=True)
     p.add_argument("--ssh-key", type=Path, default=Path.home() / ".ssh/afri-ai")
+    p.add_argument("--ssh-known-hosts", type=Path)
     p.add_argument("--values-out", type=Path, default=Path("model-values.json"))
     a = p.parse_args()
     if not (a.asr_dir / "config.json").is_file() or not (a.asr_dir / "model.bin").is_file():
@@ -31,8 +32,14 @@ def main():
         "-o",
         "IdentitiesOnly=yes",
         "-o",
+        "BatchMode=yes",
+        "-o",
+        "ConnectTimeout=10",
+        "-o",
         "StrictHostKeyChecking=accept-new",
     ]
+    if a.ssh_known_hosts:
+        ssh += ["-o", "UserKnownHostsFile=" + str(a.ssh_known_hosts.expanduser())]
     for host in a.hosts:
         host = str(ipaddress.IPv4Address(host))
         target = "ubuntu@" + host

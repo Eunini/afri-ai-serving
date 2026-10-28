@@ -421,6 +421,8 @@ def main():
                 *hosts,
                 "--ssh-key",
                 str(args.ssh_key),
+                "--ssh-known-hosts",
+                str(args.state_dir / "known_hosts"),
                 "--values-out",
                 str(args.state_dir / "model-values.json"),
             ],
