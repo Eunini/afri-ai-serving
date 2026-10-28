@@ -1,0 +1,7 @@
+{
+  "captured_at": "2026-10-28T01:28:47.102467+00:00",
+  "status": "captured",
+  "started_at": "2026-10-28T00:56:37.310813+00:00",
+  "sha256": "0b34453fdceb763ac55d36f9a5fabdbfb471f42ce95d91b95d83c634fe0577f3",
+  "scope": "Live Grafana panels after measured traffic; private localhost forwarding; authentication files excluded. Streaming-only panels may have no series for the nonstreaming workload."
+}

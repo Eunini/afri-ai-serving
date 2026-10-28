@@ -1,0 +1,7 @@
+{
+  "status": "Aborted after post-rollback serving probe; no load result from this attempt",
+  "evidence": "Exact final notice-bearing images and models verified; protected-pod DNS works and public TCP is blocked while same-node unselected control connects; initial auth/chat/speech probes and Helm upgrade/rollback commands passed.",
+  "limitation": "At least one post-rollback serving check failed. This version did not retain individual response statuses, so its cause is not claimed.",
+  "change": "New controller journals every startup/rollout attempt and permits bounded recovery only for unavailability; authentication and response-contract failures remain fatal.",
+  "cleanup": "Known instances, root volumes, VPC and public-key registration destroyed and independently checked."
+}

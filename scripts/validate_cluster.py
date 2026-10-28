@@ -61,12 +61,12 @@ def bounded_price(prices, nodes, hours, budget):
 
 def main():
     import boto3
-    import httpx
 
     from services.artifacts import manifests
     from services.audio import prepare_audio
     from scripts.image_identity import verify_imported_image
     from scripts.cluster_readiness import model_pod_states
+    from scripts.cluster_smoke import smoke as probe_serving
 
     parser = argparse.ArgumentParser()
     parser.add_argument("--out", type=Path, required=True)
@@ -182,7 +182,17 @@ def main():
                 os.killpg(process.pid, signal.SIGKILL)
                 process.wait(timeout=10)
 
-    def run(name, command, timeout=600, *, data=None, capture=False, check=True, cleanup=False):
+    def run(
+        name,
+        command,
+        timeout=600,
+        *,
+        data=None,
+        capture=False,
+        check=True,
+        cleanup=False,
+        private_input=False,
+    ):
         if not cleanup and time.monotonic() + 5 >= deadline:
             raise TimeoutError("Finite validation deadline reached")
         with (args.state_dir / (name + ".log")).open("ab") as log:
@@ -192,8 +202,10 @@ def main():
                 env=env,
                 start_new_session=True,
                 stdin=subprocess.PIPE if data is not None else subprocess.DEVNULL,
-                stdout=subprocess.PIPE if capture else log,
-                stderr=log,
+                stdout=subprocess.DEVNULL
+                if private_input
+                else (subprocess.PIPE if capture else log),
+                stderr=subprocess.DEVNULL if private_input else log,
             )
             children.append(proc)
             try:
@@ -494,7 +506,12 @@ def main():
             "metadata": {"name": "afri-ai-api", "namespace": "afri-ai"},
             "data": {"api-key": base64.b64encode(api_key.encode()).decode()},
         }
-        run("api-secret", kubectl + ["apply", "-f", "-"], data=json.dumps(secret).encode())
+        run(
+            "api-secret",
+            kubectl + ["apply", "-f", "-"],
+            data=json.dumps(secret).encode(),
+            private_input=True,
+        )
         run(
             "tls-certificate",
             [
@@ -530,7 +547,12 @@ def main():
                 ).decode(),
             },
         }
-        run("tls-secret", kubectl + ["apply", "-f", "-"], data=json.dumps(tls).encode())
+        run(
+            "tls-secret",
+            kubectl + ["apply", "-f", "-"],
+            data=json.dumps(tls).encode(),
+            private_input=True,
+        )
         write(args.state_dir / "k6-config.json", {"hosts": {"localhost": "127.0.0.1"}})
         run(
             "monitoring-repo",
@@ -648,40 +670,17 @@ def main():
         base = "https://localhost:34443"
         context = ssl.create_default_context(cafile=str(args.state_dir / "benchmark-tls.crt"))
 
-        def smoke():
-            checks = {}
-            with httpx.Client(verify=context, timeout=180, trust_env=False) as client:
-                checks["unauthorized_401"] = (
-                    client.post(
-                        base + "/v1/chat/completions",
-                        json={
-                            "messages": [{"role": "user", "content": "Say hello."}],
-                            "max_tokens": 8,
-                        },
-                    ).status_code
-                    == 401
-                )
-                response = client.post(
-                    base + "/v1/chat/completions",
-                    headers={"Authorization": "Bearer " + api_key},
-                    json={"messages": [{"role": "user", "content": "Say hello."}], "max_tokens": 8},
-                )
-                checks["chat_200"] = response.status_code == 200 and bool(
-                    response.json().get("choices")
-                )
-                audio = client.post(
-                    base + "/transcribe",
-                    headers={"Authorization": "Bearer " + api_key, "Content-Type": "audio/wav"},
-                    content=args.audio.read_bytes(),
-                )
-                checks["transcription_200"] = audio.status_code == 200 and isinstance(
-                    audio.json().get("text"), str
-                )
-            if not all(checks.values()):
-                raise RuntimeError("Final-cluster smoke checks failed")
-            return checks
+        def smoke(stage):
+            return probe_serving(
+                base,
+                context,
+                api_key,
+                args.audio.read_bytes(),
+                args.out / "smoke-attempts.jsonl",
+                stage,
+            )
 
-        receipt["smoke_checks"] = smoke()
+        receipt["smoke_checks"] = smoke("initial")
         # Exercise an actual chart upgrade and rollback before the load experiment.
         run("upgrade", install + ["--set", "speech.threads=1"], timeout=920)
         run(
@@ -690,7 +689,7 @@ def main():
             + ["rollback", "afri-ai", "1", "--namespace", "afri-ai", "--wait", "--timeout", "15m"],
             timeout=920,
         )
-        receipt["post_rollback_smoke_checks"] = smoke()
+        receipt["post_rollback_smoke_checks"] = smoke("after_rollback")
         write(
             args.out / "run.json",
             {

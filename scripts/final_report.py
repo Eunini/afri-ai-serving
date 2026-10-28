@@ -74,7 +74,7 @@ def main():
     lines = [
         "# Selected-model AWS serving validation",
         "",
-        "Measured research deployment; **production sign-off remains pending**. The selected WAXAL fine-tuned tiny int8 and Qwen2.5-1.5B Q4 models are identified by exact hashes in each run. The ASR checkpoint has 88.76% full-test WER in Project 1; serving success does not establish transcription accuracy.",
+        "Measured research deployment; **production sign-off remains pending**. The selected WAXAL fine-tuned tiny int8 and Qwen2.5-1.5B Q4 models are identified by exact hashes in each run. The source float ASR checkpoint had 88.76% full-test WER in Project 1; consult its compression results for the CPU int8 variant. Serving success does not establish transcription accuracy.",
         "",
         "Both topologies use the same source, images and weights. The final gateway admits canonical integer PCM WAV before native parsing. Model init hashes, restricted pod networking with same-node controls, real TLS requests, chart upgrade/rollback, load, failure and teardown are recorded. The private localhost certificate does not establish public-domain TLS renewal.",
         "",
@@ -119,7 +119,7 @@ def main():
     for path, manifest in zip(args.runs, manifests):
         relative = "runs/" + path.name
         lines.append(
-            f"- [{manifest['topology']} run manifest]({relative}/run.json), [policy checks]({relative}/network-policy-verification.json), [monitoring export]({relative}/monitoring-series.json), [verified teardown]({relative}/teardown.json)."
+            f"- [{manifest['topology']} run manifest]({relative}/run.json), [policy checks]({relative}/network-policy-verification.json), [rollout probe journal]({relative}/smoke-attempts.jsonl), [monitoring export]({relative}/monitoring-series.json), [verified teardown]({relative}/teardown.json)."
         )
         if (path / "dashboard-final.png").exists():
             lines += [

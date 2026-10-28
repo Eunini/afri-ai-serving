@@ -1,0 +1,11 @@
+{
+  "status": "No unresolved credential finding",
+  "reviewed_model_hash_false_positives": [
+    {
+      "file": "run.json",
+      "line": 12,
+      "disposition": "Verified model tokenizer SHA256; not a credential"
+    }
+  ],
+  "scope": "Only sanitized measured outputs; no credentials, Terraform state, audio or private command logs"
+}

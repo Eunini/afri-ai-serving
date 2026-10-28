@@ -203,6 +203,13 @@ controller teardown are independent safeguards. A new run needs empty dedicated
 state and a fresh evidence directory. The controller never imports registry
 credentials or queries billing.
 
+Initial/post-rollback serving probes have a bounded readiness window, with every
+attempt/status retained separately in `smoke-attempts.jsonl`. Temporary ingress
+unavailability is not a load-test sample. Authentication/response-contract
+failures are fatal and cannot be hidden by a successful retry. These probes do
+not establish zero-downtime rollback. Secret creation output is discarded to keep
+secret-bearing error payloads out of command logs.
+
 ```bash
 export BASE_URL=http://127.0.0.1:8000
 k6 run --out json=docs/chat-load.ndjson loadtest/traffic.js
