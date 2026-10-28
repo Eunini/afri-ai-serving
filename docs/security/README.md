@@ -7,6 +7,13 @@ license scanning ran. Raw report hashes are retained with each condensed report.
 Mounted model weights are not part of the image and have separate source/license
 and SHA256 records.
 
+The 2026-10-28 rebuild adds canonical PCM admission, and the subsequent image
+scan retains all OS findings. [The scoped review](review-20261028.md) distinguishes
+the upload-path mitigation from an upstream library fix. Actual loaded native
+audio versions and hashes are in [speech-native-audio.json](speech-native-audio.json).
+Project and upstream native-source notices are retained in the rebuilt runtime
+images; broader third-party obligations still require review.
+
 | Image | Package vulnerability findings | HIGH | CRITICAL | Fixable HIGH/CRITICAL in this scan |
 | --- | ---: | ---: | ---: | ---: |
 | Speech gateway | 177 | 45 | 0 | 0 |

@@ -7,6 +7,10 @@ RUN cmake -S /src -B /src/build -DGGML_NATIVE=OFF -DGGML_BACKEND_DL=OFF -DBUILD_
 FROM ubuntu:24.04@sha256:68ee22004a9109b44973313b02ff7b1de250f1de0f5ecb628d73f579aaff33ac
 RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates libgomp1 libcurl4t64 && rm -rf /var/lib/apt/lists/* && useradd --uid 10001 --create-home app
 COPY --from=build /src/build/bin/llama-server /usr/local/bin/llama-server
+COPY --from=build /src/LICENSE /usr/share/doc/llama.cpp/LICENSE
+COPY --from=build /src/licenses/ /usr/share/doc/llama.cpp/licenses/
+COPY --from=build /src/vendor/ /usr/share/doc/llama.cpp/vendor/
+COPY LICENSE /usr/share/doc/afri-ai-serving/LICENSE
 USER 10001
 EXPOSE 8081
 ENTRYPOINT ["llama-server"]

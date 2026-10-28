@@ -624,6 +624,21 @@ def main():
             time.sleep(5)
         else:
             raise TimeoutError("Final-model pods did not all become verified and ready")
+        run(
+            "network-policy-verification",
+            [
+                sys.executable,
+                "-m",
+                "loadtest.network_policy",
+                "--kubectl",
+                str(args.tools_dir / "kubectl"),
+                "--image",
+                images["chat"]["tag"],
+                "--out",
+                str(args.out / "network-policy-verification.json"),
+            ],
+            timeout=240,
+        )
         base = "https://localhost:34443"
         context = ssl.create_default_context(cafile=str(args.state_dir / "benchmark-tls.crt"))
 
@@ -774,6 +789,27 @@ def main():
             ],
             timeout=180,
         )
+        try:
+            receipt["dashboard_capture_exit_code"] = run(
+                "dashboard-capture",
+                [
+                    sys.executable,
+                    "-m",
+                    "scripts.capture_dashboard",
+                    "--kubectl",
+                    str(args.tools_dir / "kubectl"),
+                    "--state-dir",
+                    str(args.state_dir),
+                    "--out",
+                    str(args.out),
+                    "--started-at",
+                    receipt["started_at"],
+                ],
+                timeout=240,
+                check=False,
+            )
+        except subprocess.TimeoutExpired:
+            receipt["dashboard_capture_error_type"] = "TimeoutExpired"
         receipt["status"] = "measurements_complete"
     except BaseException as error:
         receipt.update(status="stopped", error_type=type(error).__name__)

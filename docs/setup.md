@@ -159,6 +159,23 @@ rolls back the chart, and runs the existing bounded load/failure/capacity tests.
 It exports monitoring before destroying its own resources and checking teardown.
 The new controller still awaits its first completed cloud run.
 
+The hardened profile checks DNS and blocked public TCP egress from the actual
+model pods against unselected controls on the same nodes. Traefik and Prometheus
+are the admitted namespace/pod peers; change `monitoring.namespace` if installing
+monitoring elsewhere. Models are mounted locally, so their pods need no internet
+download. The speech API accepts integer PCM WAV or FLAC; compressed and float
+WAV are rejected before native parsing. Runtime images retain project/upstream
+notices; vulnerability and license findings still require review.
+
+For dashboard capture, install `playwright-cli` and its headless browser on the
+operator host. The optional capture logs in through private localhost forwarding,
+keeps temporary browser authentication outside Git, scrolls lazy panels into view
+and closes its own session. Capture failure is recorded while measured Prometheus
+exports remain available. `scripts.final_report` only reports matching final-model
+runs after completed measurements, policy checks and independently verified
+teardown; it preserves all capacity rows and states the 5% error/30-second p95
+eligibility targets.
+
 Use kubectl **v1.36.5** in the supplied tools directory, alongside Terraform,
 Helm and k6. Build/tag the three images as `afri-research-{speech,chat,llama}:local`
 and repeat real-model integration/image review first if their IDs or gateway

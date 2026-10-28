@@ -4,6 +4,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends libsndfile1 lib
 COPY pyproject.toml requirements-speech.lock ./
 RUN pip install --no-cache-dir -r requirements-speech.lock
 COPY services ./services
+COPY LICENSE ./LICENSE
 RUN chmod -R a+rX /app/services
 RUN pip install --no-cache-dir --no-deps . && useradd --uid 10001 --create-home app
 USER 10001
