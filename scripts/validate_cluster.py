@@ -64,6 +64,7 @@ def main():
     import httpx
 
     from services.artifacts import manifests
+    from scripts.image_identity import verify_imported_image
 
     parser = argparse.ArgumentParser()
     parser.add_argument("--out", type=Path, required=True)
@@ -338,6 +339,7 @@ def main():
             remote(host, "sudo k3s --version")
         receipt["expiry_timers_verified"] = True
         # Stream the exact local images directly to each node; no extra multi-GB archive.
+        imported_images = []
         for host in hosts:
             with (args.state_dir / "image-transfer.log").open("ab") as log:
                 producer = subprocess.Popen(
@@ -365,6 +367,22 @@ def main():
                 if producer.returncode or consumer.returncode:
                     raise RuntimeError("Image transfer failed")
             for service, image in images.items():
+                listing = remote(
+                    host, "sudo k3s ctr --namespace k8s.io images list", capture=True
+                ).decode()
+                matches = [
+                    line.split()
+                    for line in listing.splitlines()
+                    if line.split() and line.split()[0] == image["tag"]
+                ]
+                if len(matches) != 1 or len(matches[0]) < 3:
+                    raise ValueError("Imported tag missing or ambiguous: " + service)
+                digest = matches[0][2]
+                raw_manifest = remote(
+                    host,
+                    "sudo k3s ctr --namespace k8s.io content get " + shlex.quote(digest),
+                    capture=True,
+                )
                 status = json.loads(
                     remote(
                         host,
@@ -372,8 +390,18 @@ def main():
                         capture=True,
                     )
                 )
-                if status["status"]["id"] != image["id"]:
-                    raise ValueError("Imported image identity changed: " + service)
+                identity = verify_imported_image(
+                    image["id"], digest, raw_manifest, status["status"]
+                )
+                imported_images.append(
+                    {
+                        "node_index": hosts.index(host),
+                        "service": service,
+                        "tag": image["tag"],
+                        **identity,
+                    }
+                )
+                write(args.out / "image-import-verification.json", imported_images)
         run(
             "stage-models",
             [

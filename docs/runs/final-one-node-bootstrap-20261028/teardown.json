@@ -1,0 +1,12 @@
+{
+  "checked_at": "2026-10-28T00:44:20.848054+00:00",
+  "region": "us-east-1",
+  "checks": {
+    "i-0ae4d08cbdccaa655": true,
+    "vol-0b45311a8b24025d1": true,
+    "vpc-00a21a5187978a81d": true,
+    "afri-ai-research-6b3fb2de85e790f0a5526389f3": true
+  },
+  "destroy_verified": true,
+  "scope": "Known experiment instances, boot volumes, VPC and registered public key. Does not assert the whole account is empty or query billing."
+}

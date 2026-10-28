@@ -1,0 +1,6 @@
+{
+  "status": "aborted before application/model load",
+  "reason": "Image verifier compared Docker image ID directly with CRI image ID; these may refer to different OCI objects. Corrected verifier checks the tag target, hashes manifest bytes and relates the manifest/configuration IDs.",
+  "evidence": "SSH, completed cloud-init, k3s startup and expiry timer verified; model serving/load were not reached. Known resources destroyed and checked.",
+  "next": "Fresh isolated rerun with corrected verification; no measured capacity result from this attempt."
+}

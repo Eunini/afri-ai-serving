@@ -1,0 +1,93 @@
+{
+  "started_at": "2026-10-28T00:41:37.922632+00:00",
+  "source_commit": "a26c695e2b780c14735a2b834b945df8be89f73f",
+  "status": "stopped",
+  "topology": "1xm7i-flex.large",
+  "max_hours": 4.0,
+  "hourly_usd": 0.10404767123287671,
+  "maximum_compute_storage_ipv4_usd": 0.41619068493150685,
+  "cost_exclusions": "Tax and traffic; remaining credits not independently accessible",
+  "stages": [
+    {
+      "name": "kubectl-version",
+      "at": "2026-10-28T00:41:38.052408+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "image-inspect-speech",
+      "at": "2026-10-28T00:41:38.201865+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "image-inspect-chat",
+      "at": "2026-10-28T00:41:38.314103+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "image-inspect-llama",
+      "at": "2026-10-28T00:41:38.395032+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "terraform-init",
+      "at": "2026-10-28T00:41:48.711950+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "terraform-apply",
+      "at": "2026-10-28T00:42:36.567474+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "terraform-output",
+      "at": "2026-10-28T00:42:42.207720+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "remote",
+      "at": "2026-10-28T00:42:45.124364+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "remote",
+      "at": "2026-10-28T00:42:58.792138+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "remote",
+      "at": "2026-10-28T00:43:00.113375+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "remote",
+      "at": "2026-10-28T00:43:01.483648+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "remote",
+      "at": "2026-10-28T00:43:25.708004+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "terraform-output",
+      "at": "2026-10-28T00:43:30.865134+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "terraform-destroy",
+      "at": "2026-10-28T00:44:18.505894+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "teardown-verification",
+      "at": "2026-10-28T00:44:21.037467+00:00",
+      "exit_code": 0
+    }
+  ],
+  "kubectl_version": "v1.36.5",
+  "expiry_timers_verified": true,
+  "error_type": "ValueError",
+  "managed_state_empty": true,
+  "teardown_verified": true,
+  "finished_at": "2026-10-28T00:44:21.038798+00:00"
+}

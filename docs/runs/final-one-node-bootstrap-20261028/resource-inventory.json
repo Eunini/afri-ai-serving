@@ -1,0 +1,15 @@
+{
+  "vpc_id": "vpc-00a21a5187978a81d",
+  "key_name": "afri-ai-research-6b3fb2de85e790f0a5526389f3",
+  "instances": [
+    {
+      "id": "i-0ae4d08cbdccaa655",
+      "launch_time": "2026-10-28T00:42:23+00:00",
+      "type": "m7i-flex.large",
+      "ami": "ami-0d6dd9e8265d48906",
+      "volume_ids": [
+        "vol-0b45311a8b24025d1"
+      ]
+    }
+  ]
+}
