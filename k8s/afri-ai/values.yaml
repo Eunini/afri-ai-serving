@@ -35,3 +35,4 @@ ingress:
 monitoring:
   enabled: false
   release: monitoring
+  namespace: monitoring

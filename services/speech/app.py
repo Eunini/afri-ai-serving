@@ -2,13 +2,13 @@ import io
 import os
 from contextlib import asynccontextmanager
 
-import soundfile as sf
 from fastapi import Depends, FastAPI, HTTPException, Request
 from fastapi.concurrency import run_in_threadpool
 from fastapi.responses import Response
 from prometheus_client import CONTENT_TYPE_LATEST, Counter, generate_latest
 
 from services.common import RequestBudgetMiddleware, authorize, instrument
+from services.audio import AudioLimitError, UnsupportedAudio, prepare_audio
 
 AUDIO_SECONDS = Counter("afri_audio_seconds_total", "Successfully transcribed audio seconds")
 MAX_BYTES = 20 * 1024 * 1024
@@ -84,16 +84,12 @@ def create_app(transcriber=None):
             chunks.append(chunk)
         audio = b"".join(chunks)
         try:
-            metadata = sf.info(io.BytesIO(audio))
-        except (RuntimeError, sf.LibsndfileError):
-            raise HTTPException(415, "Send valid WAV or FLAC audio as the request body") from None
+            audio, metadata = prepare_audio(audio, max_seconds=MAX_SECONDS)
+        except UnsupportedAudio:
+            raise HTTPException(415, "Send integer PCM WAV or FLAC audio") from None
+        except AudioLimitError as error:
+            raise HTTPException(422, str(error)) from None
         duration = metadata.duration
-        if metadata.format not in {"WAV", "WAVEX", "FLAC"}:
-            raise HTTPException(415, "Send WAV or FLAC audio")
-        if metadata.channels > 2 or not 8000 <= metadata.samplerate <= 48000:
-            raise HTTPException(422, "Use mono/stereo audio between 8 and 48 kHz")
-        if duration <= 0 or duration > MAX_SECONDS:
-            raise HTTPException(422, "Audio must be between 0 and 120 seconds")
         text = await run_in_threadpool(app.state.transcribe, audio)
         AUDIO_SECONDS.inc(duration)
         return {"text": text, "language": "yo", "audio_seconds": duration}

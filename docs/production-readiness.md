@@ -15,7 +15,7 @@ quality, continuous availability or a finished four-project release.
   after 30 seconds and holds one model slot through the response/disconnect.
   Excess inference requests return 429 with Retry-After. Limits are per worker;
   the supplied image uses one worker. Chat uploads are limited to 256 KiB;
-  speech to 20 MiB and 120 seconds of mono/stereo 8–48 kHz WAV/FLAC.
+  speech to 20 MiB and 120 seconds of mono/stereo 8–48 kHz integer PCM WAV/FLAC.
 - Regression checks cover oversized declared and chunked bodies, auth before
   parsing, slow uploads, concurrent streams and cancellation releasing capacity.
 - The selected fine-tuned tiny int8 artifact passed a real-audio local gateway
@@ -27,6 +27,13 @@ quality, continuous availability or a finished four-project release.
   The subsequent full image scan found OS vulnerabilities and unresolved license
   classifications, recorded in `security/`. These findings are not cleared by the
   passing Python audit.
+- CVE-2026-37555 affects the native IMA ADPCM WAV parser. The speech API now
+  admits WAV through Python's PCM parser and rewrites a canonical PCM header
+  before native/model decoding. Compressed/float WAV and other containers are
+  rejected; FLAC remains supported. Tests cover early ADPCM rejection and
+  ambiguous/truncated WAV chunks. This blocks the affected upload path without
+  claiming that the installed native library is patched; final images and cluster
+  validation must be repeated. See `security/review-20261028.md`.
 - Model staging generates reviewed SHA256 values and checks transferred bytes
   on each node. Helm init containers refuse to start services when the model
   manifest is empty or bytes differ. Final-cluster verification remains a gate.

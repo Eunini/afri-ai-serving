@@ -8,9 +8,25 @@ spec:
       - key: app
         operator: In
         values: [{{ .Release.Name }}-speech, {{ .Release.Name }}-chat]
-  policyTypes: [Ingress]
+  policyTypes: [Ingress, Egress]
   ingress:
     - from:
-        - namespaceSelector: {}
+        - namespaceSelector:
+            matchLabels: {kubernetes.io/metadata.name: kube-system}
+          podSelector:
+            matchLabels: {app.kubernetes.io/name: traefik}
+        - namespaceSelector:
+            matchLabels: {kubernetes.io/metadata.name: {{ .Values.monitoring.namespace | quote }}}
+          podSelector:
+            matchLabels: {app.kubernetes.io/name: prometheus}
       ports:
         - {protocol: TCP, port: 8000}
+  egress:
+    - to:
+        - namespaceSelector:
+            matchLabels: {kubernetes.io/metadata.name: kube-system}
+          podSelector:
+            matchLabels: {k8s-app: kube-dns}
+      ports:
+        - {protocol: UDP, port: 53}
+        - {protocol: TCP, port: 53}
