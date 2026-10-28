@@ -1,10 +1,9 @@
 {
-  "checked_at": "2026-10-27T23:09:24.817657+00:00",
-  "scope": "Actual locally built amd64 runtime images. Model weights are separate mounted artifacts. License classifications are scanner findings, not a legal determination.",
-  "images": [
-    {
-      "service": "speech",
-      "image_id": "sha256:67abf8c6290aa09ea0ac744eb0cb99f870252c0a67be9b9ef83b135fe33d15bf",
+  "scope": "Exact final runtime images with PCM admission and retained notices; no production clearance",
+  "images": {
+    "speech": {
+      "image_id": "sha256:293d961b3862e65c47920e3a6514a04ffc36b76c2efe794e7f918959476468df",
+      "scanned_at": "2026-10-28T02:40:38.035238643+01:00",
       "os": {
         "Family": "debian",
         "Name": "13.7"
@@ -19,15 +18,15 @@
       "license_classifications": {
         "restricted": 345,
         "unknown": 198,
-        "notice": 392,
+        "notice": 394,
         "reciprocal": 7,
         "unencumbered": 6
       },
-      "status": "Findings recorded; no production clearance"
+      "full_raw_report_sha256": "586c9db12a74f3528b68b379c4ea58ff69a7f5c86ee19d0b66cdefe25c2f9a93"
     },
-    {
-      "service": "chat",
-      "image_id": "sha256:8a2646f1e3ab0fcc3eb2bd42579f14a54a66a5e64bcb8d91a4f8c1daf6116855",
+    "chat": {
+      "image_id": "sha256:7c6493dca39d395b7660c6a548607328f123c4272cbcde536fea4c082e77a2d7",
+      "scanned_at": "2026-10-28T02:40:48.471281493+01:00",
       "os": {
         "Family": "debian",
         "Name": "13.7"
@@ -42,15 +41,15 @@
       "license_classifications": {
         "restricted": 324,
         "unknown": 184,
-        "notice": 217,
+        "notice": 219,
         "reciprocal": 4,
         "unencumbered": 5
       },
-      "status": "Findings recorded; no production clearance"
+      "full_raw_report_sha256": "57256c5e0c4ca58a10cc3990e4f0e55b472741260ab084136616b829d95ca82d"
     },
-    {
-      "service": "llama",
-      "image_id": "sha256:e0feb644c375acb89ac85a751ee308609317445e4a40c6305b2b401f762da823",
+    "llama": {
+      "image_id": "sha256:2fb1e05eaabb47a71d44346028e439e2e29bd3fabdb1ac455151a48ee67f074b",
+      "scanned_at": "2026-10-28T02:40:53.310972576+01:00",
       "os": {
         "Family": "ubuntu",
         "Name": "24.04"
@@ -67,7 +66,7 @@
         "reciprocal": 2,
         "unencumbered": 5
       },
-      "status": "Findings recorded; no production clearance"
+      "full_raw_report_sha256": "3d832c39d881508bb45e86c53775c003eaa4a3ce5ff9bf09ced031c61c8107b6"
     }
-  ]
+  }
 }

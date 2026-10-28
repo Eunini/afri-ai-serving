@@ -1,0 +1,21 @@
+{
+  "speech": {
+    "image_id": "sha256:293d961b3862e65c47920e3a6514a04ffc36b76c2efe794e7f918959476468df",
+    "project_license_present": true,
+    "wheel_license_paths": [
+      "LICENSE"
+    ]
+  },
+  "chat": {
+    "image_id": "sha256:7c6493dca39d395b7660c6a548607328f123c4272cbcde536fea4c082e77a2d7",
+    "project_license_present": true,
+    "wheel_license_paths": [
+      "LICENSE"
+    ]
+  },
+  "llama": {
+    "image_id": "sha256:2fb1e05eaabb47a71d44346028e439e2e29bd3fabdb1ac455151a48ee67f074b",
+    "project_license_present": true,
+    "upstream_license_and_vendored_sources_present": true
+  }
+}

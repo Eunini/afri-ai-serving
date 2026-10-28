@@ -1,8 +1,9 @@
 {
   "service": "llama",
   "scanner": "Trivy 0.76.1; official release checksum verified",
-  "scanned_at": "2026-10-27T23:57:41.948710938+01:00",
-  "image_id": "sha256:e0feb644c375acb89ac85a751ee308609317445e4a40c6305b2b401f762da823",
+  "scanned_at": "2026-10-28T02:40:53.310972576+01:00",
+  "image_id": "sha256:2fb1e05eaabb47a71d44346028e439e2e29bd3fabdb1ac455151a48ee67f074b",
+  "scanner_report_image_id": "sha256:2fb1e05eaabb47a71d44346028e439e2e29bd3fabdb1ac455151a48ee67f074b",
   "os": {
     "Family": "ubuntu",
     "Name": "24.04"
@@ -11,7 +12,7 @@
     "vulnerability",
     "full license"
   ],
-  "full_raw_report_sha256": "2d34efec8ae3f6216fac24e29f31d2685e5d96e9f80d0e3567e6c366a40f6217",
+  "full_raw_report_sha256": "3d832c39d881508bb45e86c53775c003eaa4a3ce5ff9bf09ced031c61c8107b6",
   "vulnerabilities_by_severity": {
     "MEDIUM": 25,
     "LOW": 4

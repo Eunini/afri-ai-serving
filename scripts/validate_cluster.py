@@ -64,6 +64,7 @@ def main():
     import httpx
 
     from services.artifacts import manifests
+    from services.audio import prepare_audio
     from scripts.image_identity import verify_imported_image
     from scripts.cluster_readiness import model_pod_states
 
@@ -93,6 +94,9 @@ def main():
     for name in ("asr_dir", "llm_file", "audio", "prices", "ssh_key"):
         setattr(args, name, getattr(args, name).expanduser().resolve(strict=True))
     prices = json.loads(args.prices.read_text())
+    if args.audio.stat().st_size > 20 * 1024**2:
+        raise ValueError("Benchmark audio exceeds the gateway's upload limit")
+    _, audio_metadata = prepare_audio(args.audio.read_bytes())
     topology, hourly = bounded_price(prices, args.nodes, args.max_hours, args.budget_usd)
     proof = json.loads((root / "docs/fine-tuned-container-integration.json").read_text())
     models = manifests(args.asr_dir, args.llm_file)
@@ -695,12 +699,26 @@ def main():
                 "monitoring_chart": "kube-prometheus-stack 92.13.1",
                 "models": proof["model_hashes"],
                 "asr_artifact": proof["asr_artifact"],
+                "llm_artifact": proof["llm_artifact"],
+                "speech_workload": {
+                    "audio_seconds": audio_metadata.duration,
+                    "sha256": hashlib.sha256(args.audio.read_bytes()).hexdigest(),
+                    "format": audio_metadata.format,
+                },
+                "chat_workload": {
+                    "prompt": "Explain photosynthesis in two sentences.",
+                    "max_tokens": 64,
+                    "temperature": 0,
+                    "stream": False,
+                    "language": "English",
+                },
                 "images": images,
                 "hourly_usd": hourly,
                 "price_evidence_sha256": hashlib.sha256(args.prices.read_bytes()).hexdigest(),
                 "scope": "Administrator-only TLS ingress via SSH; research-only fine-tuned model; source-built exact images imported without registry credentials",
             },
         )
+        (args.out / "deployment-values.json").write_bytes(values_path.read_bytes())
         save()
         receipt["status"] = "measuring"
         save()

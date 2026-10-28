@@ -30,7 +30,10 @@ def main():
     manifests = [validated_run(path) for path in args.runs]
     reference = manifests[0]
     if any(
-        any(m[key] != reference[key] for key in ["source_commit", "models", "images"])
+        any(
+            m[key] != reference[key]
+            for key in ["source_commit", "models", "images", "speech_workload", "chat_workload"]
+        )
         for m in manifests
     ):
         raise ValueError("Do not compare different final source, images or model artifacts")
@@ -75,7 +78,7 @@ def main():
         "",
         "Both topologies use the same source, images and weights. The final gateway admits canonical integer PCM WAV before native parsing. Model init hashes, restricted pod networking with same-node controls, real TLS requests, chart upgrade/rollback, load, failure and teardown are recorded. The private localhost certificate does not establish public-domain TLS renewal.",
         "",
-        "The workload repeats one real 5.76-second Yoruba recording and, separately, one English two-sentence explanation capped at 64 tokens. Each arrival plateau lasts 120 seconds. This is a short workload sample, not a general capacity or Nigerian-language LLM accuracy claim.",
+        f"The workload repeats one real {reference['speech_workload']['audio_seconds']:.3f}-second Yoruba recording (SHA256 `{reference['speech_workload']['sha256']}`) and, separately, one English two-sentence explanation capped at {reference['chat_workload']['max_tokens']} tokens. Each arrival plateau lasts 120 seconds. This is a short workload sample, not a general capacity or Nigerian-language LLM accuracy claim.",
         "",
         "## Lowest measured cost meeting the stated targets",
         "",

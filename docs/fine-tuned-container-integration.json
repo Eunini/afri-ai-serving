@@ -1,6 +1,6 @@
 {
   "scope": "local real-model container integration; not a cloud capacity benchmark",
-  "asr_artifact": "WAXAL fine-tuned whisper-tiny; validation-selected step 800; v6",
+  "asr_artifact": "WAXAL fine-tuned whisper-tiny; validation-selected step 800; v6; canonical PCM admission and retained notices",
   "asr_compute_type": "int8",
   "llm_artifact": "qwen-q4.gguf",
   "checks": {
@@ -12,21 +12,22 @@
     "prometheus_audio_counter": true
   },
   "status": "passed",
-  "source_commit": "cd34887877c5bfe4ae94ee2ea52990eab09f0df8",
+  "source_commit": "bff8a4be81bdf61bd6d4d96c1d2e434a570383e8",
   "source_commit_is_baseline": false,
   "source_files_sha256": {
     "services/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "services/artifacts.py": "8e8e00b4401474f8dcc9275049bb2c38c515d7ec622fe8527c03eaf107361523",
+    "services/audio.py": "a0df56529a38742ccdb936a38a22f98fe38dbb3af86c0569b4c041db16a0dc86",
     "services/chat/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "services/chat/app.py": "b2375b3d3e77da2035f6e8d2395fc4626d39a9c7200fc018594c2b59ecb15eae",
     "services/common.py": "eebddb86e02fec3176bbd14884a001549304d3cd8a0c186f1b6a4f76c033dc10",
     "services/speech/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "services/speech/app.py": "08380c51e4e33ba29d769a2e20a129915dc5f975beb317e4550db000bdaf85da"
+    "services/speech/app.py": "f4734564548b9a63ee9f0f2d253f657211ff3ef4f6a6f65cd77532fb62449485"
   },
   "images": {
-    "speech": "sha256:67abf8c6290aa09ea0ac744eb0cb99f870252c0a67be9b9ef83b135fe33d15bf",
-    "chat": "sha256:8a2646f1e3ab0fcc3eb2bd42579f14a54a66a5e64bcb8d91a4f8c1daf6116855",
-    "llama": "sha256:e0feb644c375acb89ac85a751ee308609317445e4a40c6305b2b401f762da823"
+    "speech": "sha256:293d961b3862e65c47920e3a6514a04ffc36b76c2efe794e7f918959476468df",
+    "chat": "sha256:7c6493dca39d395b7660c6a548607328f123c4272cbcde536fea4c082e77a2d7",
+    "llama": "sha256:2fb1e05eaabb47a71d44346028e439e2e29bd3fabdb1ac455151a48ee67f074b"
   },
   "gateway_image_sources_match_checkout": true,
   "model_manifest_verification": "passed inside both final gateway images",

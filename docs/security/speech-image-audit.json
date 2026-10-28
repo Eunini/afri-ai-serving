@@ -1,8 +1,9 @@
 {
   "service": "speech",
   "scanner": "Trivy 0.76.1; official release checksum verified",
-  "scanned_at": "2026-10-27T23:57:16.42050488+01:00",
-  "image_id": "sha256:67abf8c6290aa09ea0ac744eb0cb99f870252c0a67be9b9ef83b135fe33d15bf",
+  "scanned_at": "2026-10-28T02:40:38.035238643+01:00",
+  "image_id": "sha256:293d961b3862e65c47920e3a6514a04ffc36b76c2efe794e7f918959476468df",
+  "scanner_report_image_id": "sha256:293d961b3862e65c47920e3a6514a04ffc36b76c2efe794e7f918959476468df",
   "os": {
     "Family": "debian",
     "Name": "13.7"
@@ -11,7 +12,7 @@
     "vulnerability",
     "full license"
   ],
-  "full_raw_report_sha256": "81bf7df5b43af2c8eb6d43305ae368339c7ebf34933ef9d6da4b64052ca8579b",
+  "full_raw_report_sha256": "586c9db12a74f3528b68b379c4ea58ff69a7f5c86ee19d0b66cdefe25c2f9a93",
   "vulnerabilities_by_severity": {
     "LOW": 63,
     "HIGH": 45,
@@ -22,7 +23,7 @@
   "license_classifications": {
     "restricted": 345,
     "unknown": 198,
-    "notice": 392,
+    "notice": 394,
     "reciprocal": 7,
     "unencumbered": 6
   },
@@ -6889,6 +6890,12 @@
       "FilePath": "usr/share/gcc/python/libstdcxx/v6/xmethods.py"
     },
     {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "app/LICENSE"
+    },
+    {
       "Name": "BSD-0-Clause",
       "Category": "unknown",
       "PkgName": "",
@@ -6917,6 +6924,12 @@
       "Category": "notice",
       "PkgName": "",
       "FilePath": "usr/local/lib/python3.12/optparse.py"
+    },
+    {
+      "Name": "MIT",
+      "Category": "notice",
+      "PkgName": "",
+      "FilePath": "usr/local/lib/python3.12/site-packages/afri_ai_serving-0.1.0.dist-info/licenses/LICENSE"
     },
     {
       "Name": "MIT",

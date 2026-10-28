@@ -1,0 +1,50 @@
+{
+  "soundfile_version": "0.14.0",
+  "libsndfile_version": "1.2.2",
+  "loaded_libraries": [
+    {
+      "path": "/usr/local/lib/python3.12/site-packages/_soundfile_data/libsndfile_x86_64.so",
+      "sha256": "c872fb84af2afc0e96b603e0000f0f407af86c49ad1126f2785e5722c7bb27d7"
+    }
+  ],
+  "pyav_version": "15.1.0",
+  "ffmpeg_libraries": {
+    "libavutil": [
+      59,
+      39,
+      100
+    ],
+    "libavcodec": [
+      61,
+      19,
+      101
+    ],
+    "libavformat": [
+      61,
+      7,
+      100
+    ],
+    "libavdevice": [
+      61,
+      3,
+      100
+    ],
+    "libavfilter": [
+      10,
+      4,
+      100
+    ],
+    "libswscale": [
+      8,
+      3,
+      100
+    ],
+    "libswresample": [
+      5,
+      3,
+      100
+    ]
+  },
+  "inspected_image_id": "sha256:293d961b3862e65c47920e3a6514a04ffc36b76c2efe794e7f918959476468df",
+  "scope": "Actual loaded native versions/hashes; not a complete vulnerability audit or proof of memory safety"
+}
